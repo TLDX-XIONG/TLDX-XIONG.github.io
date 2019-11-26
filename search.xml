@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>functions of matlab and lingo</title>
+    <url>/2019/11/26/MATLAB%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</url>
+    <content><![CDATA[<h4 id="WHAT-I-LEARN-TODAY"><a href="#WHAT-I-LEARN-TODAY" class="headerlink" title=" WHAT I LEARN TODAY"></a><center> WHAT I LEARN TODAY</center></h4><p><strong>1. <code>hist</code> 函数用法</strong></p><blockquote>
+<p>hist 有直方图的意思，MATLAB 中绘制直方图的函数是 hist用法是 hist(y,x)，表示以向量 x 的各个元素为统计范围，绘制 y 的分布情况。下面是它的具体用法案例。</p>
+</blockquote><a id="more"></a>
+
+<ol>
+<li>N=hist(Y)<br>将向量 Y 的元素平均分配到十个等间隔的容器中，而且返回每个容器的元素个数。如果 Y 是一个矩阵，hist 指令逐列执行(此时省略 x 则默认为 10)</li>
+<li>N=hist(Y,X)<br>将向量 Y 的元素平均分配到 X 个等间隔的容器中，而且返回每个容器的元素个数。如果 Y 是一个矩阵，hist 指令逐列执行</li>
+</ol>
+<p><strong>2. <code>linprog</code>函数用法</strong></p>
+<blockquote>
+<p>linprog 是 MATLAB 中用于求解线性规划问题的指令函数。具体用法如下  </p>
+</blockquote>
+<p>Matlab 中线性规划的标准型为：</p>
+<center>
+min c^T^*x  
+
+<p>A<em>x&lt;=b<br>Aeq</em>x=beq<br>lb&lt;=x&lt;=ub</p>
+</center>
+ linprog 函数的基本形式为 lingprog(c,A,b)，返回值为向量 x 的值。它的标准形式如下：
+<center>[x,fval]=linprog(c,a,b,aeq,beq,lb,ub,x0,options)</center>  
+
+<p>fval 返回目标函数的值，lb 和 ub 分别是变量 x 的取值上界和下界，x0 是 x 的初始值，options 此处是控制参数。   </p>
+]]></content>
+      <categories>
+        <category>daily affairs</category>
+      </categories>
+      <tags>
+        <tag>MATLAB</tag>
+        <tag>lingo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>daily work</title>
     <url>/2019/11/03/daily-work/</url>
     <content><![CDATA[<center>
