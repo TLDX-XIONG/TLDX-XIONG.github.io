@@ -2,8 +2,8 @@
 <search>
   <entry>
     <title>the usage of lingo</title>
-    <url>/2019/11/27/the%20usage%20of%20lingo/</url>
-    <content><![CDATA[<h4 id="usage-of-lingo"><a href="#usage-of-lingo" class="headerlink" title="usage of lingo"></a><center>usage of lingo</center></h4><p>lingo 软件用于是解决规划问题的极佳求解工具，本文将简单介绍 lingo 的使用方法和语法。</p><a id="more"></a>
+    <url>/2019/11/27/the-usage-of-lingo/</url>
+    <content><![CDATA[<h3 id="USAGE-OF-LINGO"><a href="#USAGE-OF-LINGO" class="headerlink" title="USAGE OF LINGO"></a><center>USAGE OF LINGO</center></h3><p>lingo 软件用于是解决规划问题的极佳求解工具，本文将简单介绍 lingo 的使用方法和语法。</p><a id="more"></a>
 <ul>
 <li><p><strong>SETS 的使用</strong><br>  为了定义 x<del>i</del>,a<del>ij</del>那么首先需要确定 i 和 j 的取值范围。<br>  在 lingo 中用 <strong>sets</strong> 来表示<br>  代码：</p>
   <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">sets:</span><br><span class="line">Xb1 /<span class="number">1.</span><span class="number">.8</span>/;</span><br><span class="line">Xb2 /<span class="number">1.</span><span class="number">.6</span>/;</span><br><span class="line">endsets</span><br></pre></td></tr></table></figure>
@@ -13,7 +13,7 @@
   <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">sets:</span><br><span class="line">Xb1 /<span class="number">1.</span><span class="number">.8</span>/:x,c,b;</span><br><span class="line">Xb2 /<span class="number">1.</span><span class="number">.6</span>/:y;</span><br><span class="line">Xb3(Xb1,Xb2):a;</span><br><span class="line">endsets</span><br></pre></td></tr></table></figure></li>
 <li><p><strong>DATA 的使用</strong><br>在 lingo 中吧常量理解为以经被赋予某常数的变量，在 DATA 中对一些变量赋值，使之成为常量。<br>代码如下：</p>
   <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">sets:</span><br><span class="line">Xb1 /<span class="number">1.</span><span class="number">.8</span>/:x;</span><br><span class="line">Xb2 /<span class="number">1.</span><span class="number">.6</span>/:y;</span><br><span class="line">Xb3(Xb1,Xb2):a;</span><br><span class="line">endsets</span><br><span class="line">data:</span><br><span class="line">a=<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span>;</span><br><span class="line">x=<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span>;</span><br><span class="line">y=<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>;</span><br><span class="line">enddata</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>变量类型</strong><br>@Free(x)语句：变量大小不受限制，即也可以取到负值<br>@Gin(x)语句：变量为整型<br>@Bin(x)语句：变量为二进制，即非 0 即 1<br>其中 X 是要改变类型的变量<br><em>备注：如无任何限制，则变量默认为非负数</em></p>
+<li><p><strong>变量类型</strong><br>@Free(x)语句：变量大小不受限制，即也可以取到负值<br>@Gin(x)语句：变量为整型<br>@Bin(x)语句：变量为二进制，即非 0 即 1<br>@bnd(L,x,U):限制到L&lt;=x&lt;=U<br>其中 x 是要改变类型的变量<br><em>备注：如无任何限制，则变量默认为非负数</em></p>
 </li>
 <li><p><strong>Loop 语句</strong></p>
 <ul>
@@ -34,27 +34,42 @@
 </li>
 </ul>
 </li>
-<li><p><strong>lingo 函数</strong></p>
+<li><p><strong>lingo 函数</strong><br>lingo 提供了多种函数，包括：</p>
+<ol>
+<li>基本运算符</li>
+<li>数学函数</li>
+<li>金融函数</li>
+<li>概率函数</li>
+<li>变量界定函数</li>
+<li>集操作函数</li>
+<li>集循环函数</li>
+<li>数据输入输出函数</li>
+<li>辅助函数</li>
+</ol>
 </li>
 </ul>
+<p>下次将会介绍这些函数的使用</p>
 ]]></content>
       <categories>
         <category>lingo</category>
       </categories>
+      <tags>
+        <tag>sets</tag>
+        <tag>data</tag>
+        <tag>Loop</tag>
+      </tags>
   </entry>
   <entry>
     <title>functions of matlab</title>
-    <url>/2019/11/26/functions%20of%20MATLAB/</url>
-    <content><![CDATA[<h4 id="WHAT-I-LEARN-TODAY"><a href="#WHAT-I-LEARN-TODAY" class="headerlink" title=" WHAT I LEARN TODAY"></a><center> WHAT I LEARN TODAY</center></h4><p><strong>1. <code>hist</code> 函数用法</strong></p><blockquote>
+    <url>/2019/11/26/functions-of-MATLAB/</url>
+    <content><![CDATA[<h3 id="WHAT-I-LEARN-TODAY"><a href="#WHAT-I-LEARN-TODAY" class="headerlink" title=" WHAT I LEARN TODAY"></a><center> WHAT I LEARN TODAY</center></h3><h4 id="1-hist-函数用法"><a href="#1-hist-函数用法" class="headerlink" title="1. hist 函数用法"></a>1. <code>hist</code> 函数用法</h4><blockquote>
 <p>hist 有直方图的意思，MATLAB 中绘制直方图的函数是 hist用法是 hist(y,x)，表示以向量 x 的各个元素为统计范围，绘制 y 的分布情况。下面是它的具体用法案例。</p>
 </blockquote><a id="more"></a>
-
 <ol>
 <li>N=hist(Y)<br>将向量 Y 的元素平均分配到十个等间隔的容器中，而且返回每个容器的元素个数。如果 Y 是一个矩阵，hist 指令逐列执行(此时省略 x 则默认为 10)</li>
 <li>N=hist(Y,X)<br>将向量 Y 的元素平均分配到 X 个等间隔的容器中，而且返回每个容器的元素个数。如果 Y 是一个矩阵，hist 指令逐列执行</li>
 </ol>
-<p><strong>2. <code>linprog</code>函数用法</strong></p>
-<blockquote>
+<h4 id="2-linprog函数用法"><a href="#2-linprog函数用法" class="headerlink" title="2. linprog函数用法"></a>2. <code>linprog</code>函数用法</h4><blockquote>
 <p>linprog 是 MATLAB 中用于求解线性规划问题的指令函数。具体用法如下  </p>
 </blockquote>
 <p>Matlab 中线性规划的标准型为：</p>
@@ -78,7 +93,7 @@ min c^T^*x
   </entry>
   <entry>
     <title>daily work</title>
-    <url>/2019/11/03/daily%20work/</url>
+    <url>/2019/11/03/daily-work/</url>
     <content><![CDATA[<center>
 
 <h2 id="星期一的快乐时光"><a href="#星期一的快乐时光" class="headerlink" title="星期一的快乐时光"></a>星期一的<del>快乐时光</del></h2></center>
@@ -95,16 +110,16 @@ min c^T^*x
 <h5 id="终于写完了"><a href="#终于写完了" class="headerlink" title="终于写完了"></a>终于写完了</h5><p>(更新于 2019 11 5)<br>啊，经过一天的努力，终于把论文给写完了。其中，最艰辛的莫过于格式的规范了。这也是最令人头疼之处。以及对 word 数学公式的不熟悉导致花费了些许时间找符号。<br>不过现在做完了之后，就是觉得舒服啊！！！</p>
 ]]></content>
       <categories>
-        <category>monday affairs</category>
+        <category>affairs</category>
       </categories>
       <tags>
         <tag>monday</tag>
-        <tag>affairs</tag>
+        <tag>daily affairs</tag>
       </tags>
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2019/11/02/hello%20world/</url>
+    <url>/2019/11/02/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <a id="more"></a>
 
