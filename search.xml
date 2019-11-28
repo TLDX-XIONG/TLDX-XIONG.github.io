@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>matlab and lingo</title>
+    <url>/2019/11/28/matlab-and-lingo/</url>
+    <content><![CDATA[<h3 id="MATLAB-AND-LINGO"><a href="#MATLAB-AND-LINGO" class="headerlink" title="MATLAB AND LINGO"></a><center>MATLAB AND LINGO</center></h3><ul>
+<li><h4 id="diff-函数"><a href="#diff-函数" class="headerlink" title="diff 函数"></a>diff 函数</h4>diff(f): 对 f 求导<br>diff(f,t): 对 t 求导（或者求对 t 的偏导）<br>diff(f,n): 对 f 求 n 阶导数<br>diff(f,n,t): 高阶导数 d^n^f/dt^n^（或者 高阶对 t 的偏导）</li>
+<li><h4 id="int-函数"><a href="#int-函数" class="headerlink" title="int 函数"></a>int 函数</h4>int(f,t): 不定积分<br>int(f,t,a,b): a 到 b 的定积分</li>
+<li><h4 id="quad-函数"><a href="#quad-函数" class="headerlink" title="quad 函数"></a>quad 函数</h4>quad(f,a,b): 求定积分的近似值</li>
+<li><h4 id="dsolve-函数"><a href="#dsolve-函数" class="headerlink" title="dsolve 函数"></a>dsolve 函数</h4>dsolve(‘eqn’,’con’,’v’): 关于变量 v 在初值条件 con 下求解微分方程</li>
+<li><h4 id="fsolve-函数"><a href="#fsolve-函数" class="headerlink" title="fsolve 函数"></a>fsolve 函数</h4>fsolve(funs,x0): 对方程组 funs，以向量 x0 为初值求近似解</li>
+<li><h4 id="solve-函数"><a href="#solve-函数" class="headerlink" title="solve 函数"></a>solve 函数</h4>solve(s): 对方程中变量 x 求解<br>solve(s,v): 对方程中指定变量 v 求解<br>solve(s1,s2,s3,···,sn): 对 n 个方程默认变量求解<br>solve(s1,s2,s3,···,sn,v1,v2,···,vn): 对 n 个方程的指定变量求解</li>
+<li><h4 id="roots-函数"><a href="#roots-函数" class="headerlink" title="roots 函数"></a>roots 函数</h4>roots(p): 求以 p 为系数的一元多项式方程的解</li>
+<li><h4 id="fzero-函数"><a href="#fzero-函数" class="headerlink" title="fzero 函数"></a>fzero 函数</h4>fzero(fun,x0): 对一元方程 fun，以 x0 为初值求近似解</li>
+<li><h4 id="matlab-二维数组"><a href="#matlab-二维数组" class="headerlink" title="matlab 二维数组"></a>matlab 二维数组</h4>MATLAB 对于二维数组的完整引用方式为：a(i,j)<br>其它方式：<br>a(:,j): 表示选择第 j 列<br>a(i,:): 表示选择第 i 行<br>a(a:b,j): 表示选择第 j 列的第 a 到 b 行<br>a(i,a:b): 表示选择第 i 行的第 a 到 b 列</li>
+<li><h4 id="线性最小二乘法"><a href="#线性最小二乘法" class="headerlink" title="线性最小二乘法"></a>线性最小二乘法</h4>最小二乘法是一种数学优化技术。通过最小化误差的平方和寻找数据的最佳函数匹配。也可用于<code>函数拟合</code><br><strong>实例</strong><br>实验得到四个数据 (x,y): (1,6)、(2,5)、(3,7)、(4,10)。希望找到一条和这四个点最匹配的直线：y=a+bx。因此有：<br><strong><center>a+1b=6</center></strong><br><strong>a+2b=5</strong><br><strong>a+3b=7</strong><br><strong>a+4b=10</strong><br>最小二乘法采用的手段是尽量使得等号两边的方差最小：<br><strong><center>S(a,b)=[6-(a+b)]^2^ + [5-(a+2b)]^2^ + [7-(a+3b)]^2^ + [10-(a+4b)]^2^</center></strong><br>求解 min(a,b), 通过对 a,b 求偏导。再令两者偏导为零，得到 a 与 b 的值。此时的曲线便是最佳拟合曲线。</li>
+</ul><a id="more"></a>
+<hr>
+<ul>
+<li><h4 id="血液流动规律"><a href="#血液流动规律" class="headerlink" title="血液流动规律"></a>血液流动规律</h4>根据 poiseuille 定律，血液流过半径 r、长为 l 的一段血管 AC 时，流量：<br><strong><center>q=pi·r^2^(P<del>A</del>-P<del>C</del>)/8ul</center></strong><br>P<del>A</del>-P<del>C</del> 是 A，C 两点的压力差，u 是血液的黏性系数。在血液流动过程中，机体克服阻力所消耗的能量为 E<del>1</del>=q·(P<del>A</del>-P<del>C</del>),将上式带入得：<br><strong><center>E<del>1</del>=8uq<del>2</del>l/pi·r<del>4</del></center></strong></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>diff</tag>
+        <tag>int</tag>
+        <tag>quad</tag>
+        <tag>dsolve</tag>
+        <tag>fsolve</tag>
+        <tag>roots</tag>
+        <tag>fzero</tag>
+        <tag>最小二乘法</tag>
+        <tag>血液流动规律</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>the usage of lingo</title>
     <url>/2019/11/27/the-usage-of-lingo/</url>
     <content><![CDATA[<h3 id="USAGE-OF-LINGO"><a href="#USAGE-OF-LINGO" class="headerlink" title="USAGE OF LINGO"></a><center>USAGE OF LINGO</center></h3><p>lingo 软件用于是解决规划问题的极佳求解工具，本文将简单介绍 lingo 的使用方法和语法。</p><a id="more"></a>
