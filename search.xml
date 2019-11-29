@@ -295,7 +295,7 @@
     <title>matlab and lingo</title>
     <url>/2019/11/28/matlab-and-lingo/</url>
     <content><![CDATA[<h3 id="MATLAB-AND-LINGO"><a href="#MATLAB-AND-LINGO" class="headerlink" title="MATLAB AND LINGO"></a><center>MATLAB AND LINGO</center></h3><ul>
-<li><h4 id="diff-函数"><a href="#diff-函数" class="headerlink" title="diff 函数"></a>diff 函数</h4>diff(f): 对 f 求导<br>diff(f,t): df/dt 或者 &part;f/&part;t<br>diff(f,n): 对 f 求 n 阶导数<br>diff(f,n,t): 高阶导数 d<sup>n</sup>f/dt<sup>n</sup>（或者 ∂<sup>n</sup>f/dt<sup>n</sup>）<a id="more"></a></li>
+<li><h4 id="diff-函数"><a href="#diff-函数" class="headerlink" title="diff 函数"></a>diff 函数</h4>diff(f): 对 f 求导<br>diff(f,t): df/dt 或者 &part;f/&part;t<br>diff(f,n): 对 f 求 n 阶导数<br>diff(f,n,t): 高阶导数 d<sup>n</sup>f/dt<sup>n</sup>（或者 &part;<sup>n</sup>f/&part;t<sup>n</sup>）<a id="more"></a></li>
 <li><h4 id="int-函数"><a href="#int-函数" class="headerlink" title="int 函数"></a>int 函数</h4>int(f,t): &int;&fnof;(t)dt<br>int(f,t,a,b): 求 a 到 b 的定积分</li>
 <li><h4 id="quad-函数"><a href="#quad-函数" class="headerlink" title="quad 函数"></a>quad 函数</h4>quad(f,a,b): 求定积分的近似值</li>
 <li><h4 id="dsolve-函数"><a href="#dsolve-函数" class="headerlink" title="dsolve 函数"></a>dsolve 函数</h4>dsolve(‘eqn’,’con’,’v’): 关于变量 v 在初值条件 con 下求解微分方程</li>
