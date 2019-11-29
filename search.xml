@@ -1,11 +1,302 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HTML special symbol</title>
+    <url>/2019/11/29/HTML-special-symbol/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">编码</th>
+<th align="center">符号</th>
+<th align="center">编码</th>
+<th align="center">符号</th>
+<th align="center">编码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&alpha;</td>
+<td align="center">&amp;alpha；</td>
+<td align="center">&beta;</td>
+<td align="center">&amp;beta；</td>
+<td align="center">&chi;</td>
+<td align="center">&amp;chi；</td>
+</tr>
+<tr>
+<td align="center">&delta;</td>
+<td align="center">&amp;delta；</td>
+<td align="center">&epsilon;</td>
+<td align="center">&amp;epsilon；</td>
+<td align="center">&eta;</td>
+<td align="center">&amp;eta；</td>
+</tr>
+<tr>
+<td align="center">&gamma;</td>
+<td align="center">&amp;gamma；</td>
+<td align="center">&iota;</td>
+<td align="center">&amp;iota；</td>
+<td align="center">&kappa;</td>
+<td align="center">&amp;kappa；</td>
+</tr>
+<tr>
+<td align="center">&lambda;</td>
+<td align="center">&amp;lambda；</td>
+<td align="center">&mu;</td>
+<td align="center">&amp;mu；</td>
+<td align="center">&nu;</td>
+<td align="center">&amp;nu；</td>
+</tr>
+<tr>
+<td align="center">&omega;</td>
+<td align="center">&amp;omega；</td>
+<td align="center">&omicron;</td>
+<td align="center">&amp;omicron；</td>
+<td align="center">&phi;</td>
+<td align="center">&amp;phi；</td>
+</tr>
+<tr>
+<td align="center">&pi;</td>
+<td align="center">&amp;pi；</td>
+<td align="center">&psi;</td>
+<td align="center">&amp;psi；</td>
+<td align="center">&rho;</td>
+<td align="center">&amp;rho；</td>
+</tr>
+<tr>
+<td align="center">&sigma;</td>
+<td align="center">sigma；</td>
+<td align="center">&tau;</td>
+<td align="center">&amp;tau；</td>
+<td align="center">&theta;</td>
+<td align="center">&amp;theta；</td>
+</tr>
+<tr>
+<td align="center">&upsilon;</td>
+<td align="center">&amp;upsilon；</td>
+<td align="center">&xi;</td>
+<td align="center">&amp;xi；</td>
+<td align="center">&zeta;</td>
+<td align="center">&amp;zeta；</td>
+</tr>
+</tbody></table><a id="more"></a>
+<hr>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">编码</th>
+<th align="center">符号</th>
+<th align="center">编码</th>
+<th align="center">符号</th>
+<th align="center">编码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&Alpha;</td>
+<td align="center">&amp;Alpha；</td>
+<td align="center">&Beta;</td>
+<td align="center">&amp;Beta；</td>
+<td align="center">&Chi;</td>
+<td align="center">&amp;Chi；</td>
+</tr>
+<tr>
+<td align="center">&Delta;</td>
+<td align="center">&amp;Delta；</td>
+<td align="center">&Epsilon;</td>
+<td align="center">&amp;Epsilon；</td>
+<td align="center">&Eta;</td>
+<td align="center">&amp;Eta；</td>
+</tr>
+<tr>
+<td align="center">&Gamma;</td>
+<td align="center">&amp;Gamma；</td>
+<td align="center">&Iota;</td>
+<td align="center">&amp;Iota；</td>
+<td align="center">&Kappa;</td>
+<td align="center">&amp;Kappa；</td>
+</tr>
+<tr>
+<td align="center">&Lambda;</td>
+<td align="center">&amp;Lambda；</td>
+<td align="center">&Mu;</td>
+<td align="center">&amp;Mu；</td>
+<td align="center">&Nu;</td>
+<td align="center">&amp;Nu；</td>
+</tr>
+<tr>
+<td align="center">&Omega;</td>
+<td align="center">&amp;Omega；</td>
+<td align="center">&Omicron;</td>
+<td align="center">&amp;Omicron；</td>
+<td align="center">&Phi;</td>
+<td align="center">&amp;Phi；</td>
+</tr>
+<tr>
+<td align="center">&Pi;</td>
+<td align="center">&amp;Pi；</td>
+<td align="center">&Psi;</td>
+<td align="center">&amp;Psi；</td>
+<td align="center">&Rho;</td>
+<td align="center">&amp;Rho；</td>
+</tr>
+<tr>
+<td align="center">&Sigma;</td>
+<td align="center">&amp;Sigma；</td>
+<td align="center">&Tau;</td>
+<td align="center">&amp;Tau；</td>
+<td align="center">&Theta;</td>
+<td align="center">&amp;Theta；</td>
+</tr>
+<tr>
+<td align="center">&Upsilon;</td>
+<td align="center">&amp;Upsilon；</td>
+<td align="center">&Xi;</td>
+<td align="center">&amp;Xi；</td>
+<td align="center">&Zeta;</td>
+<td align="center">&amp;Zeta；</td>
+</tr>
+</tbody></table>
+<hr>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">编码</th>
+<th align="center">符号</th>
+<th align="center">编码</th>
+<th align="center">符号</th>
+<th align="center">编码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&euro;</td>
+<td align="center">&amp;euro；</td>
+<td align="center">&pound;</td>
+<td align="center">&amp;pound；</td>
+<td align="center">&yen;</td>
+<td align="center">&amp;yen；</td>
+</tr>
+</tbody></table>
+<hr>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">编码</th>
+<th align="center">符号</th>
+<th align="center">编码</th>
+<th align="center">符号</th>
+<th align="center">编码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&copy;</td>
+<td align="center">&amp;copy；</td>
+<td align="center">&deg;</td>
+<td align="center">&amp;deg；</td>
+<td align="center">&divide;</td>
+<td align="center">&amp;divide；</td>
+</tr>
+<tr>
+<td align="center">&frac13;</td>
+<td align="center">&amp;frac13；</td>
+<td align="center">&frac14;</td>
+<td align="center">&amp;frac14；</td>
+<td align="center">&reg;</td>
+<td align="center">&amp;reg；</td>
+</tr>
+<tr>
+<td align="center">&sect;</td>
+<td align="center">&amp;sect；</td>
+<td align="center">&times;</td>
+<td align="center">&amp;times；</td>
+<td align="center">&trade;</td>
+<td align="center">&amp;trade；</td>
+</tr>
+<tr>
+<td align="center">&bull;</td>
+<td align="center">&amp;bull；</td>
+<td align="center">&cent;</td>
+<td align="center">&amp;cent；</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<hr>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">编码</th>
+<th align="center">符号</th>
+<th align="center">编码</th>
+<th align="center">符号</th>
+<th align="center">编码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&asymp;</td>
+<td align="center">&amp;asymp；</td>
+<td align="center">&ge;</td>
+<td align="center">&amp;ge；</td>
+<td align="center">&le;</td>
+<td align="center">&amp;le；</td>
+</tr>
+<tr>
+<td align="center">&ne;</td>
+<td align="center">&amp;ne；</td>
+<td align="center">&sum;</td>
+<td align="center">&amp;sum；</td>
+<td align="center">&radic;</td>
+<td align="center">&amp;radic；</td>
+</tr>
+<tr>
+<td align="center">&clubs;</td>
+<td align="center">&amp;clubs；</td>
+<td align="center">&diams;</td>
+<td align="center">&amp;diams；</td>
+<td align="center">&hearts;</td>
+<td align="center">&amp;hearts；</td>
+</tr>
+<tr>
+<td align="center">&spades;</td>
+<td align="center">&amp;spades；</td>
+<td align="center">&harr;</td>
+<td align="center">&amp;harr；</td>
+<td align="center">&cap;</td>
+<td align="center">&amp;cap；</td>
+</tr>
+<tr>
+<td align="center">&infin;</td>
+<td align="center">&amp;infin；</td>
+<td align="center">&int;</td>
+<td align="center">&amp;int；</td>
+<td align="center">&uarr;</td>
+<td align="center">&amp;uarr；</td>
+</tr>
+<tr>
+<td align="center">&darr;</td>
+<td align="center">&amp;darr；</td>
+<td align="center">&larr;</td>
+<td align="center">&amp;larr；</td>
+<td align="center">&rarr;</td>
+<td align="center">&amp;rarr；</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>special symbol</category>
+      </categories>
+      <tags>
+        <tag>special symbol</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>matlab and lingo</title>
     <url>/2019/11/28/matlab-and-lingo/</url>
     <content><![CDATA[<h3 id="MATLAB-AND-LINGO"><a href="#MATLAB-AND-LINGO" class="headerlink" title="MATLAB AND LINGO"></a><center>MATLAB AND LINGO</center></h3><ul>
-<li><h4 id="diff-函数"><a href="#diff-函数" class="headerlink" title="diff 函数"></a>diff 函数</h4>diff(f): 对 f 求导<br>diff(f,t): 对 t 求导（或者求对 t 的偏导）<br>diff(f,n): 对 f 求 n 阶导数<br>diff(f,n,t): 高阶导数 d^n^f/dt^n^（或者 高阶对 t 的偏导）<a id="more"></a></li>
-<li><h4 id="int-函数"><a href="#int-函数" class="headerlink" title="int 函数"></a>int 函数</h4>int(f,t): 不定积分<br>int(f,t,a,b): a 到 b 的定积分</li>
+<li><h4 id="diff-函数"><a href="#diff-函数" class="headerlink" title="diff 函数"></a>diff 函数</h4>diff(f): 对 f 求导<br>diff(f,t): df/dt 或者 &part;f/&part;t<br>diff(f,n): 对 f 求 n 阶导数<br>diff(f,n,t): 高阶导数 d<sup>n</sup>f/dt<sup>n</sup>（或者 ∂<sup>n</sup>f/dt<sup>n</sup>）<a id="more"></a></li>
+<li><h4 id="int-函数"><a href="#int-函数" class="headerlink" title="int 函数"></a>int 函数</h4>int(f,t): &int;&fnof;(t)dt<br>int(f,t,a,b): 求 a 到 b 的定积分</li>
 <li><h4 id="quad-函数"><a href="#quad-函数" class="headerlink" title="quad 函数"></a>quad 函数</h4>quad(f,a,b): 求定积分的近似值</li>
 <li><h4 id="dsolve-函数"><a href="#dsolve-函数" class="headerlink" title="dsolve 函数"></a>dsolve 函数</h4>dsolve(‘eqn’,’con’,’v’): 关于变量 v 在初值条件 con 下求解微分方程</li>
 <li><h4 id="fsolve-函数"><a href="#fsolve-函数" class="headerlink" title="fsolve 函数"></a>fsolve 函数</h4>fsolve(funs,x0): 对方程组 funs，以向量 x0 为初值求近似解</li>
@@ -13,11 +304,11 @@
 <li><h4 id="roots-函数"><a href="#roots-函数" class="headerlink" title="roots 函数"></a>roots 函数</h4>roots(p): 求以 p 为系数的一元多项式方程的解</li>
 <li><h4 id="fzero-函数"><a href="#fzero-函数" class="headerlink" title="fzero 函数"></a>fzero 函数</h4>fzero(fun,x0): 对一元方程 fun，以 x0 为初值求近似解</li>
 <li><h4 id="matlab-二维数组"><a href="#matlab-二维数组" class="headerlink" title="matlab 二维数组"></a>matlab 二维数组</h4>MATLAB 对于二维数组的完整引用方式为：a(i,j)<br>其它方式：<br>a(:,j): 表示选择第 j 列<br>a(i,:): 表示选择第 i 行<br>a(a:b,j): 表示选择第 j 列的第 a 到 b 行<br>a(i,a:b): 表示选择第 i 行的第 a 到 b 列</li>
-<li><h4 id="线性最小二乘法"><a href="#线性最小二乘法" class="headerlink" title="线性最小二乘法"></a>线性最小二乘法</h4>最小二乘法是一种数学优化技术。通过最小化误差的平方和寻找数据的最佳函数匹配。也可用于<code>函数拟合</code><br><strong>实例</strong><br>实验得到四个数据 (x,y): (1,6)、(2,5)、(3,7)、(4,10)。希望找到一条和这四个点最匹配的直线：y=a+bx。因此有：<br><strong><center>a+1b=6</strong><br><strong>a+2b=5</strong><br><strong>a+3b=7</strong><br><strong>a+4b=10</center></strong><br>最小二乘法采用的手段是尽量使得等号两边的方差最小：<br><strong><center>S(a,b)=[6-(a+b)]^2^ + [5-(a+2b)]^2^ + [7-(a+3b)]^2^ + [10-(a+4b)]^2^</center></strong><br>求解 min(a,b), 通过对 a,b 求偏导。再令两者偏导为零，得到 a 与 b 的值。此时的曲线便是最佳拟合曲线。</li>
+<li><h4 id="线性最小二乘法"><a href="#线性最小二乘法" class="headerlink" title="线性最小二乘法"></a>线性最小二乘法</h4>最小二乘法是一种数学优化技术。通过最小化误差的平方和寻找数据的最佳函数匹配。也可用于<code>函数拟合</code><br><strong>实例</strong><br>实验得到四个数据 (x,y): (1,6)、(2,5)、(3,7)、(4,10)。希望找到一条和这四个点最匹配的直线：y=a+bx。因此有：<br><strong><center>a+1b=6</strong><br><strong>a+2b=5</strong><br><strong>a+3b=7</strong><br><strong>a+4b=10</center></strong><br>最小二乘法采用的手段是尽量使得等号两边的方差最小：<br><strong><center>S(a,b)=[6-(a+b)]<sup>2</sup> + [5-(a+2b)]<sup>2</sup> + [7-(a+3b)]<sup>2</sup> + [10-(a+4b)]<sup>2</sup></center></strong><br>求解 min(a,b), 通过对 a,b 求偏导。再令两者偏导为零，得到 a 与 b 的值。此时的曲线便是最佳拟合曲线。</li>
 </ul>
 <hr>
 <ul>
-<li><h4 id="血液流动规律"><a href="#血液流动规律" class="headerlink" title="血液流动规律"></a>血液流动规律</h4>根据 poiseuille 定律，血液流过半径 r、长为 l 的一段血管 AC 时，流量：<br><strong><center>q=pi·r^2^(P<del>A</del>-P<del>C</del>)/8ul</center></strong><br>P<del>A</del>-P<del>C</del> 是 A，C 两点的压力差，u 是血液的黏性系数。在血液流动过程中，机体克服阻力所消耗的能量为 E<del>1</del>=q·(P<del>A</del>-P<del>C</del>),将上式带入得：<br><strong><center>E<del>1</del>=8uq<del>2</del>l/pi·r<del>4</del></center></strong></li>
+<li><h4 id="血液流动规律"><a href="#血液流动规律" class="headerlink" title="血液流动规律"></a>血液流动规律</h4>根据 poiseuille 定律，血液流过半径 r、长为 l 的一段血管 AC 时，流量：<br><strong><center>q=&pi;r<sup>4</sup>&Delta;p/8&mu;l</center></strong><br>&Delta;P 是 A，C 两点的压力差，&mu; 是血液的黏性系数。在血液流动过程中，机体克服阻力所消耗的能量为 E<sub>1</sub>=q·&Delta;p,将上式中 &Delta;p带入上式得：<br><strong><center>E<sub>1</sub>=8&mu;q<sup>2</sup>l/&pi;r<sup>4</sup></center></strong></li>
 </ul>
 ]]></content>
       <categories>

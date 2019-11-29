@@ -50,15 +50,15 @@
   };
 </script>
 
-  <meta name="description" content="MATLAB AND LINGO diff 函数diff(f): 对 f 求导diff(f,t): 对 t 求导（或者求对 t 的偏导）diff(f,n): 对 f 求 n 阶导数diff(f,n,t): 高阶导数 d^n^f&#x2F;dt^n^（或者 高阶对 t 的偏导）">
+  <meta name="description" content="MATLAB AND LINGO diff 函数diff(f): 对 f 求导diff(f,t): df&#x2F;dt 或者 &amp;part;f&#x2F;&amp;part;tdiff(f,n): 对 f 求 n 阶导数diff(f,n,t): 高阶导数 dnf&#x2F;dtn（或者 ∂nf&#x2F;dtn）">
 <meta name="keywords" content="diff,int,quad,dsolve,fsolve,roots,fzero,最小二乘法,血液流动规律">
 <meta property="og:type" content="article">
 <meta property="og:title" content="matlab and lingo">
 <meta property="og:url" content="www.xionglingyu.club&#x2F;2019&#x2F;11&#x2F;28&#x2F;matlab-and-lingo&#x2F;index.html">
 <meta property="og:site_name" content="TLDX&#39;s blog">
-<meta property="og:description" content="MATLAB AND LINGO diff 函数diff(f): 对 f 求导diff(f,t): 对 t 求导（或者求对 t 的偏导）diff(f,n): 对 f 求 n 阶导数diff(f,n,t): 高阶导数 d^n^f&#x2F;dt^n^（或者 高阶对 t 的偏导）">
+<meta property="og:description" content="MATLAB AND LINGO diff 函数diff(f): 对 f 求导diff(f,t): df&#x2F;dt 或者 &amp;part;f&#x2F;&amp;part;tdiff(f,n): 对 f 求 n 阶导数diff(f,n,t): 高阶导数 dnf&#x2F;dtn（或者 ∂nf&#x2F;dtn）">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-28T15:19:35.354Z">
+<meta property="og:updated_time" content="2019-11-29T06:13:07.255Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="www.xionglingyu.club/2019/11/28/matlab-and-lingo/">
@@ -160,17 +160,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">16</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">3</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">4</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">5</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-commonweal">
@@ -248,10 +248,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-11-28 21:45:10 / Modified: 23:19:35" itemprop="dateCreated datePublished" datetime="2019-11-28T21:45:10+08:00">2019-11-28</time>
+              <time title="Created: 2019-11-28 21:45:10" itemprop="dateCreated datePublished" datetime="2019-11-28T21:45:10+08:00">2019-11-28</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-29 14:13:07" itemprop="dateModified" datetime="2019-11-29T14:13:07+08:00">2019-11-29</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -297,8 +303,8 @@
 
       
         <h3 id="MATLAB-AND-LINGO"><a href="#MATLAB-AND-LINGO" class="headerlink" title="MATLAB AND LINGO"></a><center>MATLAB AND LINGO</center></h3><ul>
-<li><h4 id="diff-函数"><a href="#diff-函数" class="headerlink" title="diff 函数"></a>diff 函数</h4>diff(f): 对 f 求导<br>diff(f,t): 对 t 求导（或者求对 t 的偏导）<br>diff(f,n): 对 f 求 n 阶导数<br>diff(f,n,t): 高阶导数 d^n^f/dt^n^（或者 高阶对 t 的偏导）<a id="more"></a></li>
-<li><h4 id="int-函数"><a href="#int-函数" class="headerlink" title="int 函数"></a>int 函数</h4>int(f,t): 不定积分<br>int(f,t,a,b): a 到 b 的定积分</li>
+<li><h4 id="diff-函数"><a href="#diff-函数" class="headerlink" title="diff 函数"></a>diff 函数</h4>diff(f): 对 f 求导<br>diff(f,t): df/dt 或者 &part;f/&part;t<br>diff(f,n): 对 f 求 n 阶导数<br>diff(f,n,t): 高阶导数 d<sup>n</sup>f/dt<sup>n</sup>（或者 ∂<sup>n</sup>f/dt<sup>n</sup>）<a id="more"></a></li>
+<li><h4 id="int-函数"><a href="#int-函数" class="headerlink" title="int 函数"></a>int 函数</h4>int(f,t): &int;&fnof;(t)dt<br>int(f,t,a,b): 求 a 到 b 的定积分</li>
 <li><h4 id="quad-函数"><a href="#quad-函数" class="headerlink" title="quad 函数"></a>quad 函数</h4>quad(f,a,b): 求定积分的近似值</li>
 <li><h4 id="dsolve-函数"><a href="#dsolve-函数" class="headerlink" title="dsolve 函数"></a>dsolve 函数</h4>dsolve(‘eqn’,’con’,’v’): 关于变量 v 在初值条件 con 下求解微分方程</li>
 <li><h4 id="fsolve-函数"><a href="#fsolve-函数" class="headerlink" title="fsolve 函数"></a>fsolve 函数</h4>fsolve(funs,x0): 对方程组 funs，以向量 x0 为初值求近似解</li>
@@ -306,11 +312,11 @@
 <li><h4 id="roots-函数"><a href="#roots-函数" class="headerlink" title="roots 函数"></a>roots 函数</h4>roots(p): 求以 p 为系数的一元多项式方程的解</li>
 <li><h4 id="fzero-函数"><a href="#fzero-函数" class="headerlink" title="fzero 函数"></a>fzero 函数</h4>fzero(fun,x0): 对一元方程 fun，以 x0 为初值求近似解</li>
 <li><h4 id="matlab-二维数组"><a href="#matlab-二维数组" class="headerlink" title="matlab 二维数组"></a>matlab 二维数组</h4>MATLAB 对于二维数组的完整引用方式为：a(i,j)<br>其它方式：<br>a(:,j): 表示选择第 j 列<br>a(i,:): 表示选择第 i 行<br>a(a:b,j): 表示选择第 j 列的第 a 到 b 行<br>a(i,a:b): 表示选择第 i 行的第 a 到 b 列</li>
-<li><h4 id="线性最小二乘法"><a href="#线性最小二乘法" class="headerlink" title="线性最小二乘法"></a>线性最小二乘法</h4>最小二乘法是一种数学优化技术。通过最小化误差的平方和寻找数据的最佳函数匹配。也可用于<code>函数拟合</code><br><strong>实例</strong><br>实验得到四个数据 (x,y): (1,6)、(2,5)、(3,7)、(4,10)。希望找到一条和这四个点最匹配的直线：y=a+bx。因此有：<br><strong><center>a+1b=6</strong><br><strong>a+2b=5</strong><br><strong>a+3b=7</strong><br><strong>a+4b=10</center></strong><br>最小二乘法采用的手段是尽量使得等号两边的方差最小：<br><strong><center>S(a,b)=[6-(a+b)]^2^ + [5-(a+2b)]^2^ + [7-(a+3b)]^2^ + [10-(a+4b)]^2^</center></strong><br>求解 min(a,b), 通过对 a,b 求偏导。再令两者偏导为零，得到 a 与 b 的值。此时的曲线便是最佳拟合曲线。</li>
+<li><h4 id="线性最小二乘法"><a href="#线性最小二乘法" class="headerlink" title="线性最小二乘法"></a>线性最小二乘法</h4>最小二乘法是一种数学优化技术。通过最小化误差的平方和寻找数据的最佳函数匹配。也可用于<code>函数拟合</code><br><strong>实例</strong><br>实验得到四个数据 (x,y): (1,6)、(2,5)、(3,7)、(4,10)。希望找到一条和这四个点最匹配的直线：y=a+bx。因此有：<br><strong><center>a+1b=6</strong><br><strong>a+2b=5</strong><br><strong>a+3b=7</strong><br><strong>a+4b=10</center></strong><br>最小二乘法采用的手段是尽量使得等号两边的方差最小：<br><strong><center>S(a,b)=[6-(a+b)]<sup>2</sup> + [5-(a+2b)]<sup>2</sup> + [7-(a+3b)]<sup>2</sup> + [10-(a+4b)]<sup>2</sup></center></strong><br>求解 min(a,b), 通过对 a,b 求偏导。再令两者偏导为零，得到 a 与 b 的值。此时的曲线便是最佳拟合曲线。</li>
 </ul>
 <hr>
 <ul>
-<li><h4 id="血液流动规律"><a href="#血液流动规律" class="headerlink" title="血液流动规律"></a>血液流动规律</h4>根据 poiseuille 定律，血液流过半径 r、长为 l 的一段血管 AC 时，流量：<br><strong><center>q=pi·r^2^(P<del>A</del>-P<del>C</del>)/8ul</center></strong><br>P<del>A</del>-P<del>C</del> 是 A，C 两点的压力差，u 是血液的黏性系数。在血液流动过程中，机体克服阻力所消耗的能量为 E<del>1</del>=q·(P<del>A</del>-P<del>C</del>),将上式带入得：<br><strong><center>E<del>1</del>=8uq<del>2</del>l/pi·r<del>4</del></center></strong></li>
+<li><h4 id="血液流动规律"><a href="#血液流动规律" class="headerlink" title="血液流动规律"></a>血液流动规律</h4>根据 poiseuille 定律，血液流过半径 r、长为 l 的一段血管 AC 时，流量：<br><strong><center>q=&pi;r<sup>4</sup>&Delta;p/8&mu;l</center></strong><br>&Delta;P 是 A，C 两点的压力差，&mu; 是血液的黏性系数。在血液流动过程中，机体克服阻力所消耗的能量为 E<sub>1</sub>=q·&Delta;p,将上式中 &Delta;p带入上式得：<br><strong><center>E<sub>1</sub>=8&mu;q<sup>2</sup>l/&pi;r<sup>4</sup></center></strong></li>
 </ul>
 
     </div>
@@ -356,6 +362,9 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2019/11/29/HTML-special-symbol/" rel="prev" title="HTML special symbol">
+                  HTML special symbol <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
