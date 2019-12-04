@@ -789,7 +789,7 @@ pre .javascript .function {
   color: #d9534f;
 }
 .pdfobject-container {
-  height: 500px;
+  height: 1000px;
   overflow: auto;
   position: relative;
   width: 100%;
@@ -1171,7 +1171,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff0394;
+  background: #98b6ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
