@@ -50,14 +50,18 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="TLDX&#39;s blog">
-<meta property="og:url" content="www.xionglingyu.club&#x2F;archives&#x2F;2019&#x2F;page&#x2F;2&#x2F;index.html">
+  <meta name="description" content="ode函数ode45 函数：高阶（4~5）的显式单步龙格-库塔法求解微分方程组，其可以求解中等精度要求的非刚性问题。ode45 函数调用格式如下：">
+<meta name="keywords" content="ode45">
+<meta property="og:type" content="article">
+<meta property="og:title" content="matlab ode系列">
+<meta property="og:url" content="www.xionglingyu.club&#x2F;2019&#x2F;12&#x2F;06&#x2F;matlab-ode%E7%B3%BB%E5%88%97&#x2F;index.html">
 <meta property="og:site_name" content="TLDX&#39;s blog">
+<meta property="og:description" content="ode函数ode45 函数：高阶（4~5）的显式单步龙格-库塔法求解微分方程组，其可以求解中等精度要求的非刚性问题。ode45 函数调用格式如下：">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-06T11:28:11.045Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="www.xionglingyu.club/archives/2019/page/2/">
+<link rel="canonical" href="www.xionglingyu.club/2019/12/06/matlab-ode%E7%B3%BB%E5%88%97/">
 
 
 <script id="page-configurations">
@@ -65,13 +69,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
-    isArchive: true
+    isArchive: false
   };
 </script>
 
-  <title>Archive | TLDX's blog</title>
+  <title>matlab ode系列 | TLDX's blog</title>
   
 
 
@@ -217,76 +221,151 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="www.xionglingyu.club/2019/12/06/matlab-ode%E7%B3%BB%E5%88%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="TLDX">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TLDX's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          matlab ode系列
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-12-06 18:41:23 / Modified: 19:28:11" itemprop="dateCreated datePublished" datetime="2019-12-06T18:41:23+08:00">2019-12-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Matlab/" itemprop="url" rel="index">
+                    <span itemprop="name">Matlab</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/12/06/matlab-ode%E7%B3%BB%E5%88%97/" class="post-meta-item leancloud_visitors" data-flag-title="matlab ode系列" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 8 posts in total. Keep on posting.</span>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2019/12/06/matlab-ode%E7%B3%BB%E5%88%97/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/06/matlab-ode%E7%B3%BB%E5%88%97/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+        <h4 id="ode函数"><a href="#ode函数" class="headerlink" title="ode函数"></a><center>ode函数<center></center></center></h4><p>ode45 函数：高阶（4~5）的显式单步龙格-库塔法求解微分方程组，其可以求解中等精度要求的非刚性问题。<br>ode45 函数调用格式如下：</p><a id="more"></a>
+<ul>
+<li>[T,Y]=ode45(odefun,tspan,y0)</li>
+<li>[T,Y]=ode45(odefun,tspan,y0,options)</li>
+<li>[T,Y,TE,YE,IE]=ode45(odefun,tspan,y0,options)</li>
+</ul>
+<p>其中，<br>T 为输出的变量采样点系列；<br>Y 为对应的函数的数值解；<br>TE 为时间序列；<br>YE 为解决时间序列的算法；<br>IE 为输出变量序列；<br>odefun 为定义微分方程组的函数，可用函数 inline 或者一个函数文件来定义；<br>tspan 为变量的求解区间；<br>y0 为初值条件；<br>options 为求解过程控制参数，其用 odeset 来定义；</p>
+<p>【例1】求下面微分方程在区间 [1,6] 的解，其初值条件为 y(0)=1.2,y’(0)=0</p>
+<center>y"+5y'-sin5t=0</center>
+ode45 函数不能直接求解这个方程，需要先将方程化为一阶方程组形式，从而成为矩阵形式便于求解。以上微分方程等价于：
+
+<p>$$<br>y_1’=y_2<br>$$<br>$$<br>y_2’=\sin 5t-5y_1<br>$$<br>首先建立微分方程的 m 文件，代码如下：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dy</span>=<span class="title">lin_fun</span><span class="params">(t,y)</span></span></span><br><span class="line">dy(<span class="number">1</span>,<span class="number">1</span>)=y(<span class="number">2</span>);</span><br><span class="line">dy(<span class="number">2</span>,<span class="number">1</span>)=<span class="built_in">sin</span>(<span class="number">5</span>*t)<span class="number">-5</span>*y(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>其实现的 MATLAB 代码如下：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;clear all</span><br><span class="line">tspan=[<span class="number">1</span>,<span class="number">6</span>];</span><br><span class="line">x0=[<span class="number">1</span>,<span class="number">0</span>];</span><br><span class="line">[t,y]=ode(@lin_fun,tspan,x0);</span><br><span class="line"><span class="built_in">plot</span>(t,y(,:<span class="number">1</span>),<span class="string">"r-"</span>);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"><span class="built_in">plot</span>(t,y(,:<span class="number">2</span>),<span class="string">'m:'</span>);</span><br><span class="line"><span class="built_in">hold</span> off;</span><br></pre></td></tr></table></figure>
+<p>【例2】在 Volterra 食饵-捕食者模型中，记食饵和捕食者在 t 时刻的数量分别记作 x(t),y(t),则有:<br>$$<br>\dot{x}\left( t \right) =x\left( r−ay \right) =rx−axy<br>$$<br>$$<br>\dot{y}\left( t \right) =y\left( −d+bx \right) =−yd+bxy<br>$$</p>
+<p>求解过程同上，首先假设<code>r=1,d=0.5,a=0.1,b=0.02,x0=25,y0=2</code><br>首先建立微分方程的 m 文件，代码如下：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dy</span>=<span class="title">lin_fun</span><span class="params">(t,x)</span></span></span><br><span class="line">dx(<span class="number">1</span>,<span class="number">1</span>)=x(<span class="number">1</span>)<span class="number">-0.1</span>*x(<span class="number">1</span>)*x(<span class="number">2</span>);</span><br><span class="line">dx(<span class="number">2</span>,<span class="number">1</span>)=<span class="number">-0.5</span>*x(<span class="number">2</span>)+<span class="number">0.02</span>*x(<span class="number">1</span>)*x(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>其实现的 MATLAB 代码如下：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;clear all</span><br><span class="line">tspan=[<span class="number">1</span>,<span class="number">15</span>];</span><br><span class="line">z0=[<span class="number">25</span>,<span class="number">2</span>];</span><br><span class="line">[t,x]=ode(@lin_fun,tspan,z0);</span><br><span class="line"><span class="built_in">plot</span>(t,y(,:<span class="number">1</span>),<span class="string">"r-"</span>);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"><span class="built_in">plot</span>(t,y(,:<span class="number">2</span>),<span class="string">'m:'</span>);</span><br><span class="line"><span class="built_in">hold</span> off;</span><br></pre></td></tr></table></figure>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+      
+        <div class="reward-container">
+  <div>原创来之不易，请多多支持</div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-03T22:51:57+08:00"
-              content="2019-11-03">
-          11-03
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/03/daily-work/" itemprop="url">
-            <span itemprop="name">daily work</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-02T08:30:48+08:00"
-              content="2019-11-02">
-          11-02
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/02/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-
-    </div>
   </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/ode45/" rel="tag"><i class="fa fa-tag"></i> ode45</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/12/01/what-is-shanbei/" rel="next" title="what is shanbei">
+                  <i class="fa fa-chevron-left"></i> what is shanbei
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2019/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span>
-  </nav>
-
+  </div>
 
 
           </div>
           
+    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -311,6 +390,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#ode函数"><span class="nav-number">1.</span> <span class="nav-text">ode函数</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -470,6 +550,54 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 

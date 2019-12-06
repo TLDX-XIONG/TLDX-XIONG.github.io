@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>matlab ode系列</title>
+    <url>/2019/12/06/matlab-ode%E7%B3%BB%E5%88%97/</url>
+    <content><![CDATA[<h4 id="ode函数"><a href="#ode函数" class="headerlink" title="ode函数"></a><center>ode函数<center></center></center></h4><p>ode45 函数：高阶（4~5）的显式单步龙格-库塔法求解微分方程组，其可以求解中等精度要求的非刚性问题。<br>ode45 函数调用格式如下：</p><a id="more"></a>
+<ul>
+<li>[T,Y]=ode45(odefun,tspan,y0)</li>
+<li>[T,Y]=ode45(odefun,tspan,y0,options)</li>
+<li>[T,Y,TE,YE,IE]=ode45(odefun,tspan,y0,options)</li>
+</ul>
+<p>其中，<br>T 为输出的变量采样点系列；<br>Y 为对应的函数的数值解；<br>TE 为时间序列；<br>YE 为解决时间序列的算法；<br>IE 为输出变量序列；<br>odefun 为定义微分方程组的函数，可用函数 inline 或者一个函数文件来定义；<br>tspan 为变量的求解区间；<br>y0 为初值条件；<br>options 为求解过程控制参数，其用 odeset 来定义；</p>
+<p>【例1】求下面微分方程在区间 [1,6] 的解，其初值条件为 y(0)=1.2,y’(0)=0</p>
+<center>y"+5y'-sin5t=0</center>
+ode45 函数不能直接求解这个方程，需要先将方程化为一阶方程组形式，从而成为矩阵形式便于求解。以上微分方程等价于：
+
+<p>$$<br>y_1’=y_2<br>$$<br>$$<br>y_2’=\sin 5t-5y_1<br>$$<br>首先建立微分方程的 m 文件，代码如下：</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dy</span>=<span class="title">lin_fun</span><span class="params">(t,y)</span></span></span><br><span class="line">dy(<span class="number">1</span>,<span class="number">1</span>)=y(<span class="number">2</span>);</span><br><span class="line">dy(<span class="number">2</span>,<span class="number">1</span>)=<span class="built_in">sin</span>(<span class="number">5</span>*t)<span class="number">-5</span>*y(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>其实现的 MATLAB 代码如下：</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">&gt;&gt;clear all</span><br><span class="line">tspan=[<span class="number">1</span>,<span class="number">6</span>];</span><br><span class="line">x0=[<span class="number">1</span>,<span class="number">0</span>];</span><br><span class="line">[t,y]=ode(@lin_fun,tspan,x0);</span><br><span class="line"><span class="built_in">plot</span>(t,y(,:<span class="number">1</span>),<span class="string">"r-"</span>);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"><span class="built_in">plot</span>(t,y(,:<span class="number">2</span>),<span class="string">'m:'</span>);</span><br><span class="line"><span class="built_in">hold</span> off;</span><br></pre></td></tr></table></figure>
+<p>【例2】在 Volterra 食饵-捕食者模型中，记食饵和捕食者在 t 时刻的数量分别记作 x(t),y(t),则有:<br>$$<br>\dot{x}\left( t \right) =x\left( r−ay \right) =rx−axy<br>$$<br>$$<br>\dot{y}\left( t \right) =y\left( −d+bx \right) =−yd+bxy<br>$$</p>
+<p>求解过程同上，首先假设<code>r=1,d=0.5,a=0.1,b=0.02,x0=25,y0=2</code><br>首先建立微分方程的 m 文件，代码如下：</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dy</span>=<span class="title">lin_fun</span><span class="params">(t,x)</span></span></span><br><span class="line">dx(<span class="number">1</span>,<span class="number">1</span>)=x(<span class="number">1</span>)<span class="number">-0.1</span>*x(<span class="number">1</span>)*x(<span class="number">2</span>);</span><br><span class="line">dx(<span class="number">2</span>,<span class="number">1</span>)=<span class="number">-0.5</span>*x(<span class="number">2</span>)+<span class="number">0.02</span>*x(<span class="number">1</span>)*x(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>其实现的 MATLAB 代码如下：</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">&gt;&gt;clear all</span><br><span class="line">tspan=[<span class="number">1</span>,<span class="number">15</span>];</span><br><span class="line">z0=[<span class="number">25</span>,<span class="number">2</span>];</span><br><span class="line">[t,x]=ode(@lin_fun,tspan,z0);</span><br><span class="line"><span class="built_in">plot</span>(t,y(,:<span class="number">1</span>),<span class="string">"r-"</span>);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"><span class="built_in">plot</span>(t,y(,:<span class="number">2</span>),<span class="string">'m:'</span>);</span><br><span class="line"><span class="built_in">hold</span> off;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>ode45</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>what is shanbei</title>
     <url>/2019/12/01/what-is-shanbei/</url>
     <content><![CDATA[<h4 id="扇贝杯"><a href="#扇贝杯" class="headerlink" title="扇贝杯"></a><center>扇贝杯</center></h4><p>今天参加了由贝湾教育科技有限公司赞助的 “扇贝杯”第四届软件和信息技术专业人才大赛，比赛总时长三小时。每每参加此类比赛时开始总是有点紧张，想抢先拿下一题，结果往往不遂人意。本次比赛可谓是神仙打架。伴随着指尖在键盘跳动的声音、榜单上一个个绿块的出现，作为菜鸡的我只得通过他们先将简单题找出，然后我才能弹出属于我的声音。<del>呜呜呜</del>。<br>敲敲敲······终于！我 AC 了两道题以及在使用各种<del>得分技巧</del>(骗分技巧)后，最后获得了三等奖(呜呜呜，我太难了)。</p><a id="more"></a>
