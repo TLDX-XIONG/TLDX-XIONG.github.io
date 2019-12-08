@@ -166,7 +166,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">8</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-commonweal">
@@ -218,6 +218,256 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="www.xionglingyu.club/2019/12/08/Start-for-Python-Crawl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="TLDX">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TLDX's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/08/Start-for-Python-Crawl/" class="post-title-link" itemprop="url">Start for Python Crawl</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-12-08 17:40:00 / Modified: 23:05:19" itemprop="dateCreated datePublished" datetime="2019-12-08T17:40:00+08:00">2019-12-08</time>
+            </span>
+
+          
+            <span id="/2019/12/08/Start-for-Python-Crawl/" class="post-meta-item leancloud_visitors" data-flag-title="Start for Python Crawl" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2019/12/08/Start-for-Python-Crawl/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/08/Start-for-Python-Crawl/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\</td>
+<td align="center">转义字符</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="center">匹配输入字符首</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td align="center">匹配输入字符尾</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">匹配前面的表达式任意 n 次。例如：zo* 能匹配“z”，也能匹配“zo”以及“zoo”。<strong>等价于{0,}</strong></td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="center">匹配前面表达式 1 次或多次 <strong>等价于{1,}</strong></td>
+</tr>
+<tr>
+<td align="center">?</td>
+<td align="center">匹配前的表达式 1 次或 0 次 <strong>等价于{0,1}</strong></td>
+</tr>
+<tr>
+<td align="center">?</td>
+<td align="center">也用于非贪婪模式匹配.正则表达式默认贪婪模式</td>
+</tr>
+<tr>
+<td align="center">{n}</td>
+<td align="center">n 是一个非负整数,匹配确定的 n 次</td>
+</tr>
+<tr>
+<td align="center">{n,}</td>
+<td align="center">n 是一个非负整数,表示至少匹配 n 次 <strong>o{0,}等价于o*,o{1,}等价于o+</strong></td>
+</tr>
+<tr>
+<td align="center">{n,m}</td>
+<td align="center">表示匹配 n 到 m 次</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center">表示任意匹配</td>
+</tr>
+<tr>
+<td align="center">a|b</td>
+<td align="center">表示匹配 a 字符或者 b 字符</td>
+</tr>
+<tr>
+<td align="center">[xyz]</td>
+<td align="center">匹配所包含的任意一个字符</td>
+</tr>
+<tr>
+<td align="center">[^xyz]</td>
+<td align="center">匹配未包含的任意字符</td>
+</tr>
+<tr>
+<td align="center">[a-z]</td>
+<td align="center">匹配指定范围的任意字符</td>
+</tr>
+<tr>
+<td align="center">[^a-z]</td>
+<td align="center">匹配不在范围的任意字符</td>
+</tr>
+<tr>
+<td align="center">\b</td>
+<td align="center">匹配一个单词的边界.例如，“er\b”可以匹配“never”中的“er”,但不能匹配“verb”中的“er”;“\b1_”可以匹配“1_23”中的“1_”,但不能匹配“21_3”中的“1_”,</td>
+</tr>
+<tr>
+<td align="center">\B</td>
+<td align="center">与\b相反,匹配非单词边界</td>
+</tr>
+<tr>
+<td align="center">\cx</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">\d</td>
+<td align="center">等价于 [0-9]</td>
+</tr>
+<tr>
+<td align="center">\D</td>
+<td align="center">等价于[^0-9]</td>
+</tr>
+<tr>
+<td align="center">\f</td>
+<td align="center">匹配一个换页符</td>
+</tr>
+<tr>
+<td align="center">\n</td>
+<td align="center">匹配换行符</td>
+</tr>
+<tr>
+<td align="center">\r</td>
+<td align="center">匹配回车符</td>
+</tr>
+<tr>
+<td align="center">\s</td>
+<td align="center">匹配任何不可见字符</td>
+</tr>
+<tr>
+<td align="center">\S</td>
+<td align="center">匹配任何可见字符</td>
+</tr>
+<tr>
+<td align="center">\t</td>
+<td align="center">匹配制表符</td>
+</tr>
+<tr>
+<td align="center">\v</td>
+<td align="center">匹配垂直指标</td>
+</tr>
+<tr>
+<td align="center">\w</td>
+<td align="center">匹配包括下划线(“_”)的任意字符</td>
+</tr>
+<tr>
+<td align="center">\W</td>
+<td align="center">匹配任何非单词字符</td>
+</tr>
+<tr>
+<td align="center">\xn</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">\num</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">\n</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">\nm</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">\nml</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">\un</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">\p{P}</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">\&lt;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">\&gt;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">()</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">|</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -783,112 +1033,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/11/27/the-usage-of-lingo/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="www.xionglingyu.club/2019/11/26/functions-of-MATLAB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="TLDX">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TLDX's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/26/functions-of-MATLAB/" class="post-title-link" itemprop="url">functions of matlab</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-11-26 21:18:57" itemprop="dateCreated datePublished" datetime="2019-11-26T21:18:57+08:00">2019-11-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-05 22:08:29" itemprop="dateModified" datetime="2019-12-05T22:08:29+08:00">2019-12-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Matlab/" itemprop="url" rel="index">
-                    <span itemprop="name">Matlab</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/11/26/functions-of-MATLAB/" class="post-meta-item leancloud_visitors" data-flag-title="functions of matlab" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2019/11/26/functions-of-MATLAB/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/26/functions-of-MATLAB/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="WHAT-I-LEARN-TODAY"><a href="#WHAT-I-LEARN-TODAY" class="headerlink" title=" WHAT I LEARN TODAY"></a><center> WHAT I LEARN TODAY</center></h3><h4 id="1-hist-函数用法"><a href="#1-hist-函数用法" class="headerlink" title="1. hist 函数用法"></a>1. <code>hist</code> 函数用法</h4><blockquote>
-<p>hist 有直方图的意思，MATLAB 中绘制直方图的函数是 hist用法是 hist(y,x)，表示以向量 x 的各个元素为统计范围，绘制 y 的分布情况。下面是它的具体用法案例。</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/11/26/functions-of-MATLAB/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
