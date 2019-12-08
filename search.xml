@@ -3,7 +3,9 @@
   <entry>
     <title>Start for Python Crawl</title>
     <url>/2019/12/08/Start-for-Python-Crawl/</url>
-    <content><![CDATA[<table>
+    <content><![CDATA[<p>本文介绍了正则表达式的语法、语义.</p>
+<a id="more"></a>
+<table>
 <thead>
 <tr>
 <th align="center">符号</th>
@@ -174,7 +176,8 @@
 <td align="center">|</td>
 <td align="center"></td>
 </tr>
-</tbody></table>]]></content>
+</tbody></table>
+]]></content>
   </entry>
   <entry>
     <title>matlab ode系列</title>
