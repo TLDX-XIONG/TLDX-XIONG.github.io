@@ -135,6 +135,12 @@
 </tbody></table>
 <p><strong>Python 正则表达式其它操作见:<a href="https://docs.python.org/zh-cn/3.7/library/re.html#re-objects" target="_blank" rel="noopener">这篇文章</a></strong></p>
 ]]></content>
+      <categories>
+        <category>Python Crawl</category>
+      </categories>
+      <tags>
+        <tag>正则表达式</tag>
+      </tags>
   </entry>
   <entry>
     <title>matlab ode系列</title>
