@@ -41,24 +41,137 @@
       </tags>
   </entry>
   <entry>
-    <title>test</title>
-    <url>/2020/06/03/test/</url>
-    <content><![CDATA[<p><strong>BP算法</strong></p><p>  训练集    $\left\{\left(x^{(1)}, y^{(1)}\right), \ldots,\left(x^{(m)}, y^{(m)}\right)\right\}$</p><a id="more"></a>
-
-<p>  设    $\Delta_{i j}^{(l)}=0(\text { for all } l, i, j)$</p>
-<p>  $\begin{array}{l}{\text {For } i=1 \text { to } m}\end{array}$</p>
-<script type="math/tex; mode=display">
-  \begin{array}{l}{\text { Set } a^{(1)}=x^{(i)}} \\ {\text { Perform forward propagation to compute } a^{(l)} \text { for } l=2,3, \ldots, L} \\ {\text { Using } y^{(i)}, \text { compute } \delta^{(L)}=a^{(L)}-y^{(i)}} \\ {\text { Compute } \delta^{(L-1)}, \delta^{(l+1)}, \ldots, \delta^{(2)}} \\ {\Delta_{i j}^{(l)} :=\Delta_{i j}^{(l)}+a_{j}^{(l)} \delta_{i}^{(l+1)}}\end{array}</script><p>  $\begin{array}{l}{D_{i j}^{(l)} :=\frac{1}{m} \Delta_{i j}^{(l)}+\lambda \Theta_{i j}^{(l)}} &amp; {\text { if } j \neq 0} \\ {D_{i j}^{(l)} :=\frac{1}{m} \Delta_{i j}^{(l)}} &amp; {\text { if } j=0}\end{array}$</p>
-<p>  其中    $\frac{\partial}{\partial \Theta_{i j}^{(l)}} J(\Theta)=D_{i j}^{(l)}$</p>
-]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Start for Python Crawl</title>
     <url>/2019/12/08/Start-for-Python-Crawl/</url>
-    <content><![CDATA[<p>本文介绍了正则表达式的语法、语义.<br><a id="more"></a><br>|符号|描述|<br>|:—:|:—:|<br>|\|转义字符|<br>|^|匹配输入字符首|<br>|$|匹配输入字符尾|<br>|<em> | 匹配前面的表达式任意 n 次。例如：zo</em> 能匹配“z”，也能匹配“zo”以及“zoo”。<strong>等价于{0,}</strong>|<br>|+|匹配前面表达式 1 次或多次 <strong>等价于{1,}</strong>|<br>|?|匹配前的表达式 1 次或 0 次 <strong>等价于{0,1}</strong>|<br>|?|也用于非贪婪模式匹配.正则表达式默认贪婪模式|<br>|{n}|n 是一个非负整数,匹配确定的 n 次|<br>|{n,}|n 是一个非负整数,表示至少匹配 n 次 <strong>o{0,}等价于o*,o{1,}等价于o+</strong>|<br>|{n,m}|表示匹配 n 到 m 次|<br>|.|表示任意匹配|<br>|a|b|表示匹配 a 字符或者 b 字符|<br>|[xyz]|匹配所包含的任意一个字符|<br>|<sup><a href="#fn_xyz" id="reffn_xyz">xyz</a></sup>|匹配未包含的任意字符|<br>|[a-z]|匹配指定范围的任意字符|<br>|<sup><a href="#fn_a-z" id="reffn_a-z">a-z</a></sup>|匹配不在范围的任意字符|<br>|\\b|匹配一个单词的边界.例如，“er\b”可以匹配“never”中的“er”,但不能匹配“verb”中的“er”;“\b1_”可以匹配“1_23”中的“1_”,但不能匹配“21_3”中的“1_”,|<br>|\\B|与\\b相反,匹配非单词边界|<br>|\\cx||<br>|\\d|等价于 [0-9]|<br>|\\D|等价于<sup><a href="#fn_0-9" id="reffn_0-9">0-9</a></sup>|<br>|\\f|匹配一个换页符|<br>|\\n|匹配换行符|<br>|\\r|匹配回车符|<br>|\\s|匹配任何不可见字符|<br>|\\S|匹配任何可见字符|<br>|\\t|匹配制表符|<br>|\\v|匹配垂直指标|<br>|\\w|匹配包括下划线(“_”)的任意字符|<br>|\\W|匹配任何非单词字符|</p>
+    <content><![CDATA[<p>本文介绍了正则表达式的语法、语义.<br><a id="more"></a></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">\\</td>
+<td style="text-align:center">转义字符</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">匹配输入字符首</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center">匹配输入字符尾</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">匹配前面的表达式任意 n 次。例如：zo<em> 能匹配“z”，也能匹配“zo”以及“zoo”。<em>*等价于{0,}</em></em></td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">匹配前面表达式 1 次或多次 <strong>等价于{1,}</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td style="text-align:center">匹配前的表达式 1 次或 0 次 <strong>等价于{0,1}</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td style="text-align:center">也用于非贪婪模式匹配.正则表达式默认贪婪模式</td>
+</tr>
+<tr>
+<td style="text-align:center">{n}</td>
+<td style="text-align:center">n 是一个非负整数,匹配确定的 n 次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,}</td>
+<td style="text-align:center">n 是一个非负整数,表示至少匹配 n 次 <strong>o{0,}等价于o*,o{1,}等价于o+</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">{n,m}</td>
+<td style="text-align:center">表示匹配 n 到 m 次</td>
+</tr>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:center">表示任意匹配</td>
+</tr>
+<tr>
+<td style="text-align:center">[xyz]</td>
+<td style="text-align:center">匹配所包含的任意一个字符</td>
+</tr>
+<tr>
+<td style="text-align:center"><sup><a href="#fn_xyz" id="reffn_xyz">xyz</a></sup></td>
+<td style="text-align:center">匹配未包含的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center">[a-z]</td>
+<td style="text-align:center">匹配指定范围的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center"><sup><a href="#fn_a-z" id="reffn_a-z">a-z</a></sup></td>
+<td style="text-align:center">匹配不在范围的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\\b</td>
+<td style="text-align:center">匹配一个单词的边界.例如，“er\b”可以匹配“never”中的“er”,但不能匹配“verb”中的“er”;“\b1_”可以匹配“1_23”中的“1_”,但不能匹配“21_3”中的“1_”,</td>
+</tr>
+<tr>
+<td style="text-align:center">\\B</td>
+<td style="text-align:center">与\\b相反,匹配非单词边界</td>
+</tr>
+<tr>
+<td style="text-align:center">\\cx</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">\\d</td>
+<td style="text-align:center">等价于 [0-9]</td>
+</tr>
+<tr>
+<td style="text-align:center">\\D</td>
+<td style="text-align:center">等价于<sup><a href="#fn_0-9" id="reffn_0-9">0-9</a></sup></td>
+</tr>
+<tr>
+<td style="text-align:center">\\f</td>
+<td style="text-align:center">匹配一个换页符</td>
+</tr>
+<tr>
+<td style="text-align:center">\\n</td>
+<td style="text-align:center">匹配换行符</td>
+</tr>
+<tr>
+<td style="text-align:center">\\r</td>
+<td style="text-align:center">匹配回车符</td>
+</tr>
+<tr>
+<td style="text-align:center">\\s</td>
+<td style="text-align:center">匹配任何不可见字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\\S</td>
+<td style="text-align:center">匹配任何可见字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\\t</td>
+<td style="text-align:center">匹配制表符</td>
+</tr>
+<tr>
+<td style="text-align:center">\\v</td>
+<td style="text-align:center">匹配垂直指标</td>
+</tr>
+<tr>
+<td style="text-align:center">\\w</td>
+<td style="text-align:center">匹配包括下划线(“_”)的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\\W</td>
+<td style="text-align:center">匹配任何非单词字符</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p><strong>Python 正则表达式其它操作见:<a href="https://docs.python.org/zh-cn/3.7/library/re.html#re-objects" target="_blank" rel="noopener">这篇文章</a></strong></p>
 ]]></content>
       <categories>
