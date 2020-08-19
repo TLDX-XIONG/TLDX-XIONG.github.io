@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>感知机算法证明</title>
+    <title>K-NN Algorithm</title>
+    <url>/2020/08/19/K-NN-Algorithm/</url>
+    <content><![CDATA[<p>$\text{k}$ 近邻法（$\text{k-nearest neighbor}$) 是一种基于分类和回归的方法，这里我们只讨论分类问题的 $\text{k}$ 近邻法。$\text{k}$ 近邻输入为实例点的特征向量，输出为实例所属类别。 $\text{k}$ 近邻假定给定了一个训练数据集，其中的实例类别已经确定。分类时，对新的实例，根据其 $\text{k}$ 个最近的训练实例的类别，通过多数表决等方式进行预测。</p><a id="more"></a>
+<h3 id="1-算法描述"><a href="#1-算法描述" class="headerlink" title="1. 算法描述"></a>1. 算法描述</h3><p>$\textbf{Input:}$</p>
+<script type="math/tex; mode=display">T=\{ (x_1,y_1),(x_2,y_2),\ldots,(x_N,y_N) \}</script><p>其中，$x_i \in X \subseteq \bf{R^n}$ 为实例的特征向量，$y_i \in Y=\{ c_1,c_2,\ldots,c_K \}$为实例的类别，$i=1,2,\ldots,N$;<br>$\textbf{Output:}$</p>
+<script type="math/tex; mode=display">y=\arg\underset{c_j}{\max}\sum_{x_i\in N_k\left( x \right)}{I\left( y_i=c_j \right) ,\ i=1,2,\ldots,N;\ j=1,2,\ldots,K}</script><p>其中，$N_k(x)$ 为涵盖最近的 $\text{k}$ 个点的邻域；$\text{I}$ 为指示函数，即当 $y_i=c_j$ 时为1，否则为0。通过分类决策规则（多数表决）决定 $x$ 的类别 $y$。</p>
+<h3 id="2-距离向量"><a href="#2-距离向量" class="headerlink" title="2. 距离向量"></a>2. 距离向量</h3><p>特征空间中两个实例点的距离是两个样本相似程度的反映。$\text{k}$ 近邻模型使用的距离一般是欧式空间的欧氏距离，但也可以是其它距离，如一般的$L_p$距离（$L_p \text{ distance}$）或者 $\text{Minkowski}$ 距离（$\text{Minkowski distance}$）。<br>设特征空间 $X$ 是 $n$ 维实数向量空间 $\bf{R^n}$，$x_i,x_j \in X, x_i=(x_i^{(1)},x_i^{(2)},\dots,x_i^{(n)})$，$x_i,x_j$ 的 $L_p$ 定义为：</p>
+<script type="math/tex; mode=display">L_p(x_i,x_j)=(\sum_{i=1}^{n}{\Vert x_i^{(l)}-x_j^{(l)} \Vert}^p)^{\frac{1}{p}}</script><p>这里$p \ge 1$，当 $n=2$ 时，就成为欧氏距离，即</p>
+<script type="math/tex; mode=display">L_p(x_i,x_j)=(\sum_{i=1}^{n}{\Vert x_i^{(l)}-x_j^{(l)} \Vert}^2)^{\frac{1}{2}}</script><p>当 $p=1$ 时，称为曼哈顿距离，即</p>
+<script type="math/tex; mode=display">L_p(x_i,x_j)=\sum_{i=1}^{n}{\Vert x_i^{(l)}-x_j^{(l)} \Vert}</script><p>当 $p=\infty$ 时，它是各个坐标距离的最大值，即</p>
+<script type="math/tex; mode=display">L_p(x_i,x_j)=\underset{i}{\max}\Vert x_i^{(l)}-x_j^{(l)} \Vert</script><h3 id="3-text-k-值选择"><a href="#3-text-k-值选择" class="headerlink" title="3. $\text{k}$ 值选择"></a>3. $\text{k}$ 值选择</h3><p>$\text{k}$ 值的选取会对最终分类结果产生较大的影响。</p>
+<ol>
+<li>如果 $\text{k}$ 值过小，则学习的近似误差会下降，只有更输入实例相近的实例点才会起预测作用。但缺点是学习的估计误差会增大，预测结果对近邻的实例点非常敏感，如果实例点恰好是噪声，预测就会出错。容易发生过拟合。</li>
+<li>如果 $\text{k}$ 值过大，优点是可以减少学习的估计误差，但缺点是会造成近似误差的增大。这使与输入实例较远的训练实例也会对预测起作用，使预测发生错误。</li>
+</ol>
+<p>因此，需要多次尝试不同 $\text{k}$ 值，然后选取最佳 $\text{k}$ 值。通常做法是 使用交叉验证来选取最优 $\text{k}$ 值。</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>K-NN</tag>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Perceptron Algorithm</title>
     <url>/2020/08/16/Perceptron/</url>
     <content><![CDATA[<h3 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1. 问题描述"></a>1. 问题描述</h3><p>感知机算法的提出最初被用来解决二分类问题，即给定 $N$ 个样本，其中每个样本都是 $p$ 维的向量。每一个样本属于 $C_1$ 或 $C_2$。我们的任务是找到一个超平面来将所有样本进行准确分类并且具有较强的泛化能力。</p><a id="more"></a>
 <h3 id="2-问题数学描述"><a href="#2-问题数学描述" class="headerlink" title="2. 问题数学描述"></a>2. 问题数学描述</h3><p>这里我们将这类问题抽象为数学描述。我们假设 $x_1,x_2,\ldots,x_N$ 是 $p$ 维向量。然后我们将 $\vec{x}_1,\vec{x}_2,…,\vec{x}_N$ 定义为：<br>如果 $x_i\in C_1$,则 $\overrightarrow{x_i}=\begin{bmatrix}x_i\\1\end{bmatrix}$; 如果 $x_i\in C_2$,则 $\overrightarrow{x_i}=\begin{bmatrix}-x_i\\ -1\end{bmatrix}$<br>此时所有向量变成了 $p+1$ 维。这个问题也转变成了寻找一个 $p+1$ 维向量 $\omega$, 使得对于任何 $i=1,2,\cdots,N$ 都有：</p>
@@ -10,10 +36,10 @@
 <p>$\textbf{Input: }\overrightarrow{x_1},\overrightarrow{x_2},\ldots,\overrightarrow{x_N}$<br>$\textbf{Output: }\omega$<br>$_\textbf{1} \quad \omega=<br>\begin{bmatrix}<br>0 \\ 0 \\ \vdots \\ 0<br>\end{bmatrix};$<br>$_\textbf{2} \quad FLAG=1;$<br>$_\textbf{3} \quad \textbf{while }FLAG \textbf{ do}$<br>$_\textbf{4} \quad \qquad FLAG=0;$<br>$_\textbf{5} \quad \qquad \textbf{for }i=1:N\;\textbf{do}$<br>$_\textbf{6} \quad\qquad\qquad \textbf{if }\omega^T\overrightarrow{x_i}\le 0 \textbf{ then}$<br>$_\textbf{7} \quad \qquad\qquad\qquad \omega=\omega+\overrightarrow{x_i};$<br>$_\textbf{8} \quad \qquad\qquad\qquad FLAG=1;$<br>$_\textbf{9} \quad \qquad\qquad \textbf{end}$<br>$_\textbf{10} \quad \qquad \textbf{end}$<br>$_\textbf{11} \quad \textbf{end}$<br>$_\textbf{12} \quad \textbf{return }w;$</p>
 <hr>
 <!--算法流程图-->
-<h3 id="4-算法收敛性证明"><a href="#4-算法收敛性证明" class="headerlink" title="4. 算法收敛性证明"></a>4. 算法收敛性证明</h3><p><strong>定理1</strong> 对于所有的 $N$ 个向量 $\overrightarrow{x_1},\overrightarrow{x_2},\ldots,\overrightarrow{x_N}$，如果存在一个向量 $\omega_{opt}$ 使得 $\omega_{opt}^T\overrightarrow{x_i}&gt;0$ 对于所有的 $i={1,2,\ldots,N}$ 都成立，则 <strong>3</strong> 中描述的算法一定能够找到一个 $\omega$，使得 $\omega_{opt}^T\overrightarrow{x_i}&gt;0$ 对于所有 $i={1,2,\ldots,N}$ 都成立。且算法的收敛性不取决于 $\omega$ 的初值选择。<br><strong>证明</strong> 我们可以假设 $\lVert \omega_{opt} \Vert=1$。因为对于找到的超平面 $\omega_{opt}$，我们总可以乘以一个系数，使得$\omega_{opt}$ 模长为1.<br>我们记$\omega(k)$ 为$\omega$ 的第 $k$ 次迭代值。然后我们有：</p>
+<h3 id="4-算法收敛性证明"><a href="#4-算法收敛性证明" class="headerlink" title="4. 算法收敛性证明"></a>4. 算法收敛性证明</h3><p><strong>定理1</strong> 对于所有的 $N$ 个向量 $\overrightarrow{x_1},\overrightarrow{x_2},\ldots,\overrightarrow{x_N}$，如果存在一个向量 $\omega_{opt}$ 使得 $\omega_{opt}^T\overrightarrow{x_i}&gt;0$ 对于所有的 $i={1,2,\ldots,N}$ 都成立，则 <strong>3</strong> 中描述的算法一定能够找到一个 $\omega$，使得 $\omega_{opt}^T\overrightarrow{x_i}&gt;0$ 对于所有 $i={1,2,\ldots,N}$ 都成立。且算法的收敛性不取决于 $\omega$ 的初值选择。<br><strong>证明</strong> 我们可以假设 $\lVert \omega_{opt} \Vert=1$。因为对于找到的超平面 $\omega_{opt}$，我们总可以乘以一个系数，使得$\omega_{opt}$ 模长为1.<br>我们记$\omega(k)$ 为$\omega$ 的第 $\text{k}$ 次迭代值。然后我们有：</p>
 <ol>
-<li>如果对于所有的 $i={1,2,\ldots,N} \omega(k)^T\overrightarrow{x_i}&gt;0$ 都成立，则算法直接成立</li>
-<li>否则，假设第 $k$ 次时，有$\omega(k)^T\overrightarrow{x_i}&lt;0$</li>
+<li>如果对于所有的 $i={1,2,\ldots,N}, \omega(k)^T\overrightarrow{x_i}&gt;0$ 都成立，则算法直接成立</li>
+<li>否则，假设第 $\text{k}$ 次时，有$\omega(k)^T\overrightarrow{x_i}&lt;0$</li>
 </ol>
 <p>然后我们根据算法更新参数</p>
 <script type="math/tex; mode=display">\omega(k+1)=\omega(k)+\overrightarrow{x_i}</script><p>然后我们有：</p>
@@ -36,8 +62,8 @@
         <category>Machine Learning</category>
       </categories>
       <tags>
-        <tag>Perceptron</tag>
         <tag>Algorithm</tag>
+        <tag>Perceptron</tag>
       </tags>
   </entry>
   <entry>
