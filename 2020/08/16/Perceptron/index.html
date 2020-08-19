@@ -58,7 +58,7 @@
 <meta property="og:site_name" content="TLDX&#39;s blog">
 <meta property="og:description" content="1. 问题描述感知机算法的提出最初被用来解决二分类问题，即给定 $N$ 个样本，其中每个样本都是 $p$ 维的向量。每一个样本属于 $C_1$ 或 $C_2$。我们的任务是找到一个超平面来将所有样本进行准确分类并且具有较强的泛化能力。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-08-18T00:42:34.277Z">
+<meta property="og:updated_time" content="2020-08-19T09:16:41.274Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="www.xionglingyu.club/2020/08/16/Perceptron/">
@@ -256,7 +256,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-18 08:42:34" itemprop="dateModified" datetime="2020-08-18T08:42:34+08:00">2020-08-18</time>
+                <time title="Modified: 2020-08-19 17:16:41" itemprop="dateModified" datetime="2020-08-19T17:16:41+08:00">2020-08-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -309,10 +309,10 @@
 <p>$\textbf{Input: }\overrightarrow{x_1},\overrightarrow{x_2},\ldots,\overrightarrow{x_N}$<br>$\textbf{Output: }\omega$<br>$_\textbf{1} \quad \omega=<br>\begin{bmatrix}<br>0 \\ 0 \\ \vdots \\ 0<br>\end{bmatrix};$<br>$_\textbf{2} \quad FLAG=1;$<br>$_\textbf{3} \quad \textbf{while }FLAG \textbf{ do}$<br>$_\textbf{4} \quad \qquad FLAG=0;$<br>$_\textbf{5} \quad \qquad \textbf{for }i=1:N\;\textbf{do}$<br>$_\textbf{6} \quad\qquad\qquad \textbf{if }\omega^T\overrightarrow{x_i}\le 0 \textbf{ then}$<br>$_\textbf{7} \quad \qquad\qquad\qquad \omega=\omega+\overrightarrow{x_i};$<br>$_\textbf{8} \quad \qquad\qquad\qquad FLAG=1;$<br>$_\textbf{9} \quad \qquad\qquad \textbf{end}$<br>$_\textbf{10} \quad \qquad \textbf{end}$<br>$_\textbf{11} \quad \textbf{end}$<br>$_\textbf{12} \quad \textbf{return }w;$</p>
 <hr>
 <!--算法流程图-->
-<h3 id="4-算法收敛性证明"><a href="#4-算法收敛性证明" class="headerlink" title="4. 算法收敛性证明"></a>4. 算法收敛性证明</h3><p><strong>定理1</strong> 对于所有的 $N$ 个向量 $\overrightarrow{x_1},\overrightarrow{x_2},\ldots,\overrightarrow{x_N}$，如果存在一个向量 $\omega_{opt}$ 使得 $\omega_{opt}^T\overrightarrow{x_i}$ 对于所有的 $i={1,2,\ldots,N}$ 都成立，则3中描述的算法一定能够找到一个 $\omega$，使得 $\omega_{opt}^T\overrightarrow{x_i}$ 对于所有 $i={1,2,\ldots,N}$ 都成立。且算法的收敛性不取决于 $\omega$ 的初始化。<br><strong>证明</strong> 我们可以假设 $|\omega_{opt}|=1$。因为对于找到的超平面 $\omega_{opt}$，我们总可以乘以一个系数，使得$\omega_{opt}$ 模长为1.<br>我们记$\omega_(k)$ 为$\omega$ 的第k次迭代值。然后我们有：</p>
+<h3 id="4-算法收敛性证明"><a href="#4-算法收敛性证明" class="headerlink" title="4. 算法收敛性证明"></a>4. 算法收敛性证明</h3><p><strong>定理1</strong> 对于所有的 $N$ 个向量 $\overrightarrow{x_1},\overrightarrow{x_2},\ldots,\overrightarrow{x_N}$，如果存在一个向量 $\omega_{opt}$ 使得 $\omega_{opt}^T\overrightarrow{x_i}&gt;0$ 对于所有的 $i={1,2,\ldots,N}$ 都成立，则 <strong>3</strong> 中描述的算法一定能够找到一个 $\omega$，使得 $\omega_{opt}^T\overrightarrow{x_i}&gt;0$ 对于所有 $i={1,2,\ldots,N}$ 都成立。且算法的收敛性不取决于 $\omega$ 的初值选择。<br><strong>证明</strong> 我们可以假设 $\lVert \omega_{opt} \Vert=1$。因为对于找到的超平面 $\omega_{opt}$，我们总可以乘以一个系数，使得$\omega_{opt}$ 模长为1.<br>我们记$\omega(k)$ 为$\omega$ 的第 $k$ 次迭代值。然后我们有：</p>
 <ol>
 <li>如果对于所有的 $i={1,2,\ldots,N} \omega(k)^T\overrightarrow{x_i}&gt;0$ 都成立，则算法直接成立</li>
-<li>否则，假设第k次时，有$\omega(k)^T\overrightarrow{x_i}&lt;0$</li>
+<li>否则，假设第 $k$ 次时，有$\omega(k)^T\overrightarrow{x_i}&lt;0$</li>
 </ol>
 <p>然后我们根据算法更新参数</p>
 <script type="math/tex; mode=display">\omega(k+1)=\omega(k)+\overrightarrow{x_i}</script><p>然后我们有：</p>
@@ -327,9 +327,9 @@
 \begin{aligned}
     &{\|\omega(k+1)-a\omega_{opt}\|}^2 \\
 \le &{\|\omega(k)-a\omega_{opt}\|}^2+{\|\overrightarrow{x_i}\|}^2-2a\omega_{opt}^T\overrightarrow{x_i}
-\end{aligned}</script><p>我们定义 $\beta=\max_{i=1}^{N}|\overrightarrow{x_i}|$，$\gamma=\min_{i=1}^{N}(\omega_{opt}^T\overrightarrow{x_i})$ 易得 $\beta,\gamma&gt;0$。此时当 $a=\frac{\beta^2+1}{2\gamma}$ 并带入，很容易得到：</p>
+\end{aligned}</script><p>我们定义 $\beta=\max_{i=1}^{N}\lVert\overrightarrow{x_i}\lVert$，$\gamma=\min_{i=1}^{N}(\omega_{opt}^T\overrightarrow{x_i})$ 易得 $\beta,\gamma&gt;0$。此时当 $a=\frac{\beta^2+1}{2\gamma}$ 并带入，很容易得到：</p>
 <script type="math/tex; mode=display">
-{\|\omega(k+1)-a\omega_{opt}\|}^2 \le {\|\omega(k)-a\omega_{opt}\|}^2 -1</script><p>我们定义 $D=|\omega(0)-\omega_{opt}|$。基于上式我们可以得到，每迭代一次 $\omega$ 与$\omega_{opt}$的距离减少1，因此至多迭代 $D^2$ 次，$\omega$ 就会收敛到$\omega_{opt}$。  </p>
+{\|\omega(k+1)-a\omega_{opt}\|}^2 \le {\|\omega(k)-a\omega_{opt}\|}^2 -1</script><p>我们定义 $D=\lVert\omega(0)-\omega_{opt}\lVert$。基于上式我们可以得到，每迭代一次 $\omega$ 与$\omega_{opt}$的距离减少1，因此至多迭代 $D^2$ 次，$\omega$ 就会收敛到$\omega_{opt}$。</p>
 
     </div>
 
