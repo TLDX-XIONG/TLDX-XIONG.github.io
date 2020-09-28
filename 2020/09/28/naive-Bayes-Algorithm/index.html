@@ -50,18 +50,18 @@
   };
 </script>
 
-  <meta name="description" content="1. 问题描述感知机算法的提出最初被用来解决二分类问题，即给定 $N$ 个样本，其中每个样本都是 $p$ 维的向量。每一个样本属于 $C_1$ 或 $C_2$。我们的任务是找到一个超平面来将所有样本进行准确分类并且具有较强的泛化能力。">
-<meta name="keywords" content="Algorithm,Perceptron">
+  <meta name="description" content="朴素贝叶斯法是基于贝叶斯定理与特征条件独立假设的分类方法（与贝叶斯估计是不同的方概念），对于给定的训练数据集，首先基于特征条件独立假设学习输入\输出的联合概率分布；然后基于此模型，对于给定的输入 $x$ ，利用贝叶斯定理求出后验概率最大的输出 $y$ 。朴素贝叶斯方法实现简单，学习与预测的效率都很高，是一种常用的方法。">
+<meta name="keywords" content="Algorithm,naive Bayes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Perceptron Algorithm">
-<meta property="og:url" content="www.xionglingyu.club&#x2F;2020&#x2F;08&#x2F;16&#x2F;Perceptron&#x2F;index.html">
+<meta property="og:title" content="naive Bayes">
+<meta property="og:url" content="www.xionglingyu.club&#x2F;2020&#x2F;09&#x2F;28&#x2F;naive-Bayes-Algorithm&#x2F;index.html">
 <meta property="og:site_name" content="TLDX&#39;s blog">
-<meta property="og:description" content="1. 问题描述感知机算法的提出最初被用来解决二分类问题，即给定 $N$ 个样本，其中每个样本都是 $p$ 维的向量。每一个样本属于 $C_1$ 或 $C_2$。我们的任务是找到一个超平面来将所有样本进行准确分类并且具有较强的泛化能力。">
+<meta property="og:description" content="朴素贝叶斯法是基于贝叶斯定理与特征条件独立假设的分类方法（与贝叶斯估计是不同的方概念），对于给定的训练数据集，首先基于特征条件独立假设学习输入\输出的联合概率分布；然后基于此模型，对于给定的输入 $x$ ，利用贝叶斯定理求出后验概率最大的输出 $y$ 。朴素贝叶斯方法实现简单，学习与预测的效率都很高，是一种常用的方法。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-08-19T12:46:09.312Z">
+<meta property="og:updated_time" content="2020-09-28T13:20:13.051Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="www.xionglingyu.club/2020/08/16/Perceptron/">
+<link rel="canonical" href="www.xionglingyu.club/2020/09/28/naive-Bayes-Algorithm/">
 
 
 <script id="page-configurations">
@@ -75,7 +75,7 @@
   };
 </script>
 
-  <title>Perceptron Algorithm | TLDX's blog</title>
+  <title>naive Bayes | TLDX's blog</title>
   
 
 
@@ -226,7 +226,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="www.xionglingyu.club/2020/08/16/Perceptron/">
+    <link itemprop="mainEntityOfPage" href="www.xionglingyu.club/2020/09/28/naive-Bayes-Algorithm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -239,7 +239,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Perceptron Algorithm
+          naive Bayes
         </h1>
 
         <div class="post-meta">
@@ -248,16 +248,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-08-16 22:11:05" itemprop="dateCreated datePublished" datetime="2020-08-16T22:11:05+08:00">2020-08-16</time>
+              <time title="Created: 2020-09-28 19:10:58 / Modified: 21:20:13" itemprop="dateCreated datePublished" datetime="2020-09-28T19:10:58+08:00">2020-09-28</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-19 20:46:09" itemprop="dateModified" datetime="2020-08-19T20:46:09+08:00">2020-08-19</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -271,7 +265,7 @@
             </span>
 
           
-            <span id="/2020/08/16/Perceptron/" class="post-meta-item leancloud_visitors" data-flag-title="Perceptron Algorithm" title="Views">
+            <span id="/2020/09/28/naive-Bayes-Algorithm/" class="post-meta-item leancloud_visitors" data-flag-title="naive Bayes" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -286,8 +280,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2020/08/16/Perceptron/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/16/Perceptron/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/09/28/naive-Bayes-Algorithm/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/28/naive-Bayes-Algorithm/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -302,34 +296,45 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1. 问题描述"></a>1. 问题描述</h3><p>感知机算法的提出最初被用来解决二分类问题，即给定 $N$ 个样本，其中每个样本都是 $p$ 维的向量。每一个样本属于 $C_1$ 或 $C_2$。我们的任务是找到一个超平面来将所有样本进行准确分类并且具有较强的泛化能力。</p><a id="more"></a>
-<h3 id="2-问题数学描述"><a href="#2-问题数学描述" class="headerlink" title="2. 问题数学描述"></a>2. 问题数学描述</h3><p>这里我们将这类问题抽象为数学描述。我们假设 $x_1,x_2,\ldots,x_N$ 是 $p$ 维向量。然后我们将 $\vec{x}_1,\vec{x}_2,…,\vec{x}_N$ 定义为：<br>如果 $x_i\in C_1$,则 $\overrightarrow{x_i}=\begin{bmatrix}x_i\\1\end{bmatrix}$; 如果 $x_i\in C_2$,则 $\overrightarrow{x_i}=\begin{bmatrix}-x_i\\ -1\end{bmatrix}$<br>此时所有向量变成了 $p+1$ 维。这个问题也转变成了寻找一个 $p+1$ 维向量 $\omega$, 使得对于任何 $i=1,2,\cdots,N$ 都有：</p>
-<script type="math/tex; mode=display">\omega^T\overrightarrow{x_i}> 0</script><!--算法流程图-->
-<h3 id="3-算法流程"><a href="#3-算法流程" class="headerlink" title="3. 算法流程"></a>3. 算法流程</h3><hr>
-<p>$\textbf{Input: }\overrightarrow{x_1},\overrightarrow{x_2},\ldots,\overrightarrow{x_N}$<br>$\textbf{Output: }\omega$<br>$_\textbf{1} \quad \omega=<br>\begin{bmatrix}<br>0 \\ 0 \\ \vdots \\ 0<br>\end{bmatrix};$<br>$_\textbf{2} \quad FLAG=1;$<br>$_\textbf{3} \quad \textbf{while }FLAG \textbf{ do}$<br>$_\textbf{4} \quad \qquad FLAG=0;$<br>$_\textbf{5} \quad \qquad \textbf{for }i=1:N\;\textbf{do}$<br>$_\textbf{6} \quad\qquad\qquad \textbf{if }\omega^T\overrightarrow{x_i}\le 0 \textbf{ then}$<br>$_\textbf{7} \quad \qquad\qquad\qquad \omega=\omega+\overrightarrow{x_i};$<br>$_\textbf{8} \quad \qquad\qquad\qquad FLAG=1;$<br>$_\textbf{9} \quad \qquad\qquad \textbf{end}$<br>$_\textbf{10} \quad \qquad \textbf{end}$<br>$_\textbf{11} \quad \textbf{end}$<br>$_\textbf{12} \quad \textbf{return }w;$</p>
-<hr>
-<!--算法流程图-->
-<h3 id="4-算法收敛性证明"><a href="#4-算法收敛性证明" class="headerlink" title="4. 算法收敛性证明"></a>4. 算法收敛性证明</h3><p><strong>定理1</strong> 对于所有的 $N$ 个向量 $\overrightarrow{x_1},\overrightarrow{x_2},\ldots,\overrightarrow{x_N}$，如果存在一个向量 $\omega_{opt}$ 使得 $\omega_{opt}^T\overrightarrow{x_i}&gt;0$ 对于所有的 $i={1,2,\ldots,N}$ 都成立，则 <strong>3</strong> 中描述的算法一定能够找到一个 $\omega$，使得 $\omega_{opt}^T\overrightarrow{x_i}&gt;0$ 对于所有 $i={1,2,\ldots,N}$ 都成立。且算法的收敛性不取决于 $\omega$ 的初值选择。<br><strong>证明</strong> 我们可以假设 $\lVert \omega_{opt} \Vert=1$。因为对于找到的超平面 $\omega_{opt}$，我们总可以乘以一个系数，使得$\omega_{opt}$ 模长为1.<br>我们记$\omega(k)$ 为$\omega$ 的第 $\text{k}$ 次迭代值。然后我们有：</p>
+        <p>朴素贝叶斯法是基于贝叶斯定理与特征条件独立假设的分类方法（与贝叶斯估计是不同的方概念），对于给定的训练数据集，首先基于特征条件独立假设学习输入\输出的联合概率分布；然后基于此模型，对于给定的输入 $x$ ，利用贝叶斯定理求出后验概率最大的输出 $y$ 。朴素贝叶斯方法实现简单，学习与预测的效率都很高，是一种常用的方法。</p><a id="more"></a>
+<h3 id="1-基本方法"><a href="#1-基本方法" class="headerlink" title="1. 基本方法"></a>1. 基本方法</h3><p>设输入空间 $\mathcal{X}\subseteq\mathbf{R^n}$ 为 $\text{n}$ 维向量的集合，输出空间为类标记集合 $\mathcal{Y}= \{c_1,\ldots,c_k\}$。输入为特征向量 $x \in \mathcal{X}$ ,输出为类标记 $y \in \mathcal{Y}$ 。 $X$ 是定义在输入空间 $\mathcal{X}$ 上的随机向量，$Y$ 是定义在输出空间的随机变量，$P(X,Y)$ 是 $X$ 和 $Y$ 的联合概率分布，训练数据集</p>
+<script type="math/tex; mode=display">T=\{ (x_1,y_1),(x_2,y_2),\ldots,(x_N,y_N) \}</script><p>由 $P(X,Y)$ 独立同分布产生。<br>朴素贝叶斯法通过训练数据集来学习联合概率分布 $P(X,Y)$ ，即学习先验概率分以及条件概率分布，先验概率分布</p>
+<script type="math/tex; mode=display">P(Y=c_k),\quad k=1,2,\ldots,K</script><p>条件概率分布</p>
+<script type="math/tex; mode=display">P(X=x|Y=c_k)=P(X^{(1)}=x^{(1)},\ldots,X^{(n)}=x^{(n)}|Y=c_k),\quad k=1,2,\ldots,K</script><p>注意到条件概率分布 $P(X=x|Y=c_k)$ 有指数级数量的参数，其估计实际上是不可行的。假设$x^{(j)}$ 可取值有 $S_j$ 个，$j=1,2,\ldots,n$ , $Y$ 可取值有 $K$ 个，那么参数个数为 $K\prod_{i=1}^n S_j$ 。<br>朴素贝叶斯对条件概率分布做了各特征独立的假设。由于这是一个较强的假设，朴素贝叶斯也就由此得名。具体的，其假设内容为</p>
+<script type="math/tex; mode=display">\begin{aligned}
+P(X=x|Y=c_k) & =P(X^{(1)}=x^{(1)},\ldots,X^{(n)}=x^{(n)}|Y=c_k) \\
+             & =\prod_{i=1}^{n}P(X^{(j)}=x{(j)}|Y=c_k) \qquad\qquad\qquad\qquad(\textbf{1})
+\end{aligned}</script><p>朴素贝叶斯属于生成模型。由于做了各特征独立的假设，使得朴素贝叶斯法变得简单，但同时也就牺牲了一定得分类准确度。<br>朴素贝叶斯法进行分类时，对给定的输入的 $x$ ，通过学习到的模型计算后验概率分布 $P(Y=c_k|X=x)$ ,将后验概率最大的类作为模型预测的输出，后验概率计算方法如下</p>
+<script type="math/tex; mode=display">P(Y=c_k|X=x)=\frac{P(X=x|Y=c_k)P(Y=c_k)}{\begin{matrix}\sum_xP(X=x|Y=c_k)P(Y=c_k) \end{matrix}} \qquad\qquad\qquad\qquad (\textbf{2})</script><p>将式 $(\textbf{1})$ 带入式 $(\textbf{2})$ 有</p>
+<script type="math/tex; mode=display">
+P(Y=c_k|X=x)=\frac{P(Y=c_k)\prod_{j}P(X{(j)}=x{(j)|Y=c_k})}{\begin{matrix}
+\sum_kP(Y=c_k)\prod_jP(X{(j)}=x{(j)}|Y=c_k) \end{matrix}} k=1,2,\ldots,K</script><p>于是朴素贝叶斯分类器可以表示为</p>
+<script type="math/tex; mode=display">
+y=f(x)=\arg \underset{c_i}{\max} \frac{P(Y=c_k)\prod_{j}P(X{(j)}=x{(j)|Y=c_k})}{\begin{matrix}
+\sum_kP(Y=c_k)\prod_jP(X{(j)}=x{(j)}|Y=c_k) \end{matrix}}</script><p>注意到，分母中对所有 $c_i$ 都是相同的，所以,</p>
+<script type="math/tex; mode=display">y=\arg \underset{c_i}{\max}P(Y=c_k)\prod_{j}P(X{(j)}=x{(j)|Y=c_k})</script><h3 id="2-参数估计"><a href="#2-参数估计" class="headerlink" title="2. 参数估计"></a>2. 参数估计</h3><p>在朴素贝叶斯法中，学习意味着估计 $P(Y=c_k)、P(X^{(j)}=x{(j)}|Y=c_k)$。可以应用极大似然估计法估计相应的概率。先验概率的极大似然估计量是</p>
+<script type="math/tex; mode=display">
+P(Y=c_k)=\frac{\sum_{i=1}^{N}I(y_i=c_k)}{N} ,k=1,2,\ldots,K</script><p>设第 $j$ 个特征 $x^{(j)}$ 可能取值的范围为 $\{a_{j1},a_{j2},\ldots,a_{js_j}\}$ ,条件概率 $P(X^{(j)}=a_{jl}|Y=c_k)$ 的极大似然估计量是</p>
+<script type="math/tex; mode=display">
+P(X^{(j)}=a_{jl}|Y=c_k)=\frac{\sum_{i=1}^{N}I(x_i^{(j)}=a_{jl},y_i=c_k)}{\sum_{i=1}^{N}I(y_i=c_k)}</script><script type="math/tex; mode=display">
+j=1,2,\ldots,n;\quad l=1,2,\ldots,S_j; \quad k=1,2,\ldots,K</script><p>式中，$x_i^{(j)}$ 是第 $i$ 个样本的第 $j$ 个特征；$a_{il}$ 是第 $j$ 个特征可能取的第 $l$ 个值，$I$ 为指示函数。</p>
+<h3 id="3-算法描述"><a href="#3-算法描述" class="headerlink" title="3. 算法描述"></a>3. 算法描述</h3><p>$\textbf{Input:}$</p>
+<script type="math/tex; mode=display">
+T=\{ (x_1,y_1),(x_2,y_2),\ldots,(x_N,y_N) \}</script><p>其中$x_i=(x_i^{(1)},x_i^{(2)},\ldots,x_i^{(n)})^T$ ,$x_i^{(j)}$ 是第 $i$ 个样本的第 $j$ 个特征，$x_i^{(j)}\in\{ a_{j1},a_{j2},\ldots,a_{js_j} \}$ , $a_{il}$ 是第 $j$ 个特征可能取的第 $l$ 个值<br>$\textbf{Output:}$ 实例 $x$ 的分类</p>
 <ol>
-<li>如果对于所有的 $i={1,2,\ldots,N}, \omega(k)^T\overrightarrow{x_i}&gt;0$ 都成立，则算法直接成立</li>
-<li>否则，假设第 $\text{k}$ 次时，有$\omega(k)^T\overrightarrow{x_i}&lt;0$</li>
+<li>计算先验概率以及条件概率<script type="math/tex; mode=display">
+P(Y=c_k)=\frac{\sum_{i=1}^{N}I(y_i=c_k)}{N} ,k=1,2,\ldots,K</script><script type="math/tex; mode=display">
+P(X^{(j)}=a_{jl}|Y=c_k)=\frac{\sum_{i=1}^{N}I(X_i^{(j)}=a_{jl},Y=c_k)}{\sum_{i=1}^{N}I(y_i=c_k)}</script><script type="math/tex; mode=display">
+j=1,2,\ldots,n;\quad l=1,2,\ldots,S_j; \quad k=1,2,\ldots,K</script></li>
+<li>对于给定的实例 $x=(x^{(1)},x^{(2)},\ldots,x^{(n)})^T$ ,计算<script type="math/tex; mode=display">
+P(Y=c_k)\prod_{j}P(X{(j)}=x{(j)|Y=c_k}) k=1,2,\ldots,K</script></li>
+<li>确定实例 $x$ 的类<script type="math/tex; mode=display">
+y=\arg \underset{c_i}{\max}P(Y=c_k)\prod_{j}P(X{(j)}=x{(j)|Y=c_k})</script><h3 id="4-贝叶斯估计"><a href="#4-贝叶斯估计" class="headerlink" title="4. 贝叶斯估计"></a>4. 贝叶斯估计</h3>用极大似然估计可能会出现估计值为 0 的情况，这时会影响到后验概率的计算结果，会使分类产生偏差，解决这一问题的方法是采用贝叶斯估计。具体先验概率和条件概率的贝叶斯估计值为<script type="math/tex; mode=display">
+P_\lambda(Y=c_k)=\frac{\sum_{i=1}^{N}I(y_i=c_k)+\lambda}{N+K\lambda}</script><script type="math/tex; mode=display">
+P_\lambda(X^{(j)}=a_{jl}|Y=c_k)=\frac{\sum_{i=1}^{N}I(x_i^{(j)}=a_{jl},y_i=c_k)+\lambda}{\sum_{i=1}^{N}I(y_i=c_k)+S_j\lambda}</script>式中$\lambda\ge 0$ 。等价于在随机变量各个取值上的频数上赋予一个正数 $\lambda&gt;0$ 。当 $\lambda=0$ 时就是极大似然估计。常取 $\lambda=1$ ，这是称为拉普拉斯平滑。显然，对任何 $l=1,2,\ldots,S_j,\quad k=1,2,\ldots,K$ ,有<script type="math/tex; mode=display">
+P_\lambda(X^{(j)}=a_{jl}|Y=c_k)>0</script><script type="math/tex; mode=display">
+\sum_{i=1}^{S_j}P_\lambda(X^{(j)}=a_{jl}|Y=c_k)=1</script></li>
 </ol>
-<p>然后我们根据算法更新参数</p>
-<script type="math/tex; mode=display">\omega(k+1)=\omega(k)+\overrightarrow{x_i}</script><p>然后我们有：</p>
-<script type="math/tex; mode=display">\omega(k+1)-a\omega_{opt}=\omega(k)-a\omega_{opt}+\overrightarrow{x_i}</script><p>两边同时取模，则有：</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-  &{\|\omega(k+1)-a\omega_{opt}\|}^2 \\
-= &{\|\omega(k)-a\omega_{opt}+\overrightarrow{x_i}\|}^2 \\
-= &{\|\omega(k)-a\omega_{opt}\|}^2+{\|\overrightarrow{x_i}\|}^2+2\omega(k)^T\overrightarrow{x_i}-2a\omega_{opt}^T\overrightarrow{x_i}
-\end{aligned}</script><p>这里a是一个正数，我们之后再具体讨论它的数值。因为 $\omega(k)^T\overrightarrow{x_i}&lt;0$，因此我们有：</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-    &{\|\omega(k+1)-a\omega_{opt}\|}^2 \\
-\le &{\|\omega(k)-a\omega_{opt}\|}^2+{\|\overrightarrow{x_i}\|}^2-2a\omega_{opt}^T\overrightarrow{x_i}
-\end{aligned}</script><p>我们定义 $\beta=\max_{i=1}^{N}\lVert\overrightarrow{x_i}\lVert$，$\gamma=\min_{i=1}^{N}(\omega_{opt}^T\overrightarrow{x_i})$ 易得 $\beta,\gamma&gt;0$。此时当 $a=\frac{\beta^2+1}{2\gamma}$ 并带入，很容易得到：</p>
-<script type="math/tex; mode=display">
-{\|\omega(k+1)-a\omega_{opt}\|}^2 \le {\|\omega(k)-a\omega_{opt}\|}^2 -1</script><p>我们定义 $D=\lVert\omega(0)-\omega_{opt}\lVert$。基于上式我们可以得到，每迭代一次 $\omega$ 与$\omega_{opt}$的距离减少1，因此至多迭代 $D^2$ 次，$\omega$ 就会收敛到$\omega_{opt}$。</p>
 
     </div>
 
@@ -362,24 +367,21 @@
           
           <div class="post-tags">
               <a href="/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
-              <a href="/tags/Perceptron/" rel="tag"><i class="fa fa-tag"></i> Perceptron</a>
+              <a href="/tags/naive-Bayes/" rel="tag"><i class="fa fa-tag"></i> naive Bayes</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/12/08/Start-for-Python-Crawl/" rel="next" title="Start for Python Crawl">
-                  <i class="fa fa-chevron-left"></i> Start for Python Crawl
+                <a href="/2020/08/19/K-NN-Algorithm/" rel="next" title="K-NN Algorithm">
+                  <i class="fa fa-chevron-left"></i> K-NN Algorithm
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2020/08/19/K-NN-Algorithm/" rel="prev" title="K-NN Algorithm">
-                  K-NN Algorithm <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -419,7 +421,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-问题描述"><span class="nav-number">1.</span> <span class="nav-text">1. 问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-问题数学描述"><span class="nav-number">2.</span> <span class="nav-text">2. 问题数学描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-算法流程"><span class="nav-number">3.</span> <span class="nav-text">3. 算法流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-算法收敛性证明"><span class="nav-number">4.</span> <span class="nav-text">4. 算法收敛性证明</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-基本方法"><span class="nav-number">1.</span> <span class="nav-text">1. 基本方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-参数估计"><span class="nav-number">2.</span> <span class="nav-text">2. 参数估计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-算法描述"><span class="nav-number">3.</span> <span class="nav-text">3. 算法描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-贝叶斯估计"><span class="nav-number">4.</span> <span class="nav-text">4. 贝叶斯估计</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

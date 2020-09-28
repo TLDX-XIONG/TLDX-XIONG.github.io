@@ -1,9 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>naive Bayes</title>
+    <url>/2020/09/28/naive-Bayes-Algorithm/</url>
+    <content><![CDATA[<p>朴素贝叶斯法是基于贝叶斯定理与特征条件独立假设的分类方法（与贝叶斯估计是不同的方概念），对于给定的训练数据集，首先基于特征条件独立假设学习输入\输出的联合概率分布；然后基于此模型，对于给定的输入 $x$ ，利用贝叶斯定理求出后验概率最大的输出 $y$ 。朴素贝叶斯方法实现简单，学习与预测的效率都很高，是一种常用的方法。</p><a id="more"></a>
+<h3 id="1-基本方法"><a href="#1-基本方法" class="headerlink" title="1. 基本方法"></a>1. 基本方法</h3><p>设输入空间 $\mathcal{X}\subseteq\mathbf{R^n}$ 为 $\text{n}$ 维向量的集合，输出空间为类标记集合 $\mathcal{Y}= \{c_1,\ldots,c_k\}$。输入为特征向量 $x \in \mathcal{X}$ ,输出为类标记 $y \in \mathcal{Y}$ 。 $X$ 是定义在输入空间 $\mathcal{X}$ 上的随机向量，$Y$ 是定义在输出空间的随机变量，$P(X,Y)$ 是 $X$ 和 $Y$ 的联合概率分布，训练数据集</p>
+<script type="math/tex; mode=display">T=\{ (x_1,y_1),(x_2,y_2),\ldots,(x_N,y_N) \}</script><p>由 $P(X,Y)$ 独立同分布产生。<br>朴素贝叶斯法通过训练数据集来学习联合概率分布 $P(X,Y)$ ，即学习先验概率分以及条件概率分布，先验概率分布</p>
+<script type="math/tex; mode=display">P(Y=c_k),\quad k=1,2,\ldots,K</script><p>条件概率分布</p>
+<script type="math/tex; mode=display">P(X=x|Y=c_k)=P(X^{(1)}=x^{(1)},\ldots,X^{(n)}=x^{(n)}|Y=c_k),\quad k=1,2,\ldots,K</script><p>注意到条件概率分布 $P(X=x|Y=c_k)$ 有指数级数量的参数，其估计实际上是不可行的。假设$x^{(j)}$ 可取值有 $S_j$ 个，$j=1,2,\ldots,n$ , $Y$ 可取值有 $K$ 个，那么参数个数为 $K\prod_{i=1}^n S_j$ 。<br>朴素贝叶斯对条件概率分布做了各特征独立的假设。由于这是一个较强的假设，朴素贝叶斯也就由此得名。具体的，其假设内容为</p>
+<script type="math/tex; mode=display">\begin{aligned}
+P(X=x|Y=c_k) & =P(X^{(1)}=x^{(1)},\ldots,X^{(n)}=x^{(n)}|Y=c_k) \\
+             & =\prod_{i=1}^{n}P(X^{(j)}=x{(j)}|Y=c_k) \qquad\qquad\qquad\qquad(\textbf{1})
+\end{aligned}</script><p>朴素贝叶斯属于生成模型。由于做了各特征独立的假设，使得朴素贝叶斯法变得简单，但同时也就牺牲了一定得分类准确度。<br>朴素贝叶斯法进行分类时，对给定的输入的 $x$ ，通过学习到的模型计算后验概率分布 $P(Y=c_k|X=x)$ ,将后验概率最大的类作为模型预测的输出，后验概率计算方法如下</p>
+<script type="math/tex; mode=display">P(Y=c_k|X=x)=\frac{P(X=x|Y=c_k)P(Y=c_k)}{\begin{matrix}\sum_xP(X=x|Y=c_k)P(Y=c_k) \end{matrix}} \qquad\qquad\qquad\qquad (\textbf{2})</script><p>将式 $(\textbf{1})$ 带入式 $(\textbf{2})$ 有</p>
+<script type="math/tex; mode=display">
+P(Y=c_k|X=x)=\frac{P(Y=c_k)\prod_{j}P(X{(j)}=x{(j)|Y=c_k})}{\begin{matrix}
+\sum_kP(Y=c_k)\prod_jP(X{(j)}=x{(j)}|Y=c_k) \end{matrix}} k=1,2,\ldots,K</script><p>于是朴素贝叶斯分类器可以表示为</p>
+<script type="math/tex; mode=display">
+y=f(x)=\arg \underset{c_i}{\max} \frac{P(Y=c_k)\prod_{j}P(X{(j)}=x{(j)|Y=c_k})}{\begin{matrix}
+\sum_kP(Y=c_k)\prod_jP(X{(j)}=x{(j)}|Y=c_k) \end{matrix}}</script><p>注意到，分母中对所有 $c_i$ 都是相同的，所以,</p>
+<script type="math/tex; mode=display">y=\arg \underset{c_i}{\max}P(Y=c_k)\prod_{j}P(X{(j)}=x{(j)|Y=c_k})</script><h3 id="2-参数估计"><a href="#2-参数估计" class="headerlink" title="2. 参数估计"></a>2. 参数估计</h3><p>在朴素贝叶斯法中，学习意味着估计 $P(Y=c_k)、P(X^{(j)}=x{(j)}|Y=c_k)$。可以应用极大似然估计法估计相应的概率。先验概率的极大似然估计量是</p>
+<script type="math/tex; mode=display">
+P(Y=c_k)=\frac{\sum_{i=1}^{N}I(y_i=c_k)}{N} ,k=1,2,\ldots,K</script><p>设第 $j$ 个特征 $x^{(j)}$ 可能取值的范围为 $\{a_{j1},a_{j2},\ldots,a_{js_j}\}$ ,条件概率 $P(X^{(j)}=a_{jl}|Y=c_k)$ 的极大似然估计量是</p>
+<script type="math/tex; mode=display">
+P(X^{(j)}=a_{jl}|Y=c_k)=\frac{\sum_{i=1}^{N}I(x_i^{(j)}=a_{jl},y_i=c_k)}{\sum_{i=1}^{N}I(y_i=c_k)}</script><script type="math/tex; mode=display">
+j=1,2,\ldots,n;\quad l=1,2,\ldots,S_j; \quad k=1,2,\ldots,K</script><p>式中，$x_i^{(j)}$ 是第 $i$ 个样本的第 $j$ 个特征；$a_{il}$ 是第 $j$ 个特征可能取的第 $l$ 个值，$I$ 为指示函数。</p>
+<h3 id="3-算法描述"><a href="#3-算法描述" class="headerlink" title="3. 算法描述"></a>3. 算法描述</h3><p>$\textbf{Input:}$</p>
+<script type="math/tex; mode=display">
+T=\{ (x_1,y_1),(x_2,y_2),\ldots,(x_N,y_N) \}</script><p>其中$x_i=(x_i^{(1)},x_i^{(2)},\ldots,x_i^{(n)})^T$ ,$x_i^{(j)}$ 是第 $i$ 个样本的第 $j$ 个特征，$x_i^{(j)}\in\{ a_{j1},a_{j2},\ldots,a_{js_j} \}$ , $a_{il}$ 是第 $j$ 个特征可能取的第 $l$ 个值<br>$\textbf{Output:}$ 实例 $x$ 的分类</p>
+<ol>
+<li>计算先验概率以及条件概率<script type="math/tex; mode=display">
+P(Y=c_k)=\frac{\sum_{i=1}^{N}I(y_i=c_k)}{N} ,k=1,2,\ldots,K</script><script type="math/tex; mode=display">
+P(X^{(j)}=a_{jl}|Y=c_k)=\frac{\sum_{i=1}^{N}I(X_i^{(j)}=a_{jl},Y=c_k)}{\sum_{i=1}^{N}I(y_i=c_k)}</script><script type="math/tex; mode=display">
+j=1,2,\ldots,n;\quad l=1,2,\ldots,S_j; \quad k=1,2,\ldots,K</script></li>
+<li>对于给定的实例 $x=(x^{(1)},x^{(2)},\ldots,x^{(n)})^T$ ,计算<script type="math/tex; mode=display">
+P(Y=c_k)\prod_{j}P(X{(j)}=x{(j)|Y=c_k}) k=1,2,\ldots,K</script></li>
+<li>确定实例 $x$ 的类<script type="math/tex; mode=display">
+y=\arg \underset{c_i}{\max}P(Y=c_k)\prod_{j}P(X{(j)}=x{(j)|Y=c_k})</script><h3 id="4-贝叶斯估计"><a href="#4-贝叶斯估计" class="headerlink" title="4. 贝叶斯估计"></a>4. 贝叶斯估计</h3>用极大似然估计可能会出现估计值为 0 的情况，这时会影响到后验概率的计算结果，会使分类产生偏差，解决这一问题的方法是采用贝叶斯估计。具体先验概率和条件概率的贝叶斯估计值为<script type="math/tex; mode=display">
+P_\lambda(Y=c_k)=\frac{\sum_{i=1}^{N}I(y_i=c_k)+\lambda}{N+K\lambda}</script><script type="math/tex; mode=display">
+P_\lambda(X^{(j)}=a_{jl}|Y=c_k)=\frac{\sum_{i=1}^{N}I(x_i^{(j)}=a_{jl},y_i=c_k)+\lambda}{\sum_{i=1}^{N}I(y_i=c_k)+S_j\lambda}</script>式中$\lambda\ge 0$ 。等价于在随机变量各个取值上的频数上赋予一个正数 $\lambda&gt;0$ 。当 $\lambda=0$ 时就是极大似然估计。常取 $\lambda=1$ ，这是称为拉普拉斯平滑。显然，对任何 $l=1,2,\ldots,S_j,\quad k=1,2,\ldots,K$ ,有<script type="math/tex; mode=display">
+P_\lambda(X^{(j)}=a_{jl}|Y=c_k)>0</script><script type="math/tex; mode=display">
+\sum_{i=1}^{S_j}P_\lambda(X^{(j)}=a_{jl}|Y=c_k)=1</script></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>naive Bayes</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>K-NN Algorithm</title>
     <url>/2020/08/19/K-NN-Algorithm/</url>
-    <content><![CDATA[<p>$\text{k}$ 近邻法（$\text{k-nearest neighbor}$) 是一种基于分类和回归的方法，这里我们只讨论分类问题的 $\text{k}$ 近邻法。$\text{k}$ 近邻输入为实例点的特征向量，输出为实例所属类别。 $\text{k}$ 近邻假定给定了一个训练数据集，其中的实例类别已经确定。分类时，对新的实例，根据其 $\text{k}$ 个最近的训练实例的类别，通过多数表决等方式进行预测。</p><a id="more"></a>
+    <content><![CDATA[<p>$\text{k}$ 近邻法（$\text{k-nearest neighbor}$) 是一种基于分类和回归的方法，这里我们只讨论分类问题的 $\text{k}$ 近邻法。$\text{k}$ 近邻输入为实例点的特征向量，输出为实例所属类别。 $\text{k}$ 近邻假定给定了一个训练数据集，其中的实例类别已经确定。分类时，对新的实例，根据其 $\text{k}$ 个最近的训练实例的类别，通过多数表决等方式进行预测。<br>$\text{k}$ 近邻法（$\text{k-nearest neighbor}$) 是一种基于分类和回归的方法，这里我们只讨论分类问题的 $\text{k}$ 近邻法。$\text{k}$ 近邻输入为实例点的特征向量，输出为实例所属类别。 $\text{k}$ 近邻假定给定了一个训练数据集，其中的实例类别已经确定。分类时，对新的实例，根据其 $\text{k}$ 个最近的训练实例的类别，通过多数表决等方式进行预测。</p><a id="more"></a>
 <h3 id="1-算法描述"><a href="#1-算法描述" class="headerlink" title="1. 算法描述"></a>1. 算法描述</h3><p>$\textbf{Input:}$</p>
 <script type="math/tex; mode=display">T=\{ (x_1,y_1),(x_2,y_2),\ldots,(x_N,y_N) \}</script><p>其中，$x_i \in X \subseteq \bf{R^n}$ 为实例的特征向量，$y_i \in Y=\{ c_1,c_2,\ldots,c_K \}$为实例的类别，$i=1,2,\ldots,N$;<br>$\textbf{Output:}$</p>
 <script type="math/tex; mode=display">y=\arg\underset{c_j}{\max}\sum_{x_i\in N_k\left( x \right)}{I\left( y_i=c_j \right) ,\ i=1,2,\ldots,N;\ j=1,2,\ldots,K}</script><p>其中，$N_k(x)$ 为涵盖最近的 $\text{k}$ 个点的邻域；$\text{I}$ 为指示函数，即当 $y_i=c_j$ 时为1，否则为0。通过分类决策规则（多数表决）决定 $x$ 的类别 $y$。</p>
