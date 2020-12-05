@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Decision Tree</title>
+    <url>/2020/10/06/Decision-Tree/</url>
+    <content><![CDATA[<p>决策树是一种基本的分类与回归方法，本文主要讨论用于分类的决策树。决策树模型呈树形结构，在分类问题中，表示基于特征对实例进行分类的过程。学习时，利用训练数据，根据损失函数最小化原则建立决策树模型。预测时，对新数据，利用决策树模型对其分类。学习过程主要包括特征选择，决策树生成和决策树剪枝。目前决策树算法主要有 ID3，C4.5，CART。</p><a id="more"></a>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>决策树是模型利用树形数据结构对实例进行分类。决策树由结点和有向边组成。结点包括：内部结点，叶结点。内部结点表示特征或某一特征的内部属性值，叶结点表示所属类别。</p>
+<p>用决策树分类时，从根节点出发，依据内部结点来对实例测试，根据测试结果将实例分配到其子结点，然后依次递归直至到达叶结点。则叶结点所属类别即为该实例所属类别。</p>
+<p>决策树学习本质上是从训练数据集中归纳出一组分类规则与训练数据集不相矛盾的决策树(即能对训练数据进行正确分类的决策树)可能有多个，也可能一个也没有我们需要的是-个与训练数据矛盾较小的决策树，同时具有很好的泛化能力。当损失函数确定以后，学习问题就变为在损失函数意义下选择最优决策树的问题。因为从所有可能的决策树中选取最优决策树是 NP 完全问题，所以现实中决策树学习算法通常采用启发式方法。</p>
+<p>决策树算法通常是递归地选择当前最优特征，并依据该特征对现有数据进行分类。各个数据也就被分配到各结点上。然后在各结点上依次递归的选择最优特征并将该结点的子数据分割成子集。如果这些子集基本能够正确地分类，则构建叶结点，并将这些子集分到所对应的叶结点中去；如果还有子集不能分类正确，则继续递归下去，直至所有子集都能正确分类或没有合适特征为止。这样，每个子集都分配到了叶结点上，即都有了明确的类。这就生成了一棵决策树。</p>
+<h3 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h3><p>特征选择在于选取对训练数据具有分类能力的特征，这样可以提高决策树学习的效率。通常选取的准则是信息增益或信息增益比</p>
+<p>信息增益概念来源于信息论。在信息论中，熵衡量了一件事件的不确定性程度。设 $X$ 是一个取有限值的离散随机变量，其概率分布为</p>
+<script type="math/tex; mode=display">
+P(X=x_i)=p_i,\qquad\qquad i=1,2,\ldots,n</script><p>则随机变量的熵为</p>
+<script type="math/tex; mode=display">
+H(X)=-\sum_{i=1}^{n}p_i\log p_i</script><p>由定义可以知道，当 $p=0$ 或 $p=1$ 时 $H(p)=0$，随机变量完全没有不确定性。当 $p=0.5$ 时，$H(p)=1$，熵取值最大，随机变量不确定性最大。</p>
+<p>设有随即变量 $(X,Y)$，其联合概率分布为</p>
+<script type="math/tex; mode=display">
+P(X=x_i,Y=y_j)=p_{ij},\qquad i=1,2,\ldots,n;\quad j=1,2,\ldots,m</script><p>条件熵 $H(Y|X)$ 表示在已知随机变量 $X$ 的条件下随机变量 $Y$ 的不确定性。其表达式为</p>
+<script type="math/tex; mode=display">
+H(Y|X)=\sum_{i=1}^n P(X=x_i)H(Y|X=x_i)</script><p>信息增益表示得知 $X$ 而令 $Y$ 的不确定度减少的程度</p>
+<p>特征 $A$ 对训练数据集 D 的信息增益 $g(D,A)$ 定义为集合 $D$ 的经验熵 $H(D)$ 与特征 $A$ 给定条件下 $D$ 的经验条件熵之差，即</p>
+<script type="math/tex; mode=display">
+g(D,A)=H(D)-H(D|A)</script><p>熵与条件熵之差 $H(Y)-H(Y|X)$ 也叫互信息。决策树中的信息增益等价于信息论中的互信息</p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>[1] 李航. 统计学习方法. 北京：清华大学出版社, 2012</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>Decision Tree</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>naive Bayes</title>
     <url>/2020/09/28/naive-Bayes-Algorithm/</url>
     <content><![CDATA[<p>朴素贝叶斯法是基于贝叶斯定理与特征条件独立假设的分类方法（与贝叶斯估计是不同的方概念），对于给定的训练数据集，首先基于特征条件独立假设学习输入\输出的联合概率分布；然后基于此模型，对于给定的输入 $x$ ，利用贝叶斯定理求出后验概率最大的输出 $y$ 。朴素贝叶斯方法实现简单，学习与预测的效率都很高，是一种常用的方法。</p><a id="more"></a>
@@ -42,6 +74,7 @@ P_\lambda(X^{(j)}=a_{jl}|Y=c_k)=\frac{\sum_{i=1}^{N}I(x_i^{(j)}=a_{jl},y_i=c_k)+
 P_\lambda(X^{(j)}=a_{jl}|Y=c_k)>0</script><script type="math/tex; mode=display">
 \sum_{i=1}^{S_j}P_\lambda(X^{(j)}=a_{jl}|Y=c_k)=1</script></li>
 </ol>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>[1] 李航. 统计学习方法. 北京：清华大学出版社, 2012</p>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
@@ -68,6 +101,7 @@ P_\lambda(X^{(j)}=a_{jl}|Y=c_k)>0</script><script type="math/tex; mode=display">
 <li>如果 $\text{k}$ 值过大，优点是可以减少学习的估计误差，但缺点是会造成近似误差的增大。这使与输入实例较远的训练实例也会对预测起作用，使预测发生错误。</li>
 </ol>
 <p>因此，需要多次尝试不同 $\text{k}$ 值，然后选取最佳 $\text{k}$ 值。通常做法是 使用交叉验证来选取最优 $\text{k}$ 值。</p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>[1] 李航. 统计学习方法. 北京：清华大学出版社, 2012</p>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
