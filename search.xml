@@ -12,8 +12,6 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 
-
-
 More info: [Writing](https://hexo.io/docs/writing.html)
 
 ### Run server
