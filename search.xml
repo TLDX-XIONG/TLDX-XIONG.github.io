@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>ASCII 表(控制字符和可显示字符)</title>
-    <url>/2020/06/21/ASCII/</url>
+    <url>/Appendix/ASCII/</url>
     <content><![CDATA[<p>ASCII（American Standard Code for Information Interchange，美国信息互换标准代码，ASCII）是基于拉丁字母的一套电脑编码系统。它主要用于显示现代英语和其他西欧语言。它是现今最通用的单字节编码系统，并等同于国际标准ISO/IEC 646。</p>
 <p>ASCII第一次以规范标准的型态发表是在1967年，最后一次更新则是在1986年，至今为止共定义了128个字符，其中33个字符无法显示（这是以现今操作系统为依归，但在DOS模式下可显示出一些诸如笑脸、扑克牌花式等8-bit符号），且这33个字符多数都已是陈废的控制字符，控制字符的用途主要是用来操控已经处理过的文字，在33个字符之外的是95个可显示的字符，包含用键盘敲下空白键所产生的空白字符也算1个可显示字符（显示为空白）。 <img src="https://img-blog.csdnimg.cn/20200621180620179.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RMRFhfWElPTkc=,size_16,color_FFFFFF,t_70#pic_center" alt="ASCII" /> 下面是ASCII控制字符在DOS系统下的ASCII表 <img src="https://img-blog.csdnimg.cn/20200621181046373.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RMRFhfWElPTkc=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" /></p>
 ]]></content>
@@ -15,7 +15,7 @@
   </entry>
   <entry>
     <title>HTML special symbol</title>
-    <url>/2019/11/29/HTML-special-symbol/</url>
+    <url>/Appendix/HTML-special-symbol/</url>
     <content><![CDATA[<table>
 <thead>
 <tr class="header">
@@ -228,7 +228,7 @@
   </entry>
   <entry>
     <title>functions of matlab</title>
-    <url>/2019/11/26/functions-of-MATLAB/</url>
+    <url>/Matlab/functions-of-MATLAB/</url>
     <content><![CDATA[###
 <center>
 WHAT I LEARN TODAY
@@ -266,7 +266,7 @@ linprog 函数的基本形式为 lingprog(c,A,b)，返回值为向量 x 的值�
   </entry>
   <entry>
     <title>matlab and lingo</title>
-    <url>/2019/11/28/matlab-and-lingo/</url>
+    <url>/Matlab/matlab-and-lingo/</url>
     <content><![CDATA[###
 <center>
 MATLAB AND LINGO
@@ -331,7 +331,7 @@ E<sub>1</sub>=8μq<sup>2</sup>l/πr<sup>4</sup>
   </entry>
   <entry>
     <title>the usage of lingo</title>
-    <url>/2019/11/27/the-usage-of-lingo/</url>
+    <url>/lingo/the-usage-of-lingo/</url>
     <content><![CDATA[###
 <center>
 USAGE OF LINGO
@@ -369,7 +369,7 @@ USAGE OF LINGO
   </entry>
   <entry>
     <title>感知机算法证明</title>
-    <url>/2020/08/19/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%AE%97%E6%B3%95%E8%AF%81%E6%98%8E/</url>
+    <url>/Machine-Learning/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%AE%97%E6%B3%95%E8%AF%81%E6%98%8E/</url>
     <content><![CDATA[<h3 id="问题描述">1. 问题描述</h3>
 <p>感知机算法的提出最初被用来解决二分类问题，即给定 <span class="math inline">\(N\)</span> 个样本，其中每个样本都是 <span class="math inline">\(p\)</span> 维的向量。每一个样本属于 <span class="math inline">\(C_1\)</span> 或 <span class="math inline">\(C_2\)</span>。我们的任务是找到一个超平面来将所有样本进行准确分类并且具有较强的泛化能力。 ### 2. 问题数学描述 这里我们将这类问题抽象为数学描述。我们假设 <span class="math inline">\(x_1,x_2,\ldots,x_N\)</span> 是 <span class="math inline">\(p\)</span> 维向量。然后我们将 <span class="math inline">\(\vec{x}_1,\vec{x}_2,...,\vec{x}_N\)</span> 定义为： 如果 <span class="math inline">\(x_i\in C_1\)</span>,则 <span class="math inline">\(\overrightarrow{x_i}=\begin{bmatrix}x_i\\1\end{bmatrix}\)</span>; 如果 <span class="math inline">\(x_i\in C_2\)</span>,则 <span class="math inline">\(\overrightarrow{x_i}=\begin{bmatrix}-x_i\\ -1\end{bmatrix}\)</span> 此时所有向量变成了 <span class="math inline">\(p+1\)</span> 维。这个问题也转变成了寻找一个 <span class="math inline">\(p+1\)</span> 维向量 <span class="math inline">\(\omega\)</span>, 使得对于任何 <span class="math inline">\(i=1,2,\cdots,N\)</span> 都有： <span class="math display">\[\omega^T\overrightarrow{x_i}&gt; 0\]</span></p>
 <!--算法流程图-->
