@@ -189,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/Machine-Learning/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%AE%97%E6%B3%95%E8%AF%81%E6%98%8E/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/19/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%AE%97%E6%B3%95%E8%AF%81%E6%98%8E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -203,7 +203,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/Machine-Learning/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%AE%97%E6%B3%95%E8%AF%81%E6%98%8E/" class="post-title-link" itemprop="url">感知机算法证明</a>
+            <a href="/2020/08/19/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%AE%97%E6%B3%95%E8%AF%81%E6%98%8E/" class="post-title-link" itemprop="url">感知机算法证明</a>
         </h2>
 
         <div class="post-meta">
@@ -220,7 +220,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-18 13:13:15" itemprop="dateModified" datetime="2021-10-18T13:13:15+08:00">2021-10-18</time>
+                <time title="Modified: 2021-10-18 13:22:51" itemprop="dateModified" datetime="2021-10-18T13:22:51+08:00">2021-10-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,14 +245,47 @@
       
           <h3 id="问题描述">1. 问题描述</h3>
 <p>感知机算法的提出最初被用来解决二分类问题，即给定 <span class="math inline">\(N\)</span> 个样本，其中每个样本都是 <span class="math inline">\(p\)</span> 维的向量。每一个样本属于 <span class="math inline">\(C_1\)</span> 或 <span class="math inline">\(C_2\)</span>。我们的任务是找到一个超平面来将所有样本进行准确分类并且具有较强的泛化能力。 ### 2. 问题数学描述 这里我们将这类问题抽象为数学描述。我们假设 <span class="math inline">\(x_1,x_2,\ldots,x_N\)</span> 是 <span class="math inline">\(p\)</span> 维向量。然后我们将 <span class="math inline">\(\vec{x}_1,\vec{x}_2,...,\vec{x}_N\)</span> 定义为： 如果 <span class="math inline">\(x_i\in C_1\)</span>,则 <span class="math inline">\(\overrightarrow{x_i}=\begin{bmatrix}x_i\\1\end{bmatrix}\)</span>; 如果 <span class="math inline">\(x_i\in C_2\)</span>,则 <span class="math inline">\(\overrightarrow{x_i}=\begin{bmatrix}-x_i\\ -1\end{bmatrix}\)</span> 此时所有向量变成了 <span class="math inline">\(p+1\)</span> 维。这个问题也转变成了寻找一个 <span class="math inline">\(p+1\)</span> 维向量 <span class="math inline">\(\omega\)</span>, 使得对于任何 <span class="math inline">\(i=1,2,\cdots,N\)</span> 都有： <span class="math display">\[\omega^T\overrightarrow{x_i}&gt; 0\]</span></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Machine-Learning/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%AE%97%E6%B3%95%E8%AF%81%E6%98%8E/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+<!--算法流程图-->
+<h3 id="算法流程">3. 算法流程</h3>
+<hr />
+<p><span class="math display">\[\begin{aligned}
+&amp; \textbf{Input: }\overrightarrow{x_1},\overrightarrow{x_2},\ldots,\overrightarrow{x_N}\\
+&amp; \textbf{Output: }\omega  \\
+&amp; _\textbf{1} \quad \omega=
+\begin{bmatrix}
+0 \\ 0 \\ \vdots \\ 0   
+\end{bmatrix};\\
+&amp;_\textbf{2} \quad FLAG=1;\\
+&amp;_\textbf{3} \quad \textbf{while }FLAG \textbf{ do}\\
+&amp;_\textbf{4} \quad \qquad FLAG=0;\\
+&amp;_\textbf{5} \quad \qquad \textbf{for }i=1:N\;\textbf{do}\\
+&amp;_\textbf{6} \quad\qquad\qquad \textbf{if }\omega^T\overrightarrow{x_i}\le 0 \textbf{ then}\\
+&amp;_\textbf{7} \quad \qquad\qquad\qquad \omega=\omega+\overrightarrow{x_i};\\
+&amp;_\textbf{8} \quad \qquad\qquad\qquad FLAG=1;\\
+&amp;_\textbf{9} \quad \qquad\qquad \textbf{end}\\
+&amp;_\textbf{10} \quad \qquad \textbf{end}\\
+&amp;_\textbf{11} \quad \textbf{end}\\
+&amp;_\textbf{12} \quad \textbf{return }w;\\
+\end{aligned}
+\]</span></p>
+<hr />
+<h3 id="算法收敛性证明">4. 算法收敛性证明</h3>
+<p><strong>定理1</strong> 对于所有的 <span class="math inline">\(N\)</span> 个向量 <span class="math inline">\(\overrightarrow{x_1},\overrightarrow{x_2},\ldots,\overrightarrow{x_N}\)</span>，如果存在一个向量 <span class="math inline">\(\omega_{opt}\)</span> 使得 <span class="math inline">\(\omega_{opt}^T\overrightarrow{x_i}&gt;0\)</span> 对于所有的 <span class="math inline">\(i={1,2,\ldots,N}\)</span> 都成立，则 <strong>3</strong> 中描述的算法一定能够找到一个 <span class="math inline">\(\omega\)</span>，使得 <span class="math inline">\(\omega_{opt}^T\overrightarrow{x_i}&gt;0\)</span> 对于所有 <span class="math inline">\(i={1,2,\ldots,N}\)</span> 都成立。且算法的收敛性不取决于 <span class="math inline">\(\omega\)</span> 的初值选择。 <strong>证明</strong> 我们可以假设 <span class="math inline">\(\lVert \omega_{opt} \Vert=1\)</span>。因为对于找到的超平面 <span class="math inline">\(\omega_{opt}\)</span>，我们总可以乘以一个系数，使得<span class="math inline">\(\omega_{opt}\)</span> 模长为1. 我们记<span class="math inline">\(\omega(k)\)</span> 为<span class="math inline">\(\omega\)</span> 的第 <span class="math inline">\(k\)</span> 次迭代值。然后我们有： 1. 如果对于所有的 <span class="math inline">\(i={1,2,\ldots,N} \omega(k)^T\overrightarrow{x_i}&gt;0\)</span> 都成立，则算法直接成立 2. 否则，假设第 <span class="math inline">\(k\)</span> 次时，有<span class="math inline">\(\omega(k)^T\overrightarrow{x_i}&lt;0\)</span></p>
+<p>然后我们根据算法更新参数 <span class="math display">\[\omega(k+1)=\omega(k)+\overrightarrow{x_i}\]</span> 然后我们有： <span class="math display">\[\omega(k+1)-a\omega_{opt}=\omega(k)-a\omega_{opt}+\overrightarrow{x_i}\]</span> 两边同时取模，则有： <span class="math display">\[
+\begin{aligned}
+  &amp;{\|\omega(k+1)-a\omega_{opt}\|}^2 \\
+= &amp;{\|\omega(k)-a\omega_{opt}+\overrightarrow{x_i}\|}^2 \\
+= &amp;{\|\omega(k)-a\omega_{opt}\|}^2+{\|\overrightarrow{x_i}\|}^2+2\omega(k)^T\overrightarrow{x_i}-2a\omega_{opt}^T\overrightarrow{x_i}
+\end{aligned}
+\]</span> 这里 a 是一个正数，我们之后再具体讨论它的数值。因为 <span class="math inline">\(\omega(k)^T\overrightarrow{x_i}&lt;0\)</span>，因此我们有： <span class="math display">\[
+\begin{aligned}
+    &amp;{\|\omega(k+1)-a\omega_{opt}\|}^2 \\
+\le &amp;{\|\omega(k)-a\omega_{opt}\|}^2+{\|\overrightarrow{x_i}\|}^2-2a\omega_{opt}^T\overrightarrow{x_i}
+\end{aligned}
+\]</span> 我们定义 <span class="math inline">\(\beta=\max_{i=1}^{N}\lVert\overrightarrow{x_i}\lVert\)</span>，<span class="math inline">\(\gamma=\min_{i=1}^{N}(\omega_{opt}^T\overrightarrow{x_i})\)</span> 易得 <span class="math inline">\(\beta,\gamma&gt;0\)</span>。此时当 <span class="math inline">\(a=\frac{\beta^2+1}{2\gamma}\)</span> 并带入，很容易得到： <span class="math display">\[
+{\|\omega(k+1)-a\omega_{opt}\|}^2 \le {\|\omega(k)-a\omega_{opt}\|}^2 -1 
+\]</span> 我们定义 <span class="math inline">\(D=\lVert\omega(0)-\omega_{opt}\lVert\)</span>。基于上式我们可以得到，每迭代一次 <span class="math inline">\(\omega\)</span> 与<span class="math inline">\(\omega_{opt}\)</span>的距离减少1，因此至多迭代 <span class="math inline">\(D^2\)</span> 次，<span class="math inline">\(\omega\)</span> 就会收敛到<span class="math inline">\(\omega_{opt}\)</span>。</p>
+
       
     </div>
 
@@ -271,7 +304,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/Appendix/ASCII/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/06/21/ASCII/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -285,7 +318,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/Appendix/ASCII/" class="post-title-link" itemprop="url">ASCII 表(控制字符和可显示字符)</a>
+            <a href="/2020/06/21/ASCII/" class="post-title-link" itemprop="url">ASCII 表(控制字符和可显示字符)</a>
         </h2>
 
         <div class="post-meta">
@@ -346,7 +379,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/Appendix/HTML-special-symbol/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/11/29/HTML-special-symbol/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -360,7 +393,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/Appendix/HTML-special-symbol/" class="post-title-link" itemprop="url">HTML special symbol</a>
+            <a href="/2019/11/29/HTML-special-symbol/" class="post-title-link" itemprop="url">HTML special symbol</a>
         </h2>
 
         <div class="post-meta">
@@ -621,7 +654,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/Matlab/matlab-and-lingo/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/11/28/matlab-and-lingo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -635,7 +668,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/Matlab/matlab-and-lingo/" class="post-title-link" itemprop="url">matlab and lingo</a>
+            <a href="/2019/11/28/matlab-and-lingo/" class="post-title-link" itemprop="url">matlab and lingo</a>
         </h2>
 
         <div class="post-meta">
@@ -684,7 +717,7 @@ MATLAB AND LINGO
 diff(f): 对 f 求导 diff(f,t): df/dt 或者 ∂f/∂t diff(f,n): 对 f 求 n 阶导数 diff(f,n,t): 高阶导数 d<sup>n</sup>f/dt<sup>n</sup>（或者 ∂<sup>n</sup>f/∂t<sup>n</sup>）
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/Matlab/matlab-and-lingo/#more" rel="contents">
+              <a class="btn" href="/2019/11/28/matlab-and-lingo/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -708,7 +741,7 @@ diff(f): 对 f 求导 diff(f,t): df/dt 或者 ∂f/∂t diff(f,n): 对 f 求 n �
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/lingo/the-usage-of-lingo/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/11/27/the-usage-of-lingo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -722,7 +755,7 @@ diff(f): 对 f 求导 diff(f,t): df/dt 或者 ∂f/∂t diff(f,n): 对 f 求 n �
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/lingo/the-usage-of-lingo/" class="post-title-link" itemprop="url">the usage of lingo</a>
+            <a href="/2019/11/27/the-usage-of-lingo/" class="post-title-link" itemprop="url">the usage of lingo</a>
         </h2>
 
         <div class="post-meta">
@@ -806,7 +839,7 @@ USAGE OF LINGO
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/Matlab/functions-of-MATLAB/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/11/26/functions-of-MATLAB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -820,7 +853,7 @@ USAGE OF LINGO
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/Matlab/functions-of-MATLAB/" class="post-title-link" itemprop="url">functions of matlab</a>
+            <a href="/2019/11/26/functions-of-MATLAB/" class="post-title-link" itemprop="url">functions of matlab</a>
         </h2>
 
         <div class="post-meta">
