@@ -277,7 +277,7 @@
 <span id="more"></span>
 <!--算法流程图-->
 <h3 id="算法流程">3. 算法流程</h3>
-<hr />
+<hr>
 <p><span class="math display">\[\begin{aligned}
 &amp; \textbf{Input: }\overrightarrow{x_1},\overrightarrow{x_2},\ldots,\overrightarrow{x_N}\\
 &amp; \textbf{Output: }\omega  \\
@@ -298,7 +298,7 @@
 &amp;_\textbf{12} \quad \textbf{return }w;\\
 \end{aligned}
 \]</span></p>
-<hr />
+<hr>
 <h3 id="算法收敛性证明">4. 算法收敛性证明</h3>
 <p><strong>定理1</strong> 对于所有的 <span class="math inline">\(N\)</span> 个向量 <span class="math inline">\(\overrightarrow{x_1},\overrightarrow{x_2},\ldots,\overrightarrow{x_N}\)</span>，如果存在一个向量 <span class="math inline">\(\omega_{opt}\)</span> 使得 <span class="math inline">\(\omega_{opt}^T\overrightarrow{x_i}&gt;0\)</span> 对于所有的 <span class="math inline">\(i={1,2,\ldots,N}\)</span> 都成立，则 <strong>3</strong> 中描述的算法一定能够找到一个 <span class="math inline">\(\omega\)</span>，使得 <span class="math inline">\(\omega_{opt}^T\overrightarrow{x_i}&gt;0\)</span> 对于所有 <span class="math inline">\(i={1,2,\ldots,N}\)</span> 都成立。且算法的收敛性不取决于 <span class="math inline">\(\omega\)</span> 的初值选择。 <strong>证明</strong> 我们可以假设 <span class="math inline">\(\lVert \omega_{opt} \Vert=1\)</span>。因为对于找到的超平面 <span class="math inline">\(\omega_{opt}\)</span>，我们总可以乘以一个系数，使得<span class="math inline">\(\omega_{opt}\)</span> 模长为1. 我们记<span class="math inline">\(\omega(k)\)</span> 为<span class="math inline">\(\omega\)</span> 的第 <span class="math inline">\(k\)</span> 次迭代值。然后我们有： 1. 如果对于所有的 <span class="math inline">\(i={1,2,\ldots,N} \omega(k)^T\overrightarrow{x_i}&gt;0\)</span> 都成立，则算法直接成立 2. 否则，假设第 <span class="math inline">\(k\)</span> 次时，有<span class="math inline">\(\omega(k)^T\overrightarrow{x_i}&lt;0\)</span></p>
 <p>然后我们根据算法更新参数 <span class="math display">\[\omega(k+1)=\omega(k)+\overrightarrow{x_i}\]</span> 然后我们有： <span class="math display">\[\omega(k+1)-a\omega_{opt}=\omega(k)-a\omega_{opt}+\overrightarrow{x_i}\]</span> 两边同时取模，则有： <span class="math display">\[

@@ -27,18 +27,23 @@
 <meta property="og:site_name" content="TLDX&#39;s blog">
 <meta property="og:description" content="cuda-cudnn-pytorch 安装教程">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_driver_version.png">
 <meta property="og:image" content="http://example.com/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_download.png">
+<meta property="og:image" content="http://example.com/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_download_2.png">
+<meta property="og:image" content="http://example.com/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_suggestion.png">
 <meta property="og:image" content="http://example.com/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_install_1.png">
 <meta property="og:image" content="http://example.com/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_install_2.jpg">
 <meta property="og:image" content="http://example.com/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_install_3.jpg">
 <meta property="og:image" content="http://example.com/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_install_4.jpg">
+<meta property="og:image" content="http://example.com/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/nvcc.png">
 <meta property="og:image" content="http://example.com/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cudnn_download.png">
 <meta property="og:image" content="http://example.com/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cudnn_install.png">
+<meta property="og:image" content="http://example.com/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/path_variable.png">
 <meta property="article:published_time" content="2021-12-06T14:18:30.000Z">
-<meta property="article:modified_time" content="2021-12-06T15:06:36.760Z">
+<meta property="article:modified_time" content="2021-12-07T02:21:35.013Z">
 <meta property="article:author" content="TLDX">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_download.png">
+<meta name="twitter:image" content="http://example.com/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_driver_version.png">
 
 <link rel="canonical" href="http://example.com/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">
 
@@ -221,10 +226,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-12-06 22:18:30 / Modified: 23:06:36" itemprop="dateCreated datePublished" datetime="2021-12-06T22:18:30+08:00">2021-12-06</time>
+              <time title="Created: 2021-12-06 22:18:30" itemprop="dateCreated datePublished" datetime="2021-12-06T22:18:30+08:00">2021-12-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-07 10:21:35" itemprop="dateModified" datetime="2021-12-07T10:21:35+08:00">2021-12-07</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -254,7 +265,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
               </span>
-              <span>609</span>
+              <span>776</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -272,30 +283,35 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>cuda-cudnn-pytorch 安装教程</p>
+        <center>
+cuda-cudnn-pytorch 安装教程
+</center>
 <span id="more"></span>
 <h3 id="cuda-安装">CUDA 安装</h3>
 <ol type="1">
-<li>查看 <code>nvidia-smi</code> 自己的 nvidia GPU CUDA 驱动版本</li>
+<li>使用 <code>nvidia-smi</code> 查看自己的 nvidia GPU CUDA 驱动版本</li>
 </ol>
-<figure>
-<img src alt="CUDA版本"><figcaption aria-hidden="true">CUDA版本</figcaption>
-</figure>
+<p><img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_driver_version.png"></p>
 <ol start="2" type="1">
 <li>去官网下载 CUDA 包。</li>
 </ol>
-<p>https://developer.nvidia.com/cuda-toolkit-archive <img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_download.png" alt="cuda_download"></p>
-<p>注意，下载的CUDA包的版本号不能大于自己GPU CUDA的版本。这是有官方给的建议。</p>
-<figure>
-<img src alt="CUDA版本推荐下载表"><figcaption aria-hidden="true">CUDA版本推荐下载表</figcaption>
-</figure>
-<ol type="1">
-<li>安装 CUDA <img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_install_1.png">) 我们进行自定义安装。自定义安装这里可以进行一些设置，否则有可能会导致安装失败，首先组件这里取勾GeForce Experience。 <img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_install_2.jpg"> 然后， 我这里安装的时候，必须Visual Studio Integration也需要取消勾选。 <img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_install_3.jpg"> 点开Driver comonents，Display Driver这一行，前面显示的是Cuda本身包含的驱动版本是411.31 如果你电脑目前安装的驱动版本号新于Cuda本身自带的驱动版本号，那一定要把这个勾去掉。否则会安装失败(相同或小于的话，就不用去取勾了) <img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_install_4.jpg"></li>
+<p>https://developer.nvidia.com/cuda-toolkit-archive <img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_download.png" alt="cuda_download"> 选择本地安装 <img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_download_2.png"> 注意，下载的CUDA包的版本号不能大于自己GPU CUDA的版本。这是官方给的建议。 https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html</p>
+<p><img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_suggestion.png"></p>
+<ol start="3" type="1">
+<li>安装 CUDA <img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_install_1.png"> 我们进行自定义安装。自定义安装这里可以进行一些设置，否则有可能会导致安装失败，首先组件这里取勾GeForce Experience。 <img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_install_2.jpg"> 然后， 我这里安装的时候，必须Visual Studio Integration也需要取消勾选。 <img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_install_3.jpg"> 点开Driver comonents，Display Driver这一行，前面显示的是Cuda本身包含的驱动版本是411.31 如果你电脑目前安装的驱动版本号新于Cuda本身自带的驱动版本号，那一定要把这个勾去掉。否则会安装失败(相同或小于的话，就不用去取勾了) <img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cuda_install_4.jpg"></li>
 </ol>
-<p>安装完成后，使用 <code>nvcc -V</code> 命令测试是否安装成功 <img src> ### cudnn 安装 cudnn 需要登录下载(科学上网)。 1. 官网下载：https://developer.nvidia.com/rdp/cudnn-archive。下载的时候尽量与 CUDA 版本对应。 <img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cudnn_download.png"></p>
-<ol start="2" type="1">
+<p>安装完成后，使用 <code>nvcc -V</code> 命令测试是否安装成功 <img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/nvcc.png"></p>
+<h3 id="cudnn-安装">cudnn 安装</h3>
+<p>cudnn 需要登录下载(科学上网)。 1. 官网下载：https://developer.nvidia.com/rdp/cudnn-archive。 下载的时候尽量与 CUDA 版本对应。 <img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cudnn_download.png"></p>
+<ol type="1">
 <li>解压文件夹，将解压后的文件夹下的文件拷贝到cuda安装目录下，与之相对应的文件夹下。 <img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/cudnn_install.png"></li>
-<li>添加系统环境变量 ### PyTorch 安装</li>
+<li>添加系统环境变量 <img src="/configuration/cuda-cudnn-pytorch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/path_variable.png"></li>
+</ol>
+<h3 id="pytorch-安装">PyTorch 安装</h3>
+<ol type="1">
+<li><p>官网下载，找到自己对应的 cuda-pytorch</p>
+<p>https://pytorch.org/get-started/previous-versions/</p></li>
+<li><p>使用 pip 或 conda 安装 pytorch。安装的时候推荐使用虚拟环境，以避免依赖包冲突。</p></li>
 </ol>
 
     </div>
@@ -375,7 +391,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#cuda-%E5%AE%89%E8%A3%85"><span class="nav-text">CUDA 安装</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#cuda-%E5%AE%89%E8%A3%85"><span class="nav-text">CUDA 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cudnn-%E5%AE%89%E8%A3%85"><span class="nav-text">cudnn 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytorch-%E5%AE%89%E8%A3%85"><span class="nav-text">PyTorch 安装</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
