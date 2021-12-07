@@ -100,21 +100,109 @@
 </tbody>
 </table>
 <span id="more"></span>
-<table style="width:7%;">
-<colgroup>
-<col style="width: 6%">
-</colgroup>
+<hr>
+<table>
 <thead>
 <tr class="header">
-<th>|符号|编码|符号|编码|符号|编码| |:--:|:--:|:--:|:--:|:--:|:--:| |Α|&amp;Alpha；|Β|&amp;Beta；|Χ|&amp;Chi；| |Δ|&amp;Delta；|Ε|&amp;Epsilon；|Η|&amp;Eta；| |Γ|&amp;Gamma；|Ι|&amp;Iota；|Κ|&amp;Kappa；| |Λ|&amp;Lambda；|Μ|&amp;Mu；|Ν|&amp;Nu；| |Ω|&amp;Omega；|Ο|&amp;Omicron；|Φ|&amp;Phi；| |Π|&amp;Pi；|Ψ|&amp;Psi；|Ρ|&amp;Rho； |Σ|&amp;Sigma；|Τ|&amp;Tau；|Θ|&amp;Theta；| |Υ|&amp;Upsilon；|Ξ|&amp;Xi；|Ζ|&amp;Zeta；</th>
+<th style="text-align: center;">符号</th>
+<th style="text-align: center;">编码</th>
+<th style="text-align: center;">符号</th>
+<th style="text-align: center;">编码</th>
+<th style="text-align: center;">符号</th>
+<th style="text-align: center;">编码</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>|符号|编码|符号|编码|符号|编码| |:--:|:--:|:--:|:--:|:--:|:--:| |€|&amp;euro；|£|&amp;pound；|¥|&amp;yen；</td>
+<td style="text-align: center;">Α</td>
+<td style="text-align: center;">&amp;Alpha；</td>
+<td style="text-align: center;">Β</td>
+<td style="text-align: center;">&amp;Beta；</td>
+<td style="text-align: center;">Χ</td>
+<td style="text-align: center;">&amp;Chi；</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Δ</td>
+<td style="text-align: center;">&amp;Delta；</td>
+<td style="text-align: center;">Ε</td>
+<td style="text-align: center;">&amp;Epsilon；</td>
+<td style="text-align: center;">Η</td>
+<td style="text-align: center;">&amp;Eta；</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Γ</td>
+<td style="text-align: center;">&amp;Gamma；</td>
+<td style="text-align: center;">Ι</td>
+<td style="text-align: center;">&amp;Iota；</td>
+<td style="text-align: center;">Κ</td>
+<td style="text-align: center;">&amp;Kappa；</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Λ</td>
+<td style="text-align: center;">&amp;Lambda；</td>
+<td style="text-align: center;">Μ</td>
+<td style="text-align: center;">&amp;Mu；</td>
+<td style="text-align: center;">Ν</td>
+<td style="text-align: center;">&amp;Nu；</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ω</td>
+<td style="text-align: center;">&amp;Omega；</td>
+<td style="text-align: center;">Ο</td>
+<td style="text-align: center;">&amp;Omicron；</td>
+<td style="text-align: center;">Φ</td>
+<td style="text-align: center;">&amp;Phi；</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Π</td>
+<td style="text-align: center;">&amp;Pi；</td>
+<td style="text-align: center;">Ψ</td>
+<td style="text-align: center;">&amp;Psi；</td>
+<td style="text-align: center;">Ρ</td>
+<td style="text-align: center;">&amp;Rho；</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Σ</td>
+<td style="text-align: center;">&amp;Sigma；</td>
+<td style="text-align: center;">Τ</td>
+<td style="text-align: center;">&amp;Tau；</td>
+<td style="text-align: center;">Θ</td>
+<td style="text-align: center;">&amp;Theta；</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Υ</td>
+<td style="text-align: center;">&amp;Upsilon；</td>
+<td style="text-align: center;">Ξ</td>
+<td style="text-align: center;">&amp;Xi；</td>
+<td style="text-align: center;">Ζ</td>
+<td style="text-align: center;">&amp;Zeta；</td>
 </tr>
 </tbody>
 </table>
+<hr>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">符号</th>
+<th style="text-align: center;">编码</th>
+<th style="text-align: center;">符号</th>
+<th style="text-align: center;">编码</th>
+<th style="text-align: center;">符号</th>
+<th style="text-align: center;">编码</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">€</td>
+<td style="text-align: center;">&amp;euro；</td>
+<td style="text-align: center;">£</td>
+<td style="text-align: center;">&amp;pound；</td>
+<td style="text-align: center;">¥</td>
+<td style="text-align: center;">&amp;yen；</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <table>
 <thead>
 <tr class="header">
