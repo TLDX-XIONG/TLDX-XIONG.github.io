@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="经典语义分割论文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="classic semantic segmentation paper">
+<meta property="og:url" content="http://example.com/Semantic-Segmentation/classic-semantic-segmentation-paper/index.html">
+<meta property="og:site_name" content="TLDX&#39;s blog">
+<meta property="og:description" content="经典语义分割论文">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-10T01:54:17.000Z">
+<meta property="article:modified_time" content="2021-11-10T02:03:26.887Z">
+<meta property="article:author" content="TLDX">
+<meta property="article:tag" content="Semantic Segmentation">
+<meta property="article:tag" content="paper">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/Semantic-Segmentation/classic-semantic-segmentation-paper/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>classic semantic segmentation paper | TLDX's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">TLDX's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">a waver</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">11</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/Semantic-Segmentation/classic-semantic-segmentation-paper/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="TLDX">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TLDX's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          classic semantic segmentation paper
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-10 09:54:17 / Modified: 10:03:26" itemprop="dateCreated datePublished" datetime="2021-11-10T09:54:17+08:00">2021-11-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Semantic-Segmentation/" itemprop="url" rel="index"><span itemprop="name">Semantic Segmentation</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/Semantic-Segmentation/classic-semantic-segmentation-paper/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/Semantic-Segmentation/classic-semantic-segmentation-paper/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>4.8k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>4 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center>
+经典语义分割论文
+</center>
+<span id="more"></span>
+<h5 id="cvpr-2015fcn">1. CVPR 2015，FCN</h5>
+<p>深度学习语义分割开山之作</p>
+<p>论文名称：Fully convolutional networks for semantic segmentation</p>
+<p><strong>摘要：</strong></p>
+<p>卷积网络在特征分层领域是非常强大的视觉模型。我们证明了经过端到端、像素到像素训练的卷积网络超过语义分割中最先进的技术。我们的核心观点是建立“全卷积”网络，输入任意尺寸，经过有效的推理和学习产生相应尺寸的输出。我们定义并指定全卷积网络的空间，解释它们在空间范围内dense prediction任务(预测每个像素所属的类别)和获取与先验模型联系的应用。我们改编当前的分类网络(AlexNet [22] ,the VGG net [34] , and GoogLeNet [35] )到完全卷积网络和通过微调 [5]传递它们的学习表现到分割任务中。然后我们定义了一个跳跃式的架构，结合来自深、粗层的语义信息和来自浅、细层的表征信息来产生准确和精细的分割。我们的完全卷积网络成为了在PASCAL VOC最出色的分割方式（在2012年相对62.2%的平均IU提高了20%），NYUDv2，和SIFT Flow,对一个典型图像推理只需要花费不到0.2秒的时间。</p>
+<p>论文链接：https://arxiv.org/pdf/1411.4038.pd</p>
+<p>源码：https://github.com/shelhamer/fcn.berkeleyvision.org</p>
+<h5 id="micca-2015u-net">2. MICCA 2015，U-Net</h5>
+<p>医学图像分割领头者</p>
+<p>论文名称：U-Net: Convolutional Networks for Biomedical Image Segmentation</p>
+<p><strong>摘要：</strong></p>
+<p>网络结构包括一个捕获上下文信息的收缩路径和一个用于精确定位的对称扩张路径，该网络能使用很少的图像就能够进行端到端的训练，并且在ISBI对电子显微镜下神经元结构进行的分割挑战方面胜过先前的最佳方法（滑动窗口卷积网络）。</p>
+<p>论文链接：https://arxiv.org/pdf/1505.04597v1.pdf</p>
+<p>包含经过训练的网络、源代码等：</p>
+<p>https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/u-net-release-2015-10-02.tar.gz</p>
+<h5 id="iclr-2018">3 ICLR 2018</h5>
+<p>论文名称：FusionNet: A deep fully residual convolutional neural network for image segmentation in connectomics</p>
+<p><strong>摘要：</strong></p>
+<p>Electron microscopic connectomics（电子显微镜连接组学）是一个炙手可热的研究方向，致力于通过高通量、纳米级显微镜来综合理解脑部连接图。但是人工消耗很大，现在深度学习网络发展的如日中天，我们搭建了一个FusionNet网络，用于在连接组学数据中自动分割神经元结构。（用神经网络去研究神经网络）FusionNet利用了机器学习的最新进展，如语义分割和残差网络，并引入了允许更深的网络架构来实现更准确的分割的基于累加的跳过连接。我们与ISBI EM segmentation challenge（这是一个挑战赛，EM指电子显微镜）的前几名的结果进行了对比，展现了我们的网络的性能。我们还展示了两个不同任务的分割结果，包括细胞膜和细胞核分割以及细胞形态的统计分析。</p>
+<p>论文链接：https://arxiv.org/ftp/arxiv/papers/1612/1612.05360.pdf</p>
+<h5 id="cvpr2015segnet">4. CVPR2015，SegNet</h5>
+<p>语义分割必读算法，和DeconvNet 类似。</p>
+<p>论文名称：Segnet: A deep convolutional encoder-decoder architecture for image segmentation</p>
+<p><strong>摘要：</strong></p>
+<p>SegNet 有三个部分构成：一个 encoder network，一个对应的 decoder network，最后一个像素级别的分类层。本文最大的亮点在：在 encoder 阶段我们做 max-pooling时，我们将 pooling indices 记录下来，在decoder upsamples 使用这些 pooling indices 得到稀疏的 upsampled maps，再用 trainable filters 进行卷积得到 dense feature maps。</p>
+<p>论文链接：https://arxiv.org/pdf/1511.00561.pdf</p>
+<h5 id="iccv-2015deconvnet">5 ICCV 2015，DeconvNet</h5>
+<p>论文名称：Learning deconvolution network for semantic segmentation</p>
+<p><strong>摘要：</strong></p>
+<ol type="1">
+<li><p>提出新的语义分割算法：深度反卷积网络；</p></li>
+<li><p>在VGG-16卷积层上学习网络；</p></li>
+<li><p>反卷积组成：deconvolution and unpooling layers，识别逐像素的类别标签，并预测分割mask；</p></li>
+<li><p>将object proposal（edge box）送入训练后的网络，然后整幅图像是这些proposal的分割结果的组合,这样就可以解决物体太大或者太小所带来的分割问题；</p></li>
+<li><p>deep deconvolution network 和候选区域级别的预测(proposal-wise predictio)，改进了现存的基于FCN的方法．</p></li>
+<li><p>我们的算法能识别精细的结构以及不同尺度大小的目标</p></li>
+</ol>
+<p>论文链接：https://arxiv.org/pdf/1505.04366.pdf</p>
+<h5 id="iclr-2015deeplabv1">6. ICLR 2015，DeepLabv1</h5>
+<p>带孔卷积，大有作为</p>
+<p>论文名称：DeepLab V1: Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs</p>
+<p><strong>摘要：</strong></p>
+<p>CRF简单来说，能做到的就是在决定一个位置的像素值时（在这个paper里是label），会考虑周围邻居的像素值（label），这样能抹除一些噪音。但是通过CNN得到的feature map在一定程度上已经足够平滑了，所以short range的CRF没什么意义。于是作者采用了fully connected CRF，这样考虑的就是全局的信息了。</p>
+<p>论文链接：https://arxiv.org/pdf/1412.7062.pdf</p>
+<h5 id="tpami-2017-deeplabv2">7. TPAMI 2017 DeepLabv2</h5>
+<p>论文名称：V2: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs</p>
+<p><strong>摘要：</strong></p>
+<p>提出并强调洞卷积（atrous convolution）的作用与实际应用操作，Atrous convolution可以精确地控制在深度卷积神经网络中计算特征响应的分辨率，它还允许在不增加参数数量或计算量的情况下，有效地扩大过滤器的视野，以结合更多的上下文信息。</p>
+<p>论文链接：https://export.arxiv.org/pdf/1606.00915</p>
+<h5 id="eccv-2018-deeplabv3">8. ECCV 2018 DeepLabv3</h5>
+<p>论文名称：V3: Rethinking Atrous Convolution for Semantic Image Segmentation</p>
+<p><strong>摘要：</strong></p>
+<p>DeepLabv3进一步探讨空洞卷积，这是一个在语义分割任务中：可以调整滤波器视野、控制卷积神经网络计算的特征响应分辨率的强大工具。为了解决多尺度下的目标分割问题，我们设计了空洞卷积级联或不同采样率空洞卷积并行架构。此外，我们强调了ASPP(Atrous Spatial Pyramid Pooling)模块，该模块可以在获取多个尺度上卷积特征，进一步提升性能。同时，我们分享了实施细节和训练方法，此次提出的DeepLabv3相比先前的版本有显著的效果提升，在PASCAL VOC 2012上获得了先进的性能。</p>
+<p>论文链接：https://arxiv.org/pdf/1706.05587.pdf</p>
+<h5 id="eccv-2018-deeplabv4">9. ECCV 2018 DeepLabv4</h5>
+<p>论文名称：V4: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation</p>
+<p><strong>摘要：</strong></p>
+<p>空间金字塔池模块或编码 - 解码器结构用于深度神经网络中解决语义分割任务。前一种网络能够通过利用多个速率和多个有效视场的过滤器或池化操作探测输入特征来编码多尺度上下文信息，而后一种网络可以通过逐渐恢复空间信息来捕获更清晰的对象边界。在这项工作中，我们建议结合两种方法的优点。具体来说，我们提出的模型DeepLabv3 +通过添加一个简单而有效的解码器模块来扩展DeepLabv3，以优化分割结果，尤其是沿着对象边界。我们进一步探索Xception模型并将深度可分离卷积应用于Atrous Spatial Pyramid Pooling和解码器模块，从而产生更快更强的编码器-解码器网络。我们证明了所提出的模型在PASCAL VOC 2012语义图像分割数据集上的有效性，并且在没有任何后处理的情况下在测试集上实现了89％的性能。我们的论文附有Tensorflow中提出的模型的公开参考实现。</p>
+<p>论文链接：https://arxiv.org/pdf/1802.02611.pdf</p>
+<h5 id="cvpr-2017gcn">10. CVPR 2017，GCN</h5>
+<p>开拓语义分割新思想</p>
+<p>论文名称：Large Kernel Matters--Improve Semantic Segmentation by Global Convolutional Network</p>
+<p><strong>摘要：</strong></p>
+<p>文章认为，classification和localization之间是有冲突的，我们平时所用的卷积分割网络，在提高分割效果的同时，削弱了分类的能力。文中认为通过设置大的感受野可以获得featuremap与pixel score之间的densely connections。</p>
+<p>论文链接：https://arxiv.org/pdf/1703.02719.pdf</p>
+<h5 id="eccv-2018exfuse">11. ECCV 2018，ExFuse</h5>
+<p>宏观角度看待语义分割</p>
+<p>论文名称：ExFuse: Enhancing Feature Fusion for Semantic Segmentation</p>
+<p><strong>摘要：</strong></p>
+<p>文中提到说目前语义分割的框架，大多是FCN的框架，使用encode得到将语义信息融合到feature map中，然后再使用decode通过feature map得到分割结果，一般来说encoder都是使用pre-trained的分割网络进行transfer过来的，但是呢，虽然这样encoder可以得到更丰富的语义信息，但是损失了分辨率，对于恢复到原本分辨率分割图来说带来了困难，因此U-net被提出来解决这个问题，使用skip connection将hight-level low-resolution from top layers和low-level high-resolution from bottom layers的特征融合起来。</p>
+<p>论文链接：https://arxiv.org/pdf/1804.03821.pdf</p>
+<h5 id="cvpr-2018">12. CVPR 2018</h5>
+<p>论文名称：Learning a discriminative feature network for semantic segmentation</p>
+<p><strong>摘要：</strong></p>
+<p>创新点就是特征区分网络discriminative feature network，本别叫做平滑网络Smooth Network以及边界网络Border Network。这两个网络可以处理类内一致性以及类间区分性。最终。形成了encoder-decoder网络结构，美其名曰Discriminative Feature Network</p>
+<p>论文链接： https://arxiv.org/pdf/1804.09337.pdf</p>
+<blockquote>
+<p>文章转自 <a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv13752355?spm_id_from=444.41.0.0">B站深度之眼</a>，如有侵权，请联系删除。</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Semantic-Segmentation/" rel="tag"># Semantic Segmentation</a>
+              <a href="/tags/paper/" rel="tag"># paper</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Python/Python-%E7%B3%BB%E5%88%97%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D/" rel="prev" title="Python 系列模块介绍">
+      <i class="fa fa-chevron-left"></i> Python 系列模块介绍
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/configuration/virtualenv/" rel="next" title="virtualenv">
+      virtualenv <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#cvpr-2015fcn"><span class="nav-text">1. CVPR 2015，FCN</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#micca-2015u-net"><span class="nav-text">2. MICCA 2015，U-Net</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#iclr-2018"><span class="nav-text">3 ICLR 2018</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cvpr2015segnet"><span class="nav-text">4. CVPR2015，SegNet</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#iccv-2015deconvnet"><span class="nav-text">5 ICCV 2015，DeconvNet</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#iclr-2015deeplabv1"><span class="nav-text">6. ICLR 2015，DeepLabv1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tpami-2017-deeplabv2"><span class="nav-text">7. TPAMI 2017 DeepLabv2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#eccv-2018-deeplabv3"><span class="nav-text">8. ECCV 2018 DeepLabv3</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#eccv-2018-deeplabv4"><span class="nav-text">9. ECCV 2018 DeepLabv4</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cvpr-2017gcn"><span class="nav-text">10. CVPR 2017，GCN</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#eccv-2018exfuse"><span class="nav-text">11. ECCV 2018，ExFuse</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cvpr-2018"><span class="nav-text">12. CVPR 2018</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="TLDX"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">TLDX</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/TLDX-XIONG" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;TLDX-XIONG" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2029949969@qq.com" title="E-Mail → mailto:2029949969@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TLDX All Rights Reserved</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">88k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:20</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '8UBNFxmQcjGjVE43FUfTiJpd-gzGzoHsz',
+      appKey     : 'iREWYRy3HYdwh6ICCVsB1OQB',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="1. 问题描述 感知机算法的提出最初被用来解决二分类问题，即给定 \(N\) 个样本，其中每个样本都是 \(p\) 维的向量。每一个样本属于 \(C_1\) 或 \(C_2\)。我们的任务是找到一个超平面来将所有样本进行准确分类并且具有较强的泛化能力。 ### 2. 问题数学描述 这里我们将这类问题抽象为数学描述。我们假设 \(x_1,x_2,\ldots,x_N\) 是 \(p\) 维向量。然">
+<meta property="og:type" content="article">
+<meta property="og:title" content="感知机算法证明">
+<meta property="og:url" content="http://example.com/Machine-Learning/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%AE%97%E6%B3%95%E8%AF%81%E6%98%8E/index.html">
+<meta property="og:site_name" content="TLDX&#39;s blog">
+<meta property="og:description" content="1. 问题描述 感知机算法的提出最初被用来解决二分类问题，即给定 \(N\) 个样本，其中每个样本都是 \(p\) 维的向量。每一个样本属于 \(C_1\) 或 \(C_2\)。我们的任务是找到一个超平面来将所有样本进行准确分类并且具有较强的泛化能力。 ### 2. 问题数学描述 这里我们将这类问题抽象为数学描述。我们假设 \(x_1,x_2,\ldots,x_N\) 是 \(p\) 维向量。然">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-19T09:37:25.000Z">
+<meta property="article:modified_time" content="2021-10-18T06:51:12.486Z">
+<meta property="article:author" content="TLDX">
+<meta property="article:tag" content="Proof">
+<meta property="article:tag" content="Alogrithm">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/Machine-Learning/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%AE%97%E6%B3%95%E8%AF%81%E6%98%8E/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>感知机算法证明 | TLDX's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">TLDX's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">a waver</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">11</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/Machine-Learning/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%AE%97%E6%B3%95%E8%AF%81%E6%98%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="TLDX">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TLDX's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          感知机算法证明
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-19 17:37:25" itemprop="dateCreated datePublished" datetime="2020-08-19T17:37:25+08:00">2020-08-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-10-18 14:51:12" itemprop="dateModified" datetime="2021-10-18T14:51:12+08:00">2021-10-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/Machine-Learning/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%AE%97%E6%B3%95%E8%AF%81%E6%98%8E/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/Machine-Learning/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%AE%97%E6%B3%95%E8%AF%81%E6%98%8E/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="问题描述">1. 问题描述</h3>
+<p>感知机算法的提出最初被用来解决二分类问题，即给定 <span class="math inline">\(N\)</span> 个样本，其中每个样本都是 <span class="math inline">\(p\)</span> 维的向量。每一个样本属于 <span class="math inline">\(C_1\)</span> 或 <span class="math inline">\(C_2\)</span>。我们的任务是找到一个超平面来将所有样本进行准确分类并且具有较强的泛化能力。 ### 2. 问题数学描述 这里我们将这类问题抽象为数学描述。我们假设 <span class="math inline">\(x_1,x_2,\ldots,x_N\)</span> 是 <span class="math inline">\(p\)</span> 维向量。然后我们将 <span class="math inline">\(\vec{x}_1,\vec{x}_2,...,\vec{x}_N\)</span> 定义为： 如果 <span class="math inline">\(x_i\in C_1\)</span>,则 <span class="math inline">\(\overrightarrow{x_i}=\begin{bmatrix}x_i\\1\end{bmatrix}\)</span>; 如果 <span class="math inline">\(x_i\in C_2\)</span>,则 <span class="math inline">\(\overrightarrow{x_i}=\begin{bmatrix}-x_i\\ -1\end{bmatrix}\)</span> 此时所有向量变成了 <span class="math inline">\(p+1\)</span> 维。这个问题也转变成了寻找一个 <span class="math inline">\(p+1\)</span> 维向量 <span class="math inline">\(\omega\)</span>, 使得对于任何 <span class="math inline">\(i=1,2,\cdots,N\)</span> 都有： <span class="math display">\[\omega^T\overrightarrow{x_i}&gt; 0\]</span></p>
+<span id="more"></span>
+<!--算法流程图-->
+<h3 id="算法流程">3. 算法流程</h3>
+<hr />
+<p><span class="math display">\[\begin{aligned}
+&amp; \textbf{Input: }\overrightarrow{x_1},\overrightarrow{x_2},\ldots,\overrightarrow{x_N}\\
+&amp; \textbf{Output: }\omega  \\
+&amp; _\textbf{1} \quad \omega=
+\begin{bmatrix}
+0 \\ 0 \\ \vdots \\ 0   
+\end{bmatrix};\\
+&amp;_\textbf{2} \quad FLAG=1;\\
+&amp;_\textbf{3} \quad \textbf{while }FLAG \textbf{ do}\\
+&amp;_\textbf{4} \quad \qquad FLAG=0;\\
+&amp;_\textbf{5} \quad \qquad \textbf{for }i=1:N\;\textbf{do}\\
+&amp;_\textbf{6} \quad\qquad\qquad \textbf{if }\omega^T\overrightarrow{x_i}\le 0 \textbf{ then}\\
+&amp;_\textbf{7} \quad \qquad\qquad\qquad \omega=\omega+\overrightarrow{x_i};\\
+&amp;_\textbf{8} \quad \qquad\qquad\qquad FLAG=1;\\
+&amp;_\textbf{9} \quad \qquad\qquad \textbf{end}\\
+&amp;_\textbf{10} \quad \qquad \textbf{end}\\
+&amp;_\textbf{11} \quad \textbf{end}\\
+&amp;_\textbf{12} \quad \textbf{return }w;\\
+\end{aligned}
+\]</span></p>
+<hr />
+<h3 id="算法收敛性证明">4. 算法收敛性证明</h3>
+<p><strong>定理1</strong> 对于所有的 <span class="math inline">\(N\)</span> 个向量 <span class="math inline">\(\overrightarrow{x_1},\overrightarrow{x_2},\ldots,\overrightarrow{x_N}\)</span>，如果存在一个向量 <span class="math inline">\(\omega_{opt}\)</span> 使得 <span class="math inline">\(\omega_{opt}^T\overrightarrow{x_i}&gt;0\)</span> 对于所有的 <span class="math inline">\(i={1,2,\ldots,N}\)</span> 都成立，则 <strong>3</strong> 中描述的算法一定能够找到一个 <span class="math inline">\(\omega\)</span>，使得 <span class="math inline">\(\omega_{opt}^T\overrightarrow{x_i}&gt;0\)</span> 对于所有 <span class="math inline">\(i={1,2,\ldots,N}\)</span> 都成立。且算法的收敛性不取决于 <span class="math inline">\(\omega\)</span> 的初值选择。 <strong>证明</strong> 我们可以假设 <span class="math inline">\(\lVert \omega_{opt} \Vert=1\)</span>。因为对于找到的超平面 <span class="math inline">\(\omega_{opt}\)</span>，我们总可以乘以一个系数，使得<span class="math inline">\(\omega_{opt}\)</span> 模长为1. 我们记<span class="math inline">\(\omega(k)\)</span> 为<span class="math inline">\(\omega\)</span> 的第 <span class="math inline">\(k\)</span> 次迭代值。然后我们有： 1. 如果对于所有的 <span class="math inline">\(i={1,2,\ldots,N} \omega(k)^T\overrightarrow{x_i}&gt;0\)</span> 都成立，则算法直接成立 2. 否则，假设第 <span class="math inline">\(k\)</span> 次时，有<span class="math inline">\(\omega(k)^T\overrightarrow{x_i}&lt;0\)</span></p>
+<p>然后我们根据算法更新参数 <span class="math display">\[\omega(k+1)=\omega(k)+\overrightarrow{x_i}\]</span> 然后我们有： <span class="math display">\[\omega(k+1)-a\omega_{opt}=\omega(k)-a\omega_{opt}+\overrightarrow{x_i}\]</span> 两边同时取模，则有： <span class="math display">\[
+\begin{aligned}
+  &amp;{\|\omega(k+1)-a\omega_{opt}\|}^2 \\
+= &amp;{\|\omega(k)-a\omega_{opt}+\overrightarrow{x_i}\|}^2 \\
+= &amp;{\|\omega(k)-a\omega_{opt}\|}^2+{\|\overrightarrow{x_i}\|}^2+2\omega(k)^T\overrightarrow{x_i}-2a\omega_{opt}^T\overrightarrow{x_i}
+\end{aligned}
+\]</span> 这里 a 是一个正数，我们之后再具体讨论它的数值。因为 <span class="math inline">\(\omega(k)^T\overrightarrow{x_i}&lt;0\)</span>，因此我们有： <span class="math display">\[
+\begin{aligned}
+    &amp;{\|\omega(k+1)-a\omega_{opt}\|}^2 \\
+\le &amp;{\|\omega(k)-a\omega_{opt}\|}^2+{\|\overrightarrow{x_i}\|}^2-2a\omega_{opt}^T\overrightarrow{x_i}
+\end{aligned}
+\]</span> 我们定义 <span class="math inline">\(\beta=\max_{i=1}^{N}\lVert\overrightarrow{x_i}\lVert\)</span>，<span class="math inline">\(\gamma=\min_{i=1}^{N}(\omega_{opt}^T\overrightarrow{x_i})\)</span> 易得 <span class="math inline">\(\beta,\gamma&gt;0\)</span>。此时当 <span class="math inline">\(a=\frac{\beta^2+1}{2\gamma}\)</span> 并带入，很容易得到： <span class="math display">\[
+{\|\omega(k+1)-a\omega_{opt}\|}^2 \le {\|\omega(k)-a\omega_{opt}\|}^2 -1 
+\]</span> 我们定义 <span class="math inline">\(D=\lVert\omega(0)-\omega_{opt}\lVert\)</span>。基于上式我们可以得到，每迭代一次 <span class="math inline">\(\omega\)</span> 与<span class="math inline">\(\omega_{opt}\)</span>的距离减少1，因此至多迭代 <span class="math inline">\(D^2\)</span> 次，<span class="math inline">\(\omega\)</span> 就会收敛到<span class="math inline">\(\omega_{opt}\)</span>。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Proof/" rel="tag"># Proof</a>
+              <a href="/tags/Alogrithm/" rel="tag"># Alogrithm</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Appendix/ASCII/" rel="prev" title="ASCII 表(控制字符和可显示字符)">
+      <i class="fa fa-chevron-left"></i> ASCII 表(控制字符和可显示字符)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/cpp/c-primer-v5-solutions/" rel="next" title="c++ primer v5 solutions">
+      c++ primer v5 solutions <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-text">1. 问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B"><span class="nav-text">3. 算法流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%94%B6%E6%95%9B%E6%80%A7%E8%AF%81%E6%98%8E"><span class="nav-text">4. 算法收敛性证明</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="TLDX"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">TLDX</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/TLDX-XIONG" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;TLDX-XIONG" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2029949969@qq.com" title="E-Mail → mailto:2029949969@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TLDX All Rights Reserved</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">88k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:20</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '8UBNFxmQcjGjVE43FUfTiJpd-gzGzoHsz',
+      appKey     : 'iREWYRy3HYdwh6ICCVsB1OQB',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
