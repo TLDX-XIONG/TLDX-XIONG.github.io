@@ -922,7 +922,22 @@ vscode c++和jupyter 配置方法
   <entry>
     <title>git operations</title>
     <url>/uncategorized/git-operations/</url>
-    <content><![CDATA[
+    <content><![CDATA[<center>
+git operations
+</center>
+<span id="more"></span>
+<ul>
+<li><p><strong>设置用户信息</strong> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &#x27;TLDX-XIONG&#x27;</span><br><span class="line">git config --global user.email &#x27;tldx@qq.com&#x27;</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong><code>git init</code></strong> 使用当前目录初始化仓库 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure> 初始化仓库并命名 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init [dir]</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong><code>git clone</code></strong> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/TLDX-XIONG/d2l-notebook.git</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong><code>git add</code></strong> 添加文件 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add [file]</span><br></pre></td></tr></table></figure> 添加文件夹 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add [dir]</span><br></pre></td></tr></table></figure> 添加所有文件到缓存区 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong><code>git status</code></strong> 查看仓库当前的状态，显示有变更的文件。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong><code>git commit</code></strong> 提交缓存区内容至本地仓库 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git commit -m &#x27;message&#x27;</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong><code>git remote</code></strong> 显示所有远程仓库 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure> 添加远程版本库 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote add origin git@github.com:TLDX-XIONG/d2l-notebook.git</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong><code>git fetch</code></strong> 获取远程库的更新数据 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git fetch origin</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong><code>git merge</code></strong> 将从远程仓库获取的更新数据合并到分支 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong><code>git pull</code></strong> <code>git fetch</code>和<code>git merge</code>的结合版 取回 origin/master 分支，再与本地的 master(默认可不写) 分支合并 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git pull origin master</span><br></pre></td></tr></table></figure></p></li>
+</ul>
 ]]></content>
       <tags>
         <tag>git</tag>
