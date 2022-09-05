@@ -1129,7 +1129,11 @@ everything 配置 HTTP Server 以及内网穿透
   <entry>
     <title>linux-cmd</title>
     <url>/Linux/linux-cmd/</url>
-    <content><![CDATA[<h3 id="linux-常用命令总结">Linux 常用命令总结</h3>
+    <content><![CDATA[<center>
+Linux 常用命令
+</center>
+<span id="more"></span>
+<h3 id="linux-常用命令总结">Linux 常用命令总结</h3>
 <ul>
 <li><code>cd dir</code> <strong>切换目录</strong>
 <ul>
