@@ -1126,4 +1126,59 @@ everything 配置 HTTP Server 以及内网穿透
         <tag>http server</tag>
       </tags>
   </entry>
+  <entry>
+    <title>linux-cmd</title>
+    <url>/Linux/linux-cmd/</url>
+    <content><![CDATA[<h3 id="linux-常用命令总结">Linux 常用命令总结</h3>
+<ul>
+<li><code>cd dir</code> <strong>切换目录</strong>
+<ul>
+<li><code>~</code>：回到 home 目录</li>
+</ul></li>
+<li><code>pwd</code>：<strong>查看目录绝对路径</strong></li>
+<li><code>clear</code>：<strong>清屏命令</strong></li>
+<li><code>mkdir -m -p dir</code> <strong>创建目录</strong> 其中 <code>-m</code> 代表权限 <code>-p</code> 代表如果目录不存在则创建一个，不会报错。</li>
+<li><code>ls [options]</code> <strong>列出目录</strong>
+<ul>
+<li><code>-a</code> 列出所有文件包括 <code>·</code> 和 <code>··</code></li>
+<li><code>-l</code> 列出详细信息</li>
+<li><code>-r</code> 倒序显示</li>
+<li><code>-t</code> 按时间显示</li>
+</ul></li>
+<li><code>rmdir dir</code> <strong>删除空目录</strong></li>
+<li><code>tree</code> <strong>以树状图列出文件</strong></li>
+<li><code>mv source dest</code> <strong>移动文件</strong></li>
+<li>将源文件或目录移动到目标目录下，如果不存在，则为重命名源文件或目录</li>
+<li><code>rm [options]</code> <strong>删除文件或目录</strong>
+<ul>
+<li><code>-i</code> 删除文件时询问是否删除</li>
+<li><code>-r</code> 删除该目录下的所有文件</li>
+</ul></li>
+<li><code>cp [options] [source] [dest]</code> <strong>复制文件和目录</strong>
+<ul>
+<li><code>-r</code> 复制目录下的所有文件</li>
+<li><code>-i</code> 覆盖时候询问是否覆盖</li>
+</ul></li>
+<li><code>zip</code> <strong>压缩文件</strong>
+<ul>
+<li><code>-r</code> 递归处理压缩</li>
+<li><code>-q</code> 隐藏指令执行过程</li>
+</ul></li>
+<li><code>unzip</code> <strong>解压文件</strong>
+<ul>
+<li><code>-d</code> 解压后存储的目录</li>
+<li><code>-v</code> 查看压缩文件信息</li>
+<li><code>-l</code> 查看压缩文件包含的文件</li>
+</ul></li>
+<li><code>tar [-czvf] compressname dir</code> <strong>压缩文件</strong></li>
+<li><code>tar [-xzvf] compressname -C dir</code> <strong>解压文件</strong></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
 </search>
