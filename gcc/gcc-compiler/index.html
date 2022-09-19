@@ -20,15 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="TLDX&#39;s blog">
-<meta property="og:url" content="http://example.com/categories/cpp/index.html">
+  <meta name="description" content="gcc 编译器命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gcc compiler">
+<meta property="og:url" content="http://example.com/gcc/gcc-compiler/index.html">
 <meta property="og:site_name" content="TLDX&#39;s blog">
+<meta property="og:description" content="gcc 编译器命令">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-09-19T07:38:10.000Z">
+<meta property="article:modified_time" content="2022-09-19T08:24:14.303Z">
 <meta property="article:author" content="TLDX">
+<meta property="article:tag" content="gcc">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/categories/cpp/">
+<link rel="canonical" href="http://example.com/gcc/gcc-compiler/">
 
 
 <script id="page-configurations">
@@ -36,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Category: cpp | TLDX's blog</title>
+  <title>gcc compiler | TLDX's blog</title>
   
 
 
@@ -180,57 +185,155 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/gcc/gcc-compiler/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="TLDX">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TLDX's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          gcc compiler
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-09-19 15:38:10 / Modified: 16:24:14" itemprop="dateCreated datePublished" datetime="2022-09-19T15:38:10+08:00">2022-09-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/gcc/" itemprop="url" rel="index"><span itemprop="name">gcc</span></a>
+                </span>
+            </span>
+
+          
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">cpp
-          <small>Category</small>
-        </h2>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/gcc/gcc-compiler/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/gcc/gcc-compiler/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>562</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <center>
+gcc 编译器命令
+</center>
+<span id="more"></span>
+<ol type="1">
+<li>gcc 编译程序过程包含
+<ul>
+<li>预处理(.i文件)</li>
+<li>编译(.S文件)</li>
+<li>汇编(.o文件)</li>
+<li>链接(可执行文件) <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line"></span><br><span class="line">main.c --&gt; |预处理|main.i --&gt; |编译|main.S --&gt; |汇编|main.o</span><br><span class="line">start.c --&gt; |预处理|start.i --&gt; |编译|start.S --&gt; |汇编|start.o</span><br><span class="line">main.o --&gt; |链接| main可执行文件</span><br><span class="line">start.o --&gt; |链接|main可执行文件</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li>编译过程
+<ul>
+<li>预处理：<code>gcc -E hello.c -o hello.i</code></li>
+<li>编 译：<code>gcc -S hello.i -o hello.s</code></li>
+<li>汇 编：<code>gcc -c hello.s -o hello.o</code></li>
+<li>链 接：<code>gcc hello.o xxx.o -o hello</code></li>
+</ul></li>
+<li>常见使用示例
+<ul>
+<li><code>gcc hello.c</code> <em>直接输出为二进制文件 <code>a.out</code>，通过 <code>./a.out</code> 执行</em></li>
+<li><code>gcc hello.c -o hello</code> <em>输出名为 <code>hello</code> 的可执行文件，通过 <code>./hello</code> 执行</em></li>
+<li><code>gcc -c hello.c</code> <em>输出 <code>hello.o</code> 文件，用于链接</em></li>
+<li><code>gcc hello.o main.o -o main</code> <em>链接多个编译文件，生成 <code>main</code> 可执行文件</em></li>
+</ul></li>
+<li>编译常用选项
+<ul>
+<li>-Wall <em>打印警告信息</em></li>
+<li>-w <em>忽略所有警告信息</em></li>
+<li>-O1，-O2，-O3 <em>表示程序优化等级，O3 最高</em></li>
+<li>-g <em>用来产生调试信息，供 dgb 调试器使用</em></li>
+</ul></li>
+</ol>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-10-21T21:42:56+08:00"
-              content="2021-10-21">
-          10-21
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/gcc/" rel="tag"># gcc</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/cpp/c-primer-v5-solutions/" itemprop="url">
-            <span itemprop="name">c++ primer v5 solutions</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Linux/linux-cmd/" rel="prev" title="linux-cmd">
+      <i class="fa fa-chevron-left"></i> linux-cmd
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {

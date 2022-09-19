@@ -1185,4 +1185,49 @@ Linux 常用命令
         <tag>linux</tag>
       </tags>
   </entry>
+  <entry>
+    <title>gcc compiler</title>
+    <url>/gcc/gcc-compiler/</url>
+    <content><![CDATA[<center>
+gcc 编译器命令
+</center>
+<span id="more"></span>
+<ol type="1">
+<li>gcc 编译程序过程包含
+<ul>
+<li>预处理(.i文件)</li>
+<li>编译(.S文件)</li>
+<li>汇编(.o文件)</li>
+<li>链接(可执行文件) <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line"></span><br><span class="line">main.c --&gt; |预处理|main.i --&gt; |编译|main.S --&gt; |汇编|main.o</span><br><span class="line">start.c --&gt; |预处理|start.i --&gt; |编译|start.S --&gt; |汇编|start.o</span><br><span class="line">main.o --&gt; |链接| main可执行文件</span><br><span class="line">start.o --&gt; |链接|main可执行文件</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li>编译过程
+<ul>
+<li>预处理：<code>gcc -E hello.c -o hello.i</code></li>
+<li>编 译：<code>gcc -S hello.i -o hello.s</code></li>
+<li>汇 编：<code>gcc -c hello.s -o hello.o</code></li>
+<li>链 接：<code>gcc hello.o xxx.o -o hello</code></li>
+</ul></li>
+<li>常见使用示例
+<ul>
+<li><code>gcc hello.c</code> <em>直接输出为二进制文件 <code>a.out</code>，通过 <code>./a.out</code> 执行</em></li>
+<li><code>gcc hello.c -o hello</code> <em>输出名为 <code>hello</code> 的可执行文件，通过 <code>./hello</code> 执行</em></li>
+<li><code>gcc -c hello.c</code> <em>输出 <code>hello.o</code> 文件，用于链接</em></li>
+<li><code>gcc hello.o main.o -o main</code> <em>链接多个编译文件，生成 <code>main</code> 可执行文件</em></li>
+</ul></li>
+<li>编译常用选项
+<ul>
+<li>-Wall <em>打印警告信息</em></li>
+<li>-w <em>忽略所有警告信息</em></li>
+<li>-O1，-O2，-O3 <em>表示程序优化等级，O3 最高</em></li>
+<li>-g <em>用来产生调试信息，供 dgb 调试器使用</em></li>
+</ul></li>
+</ol>
+]]></content>
+      <categories>
+        <category>gcc</category>
+      </categories>
+      <tags>
+        <tag>gcc</tag>
+      </tags>
+  </entry>
 </search>
