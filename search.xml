@@ -1198,8 +1198,15 @@ gcc 编译器命令
 <li>预处理(.i文件)</li>
 <li>编译(.S文件)</li>
 <li>汇编(.o文件)</li>
-<li>链接(可执行文件) <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line"></span><br><span class="line">main.c --&gt; |预处理|main.i --&gt; |编译|main.S --&gt; |汇编|main.o</span><br><span class="line">start.c --&gt; |预处理|start.i --&gt; |编译|start.S --&gt; |汇编|start.o</span><br><span class="line">main.o --&gt; |链接| main可执行文件</span><br><span class="line">start.o --&gt; |链接|main可执行文件</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>链接(可执行文件)</li>
 </ul></li>
+</ol>
+<pre class="mermaid">graph LR
+main.c --> |预处理|main.i --> |编译|main.S --> |汇编|main.o
+start.c --> |预处理|start.i --> |编译|start.S --> |汇编|start.o
+main.o --> |链接| main可执行文件
+start.o --> |链接|main可执行文件</pre>
+<ol start="2" type="1">
 <li>编译过程
 <ul>
 <li>预处理：<code>gcc -E hello.c -o hello.i</code></li>
