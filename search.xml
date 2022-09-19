@@ -1226,7 +1226,7 @@ start.o --> |链接|main可执行文件</pre>
 <li>-Wall <em>打印警告信息</em></li>
 <li>-w <em>忽略所有警告信息</em></li>
 <li>-O1，-O2，-O3 <em>表示程序优化等级，O3 最高</em></li>
-<li>-g <em>用来产生调试信息，供 dgb 调试器使用</em></li>
+<li>-g <em>用来产生调试信息，供 gdb 调试器使用</em></li>
 </ul></li>
 </ol>
 ]]></content>
