@@ -1130,7 +1130,7 @@ everything 配置 HTTP Server 以及内网穿透
     <title>linux-cmd</title>
     <url>/Linux/linux-cmd/</url>
     <content><![CDATA[<center>
-Linux 常用命令
+Linux and Shell
 </center>
 <span id="more"></span>
 <h3 id="linux-常用命令总结">Linux 常用命令总结</h3>
@@ -1177,12 +1177,23 @@ Linux 常用命令
 <li><code>tar [-czvf] compressname dir</code> <strong>压缩文件</strong></li>
 <li><code>tar [-xzvf] compressname -C dir</code> <strong>解压文件</strong></li>
 </ul>
+<h3 id="shell">Shell</h3>
+<ul>
+<li><code>date</code> <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ date</span><br><span class="line">Fri 10 Jan 2020 11:49:31 AM EST</span><br><span class="line">missing:~$ </span><br></pre></td></tr></table></figure></li>
+<li><code>echo</code> <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo hello</span><br><span class="line">foo=bar    # 变量赋值</span><br><span class="line">echo $foo  # 引用变量输出</span><br><span class="line">echo &quot;hello, $foo&quot; # 双引号格式化输出字符串，会自动替换</span><br><span class="line">echo &#x27;hello, $foo&#x27; # 单引号直接输出字符串，不执行格式化</span><br><span class="line">echo hello &gt; hello.txt  # 将输出重定向到 hello.txt</span><br></pre></td></tr></table></figure></li>
+<li><code>cat</code> <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ echo hello &gt; hello.txt</span><br><span class="line">missing:~$ cat hello.txt</span><br><span class="line">hello</span><br><span class="line">missing:~$ cat &lt; hello.txt # 重定向输入为 hello.txt</span><br><span class="line">hello</span><br><span class="line">missing:~$ cat &lt; hello.txt &gt; hello2.txt # 重定向输入为 hello.txt，输出为 hello2.txt</span><br><span class="line">missing:~$ cat hello2.txt</span><br><span class="line">hello</span><br><span class="line">missing:~$ cat hello.txt &gt;&gt; hello2.txt # 使用 &gt;&gt; 追加内容</span><br><span class="line">missing:~$ cat hello2.txt</span><br><span class="line">hello</span><br><span class="line">hello</span><br></pre></td></tr></table></figure></li>
+<li><code>which</code> <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">which echo # 定位程序所在的路径</span><br></pre></td></tr></table></figure></li>
+<li><code>man</code> <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">man ls  # 用户手册，查看命令使用方法</span><br></pre></td></tr></table></figure></li>
+<li><code>tldr</code> <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tldr ls # 更好用的用户手册是 tldr</span><br></pre></td></tr></table></figure></li>
+<li><em>pipes</em> <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ ls -l / | tail -n1 # 使用 pipe 将一个</span><br><span class="line">drwxr-xr-x 1 root  root  4096 Jun 20  2019 var</span><br><span class="line">missing:~$ curl --head --silent google.com | grep --ignore-case content-length | cut --delimiter=&#x27; &#x27; -f2</span><br><span class="line">219</span><br></pre></td></tr></table></figure></li>
+</ul>
 ]]></content>
       <categories>
         <category>Linux</category>
       </categories>
       <tags>
         <tag>linux</tag>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
