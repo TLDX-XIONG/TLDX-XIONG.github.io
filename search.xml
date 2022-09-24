@@ -1258,4 +1258,28 @@ start.o --> |链接|main可执行文件</pre>
         <tag>gcc</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Vim-cmd</title>
+    <url>/Linux/Vim-cmd/</url>
+    <content><![CDATA[<center>
+vim 教程
+</center>
+<span id="more"></span>
+<h3 id="vim-使用方法">vim 使用方法</h3>
+<pre class="mermaid">graph LR
+Normal --i--> Insert
+Normal --R--> Replace
+Normal --v--> Visual
+Normal --shift-v--> Visual-line
+Normal --ctrl-v--> Visual-block
+Normal --:--> Command-line
+Insert --ESC--> Normal</pre>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
 </search>
