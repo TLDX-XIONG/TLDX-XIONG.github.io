@@ -1176,6 +1176,16 @@ Linux and Shell
 </ul></li>
 <li><code>tar [-czvf] compressname dir</code> <strong>压缩文件</strong></li>
 <li><code>tar [-xzvf] compressname -C dir</code> <strong>解压文件</strong></li>
+<li><code>find [path]</code> <strong>查找文件</strong>
+<ul>
+<li><code>name</code> 指定查找的文件</li>
+<li><code>type</code> 文件类型</li>
+</ul></li>
+<li><code>xargs</code> <strong>连接两个命令</strong>
+<ul>
+<li><code>[source_command] | xargs -d '\n' [dest_command]</code></li>
+<li><code>find . -name "*.py" | xargs -d '\n' rm</code></li>
+</ul></li>
 </ul>
 <h3 id="shell">Shell</h3>
 <ul>
