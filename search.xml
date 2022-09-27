@@ -1175,7 +1175,8 @@ Linux and Shell
 <li><code>-l</code> 查看压缩文件包含的文件</li>
 </ul></li>
 <li><code>tar [-czvf] compressname dir</code> <strong>压缩文件</strong></li>
-<li><code>tar [-xzvf] compressname -C dir</code> <strong>解压文件</strong></li>
+<li><code>tar [-xvf] compressname -C dir</code> <strong>解压文件</strong></li>
+<li><code>tar [-xzvf] compressname -C dir</code><strong>解压.gz文件</strong></li>
 <li><code>find [path]</code> <strong>查找文件</strong>
 <ul>
 <li><code>name</code> 指定查找的文件</li>
