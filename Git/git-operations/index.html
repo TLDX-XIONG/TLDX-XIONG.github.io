@@ -28,7 +28,7 @@
 <meta property="og:description" content="git operations">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-01-02T14:20:56.000Z">
-<meta property="article:modified_time" content="2022-01-06T05:23:43.155Z">
+<meta property="article:modified_time" content="2022-10-03T03:47:02.313Z">
 <meta property="article:author" content="TLDX">
 <meta property="article:tag" content="git">
 <meta property="article:tag" content="github">
@@ -223,7 +223,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-06 13:23:43" itemprop="dateModified" datetime="2022-01-06T13:23:43+08:00">2022-01-06</time>
+                <time title="Modified: 2022-10-03 11:47:02" itemprop="dateModified" datetime="2022-10-03T11:47:02+08:00">2022-10-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -254,7 +254,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
               </span>
-              <span>643</span>
+              <span>754</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -278,13 +278,14 @@ git operations
 <span id="more"></span>
 <ul>
 <li><p><strong>设置用户信息</strong> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &#x27;TLDX-XIONG&#x27;</span><br><span class="line">git config --global user.email &#x27;tldx@qq.com&#x27;</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>生成密钥</strong> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;tldx@qq.com&quot;  # 生成密钥，然后将公钥 id_rsa.pub 添加到 github ssh keys</span><br></pre></td></tr></table></figure></p></li>
 <li><p><strong><code>git init</code></strong></p>
-<p>使用当前目录初始化仓库 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure> 初始化仓库并命名 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init [dir]</span><br></pre></td></tr></table></figure></p></li>
+<p>使用当前目录初始化仓库 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure> 初始化仓库并命名 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init [dir]</span><br></pre></td></tr></table></figure> 初始化本地裸仓库 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init --bare  </span><br></pre></td></tr></table></figure></p></li>
 <li><p><strong><code>git clone</code></strong> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/TLDX-XIONG/d2l-notebook.git</span><br></pre></td></tr></table></figure></p></li>
 <li><p><strong><code>git add</code></strong></p>
 <p>添加文件 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add [file]</span><br></pre></td></tr></table></figure> 添加文件夹 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add [dir]</span><br></pre></td></tr></table></figure> 添加所有文件到缓存区 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure></p></li>
 <li><p><strong><code>git status</code></strong></p>
-<p>查看仓库当前的状态，显示有变更的文件。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure></p></li>
+<p>查看仓库当前的状态，显示有变更的文件。 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git status</span></span><br></pre></td></tr></table></figure></p></li>
 <li><p><strong><code>git commit</code></strong></p>
 <p>提交缓存区内容至本地仓库 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &#x27;message&#x27;</span><br></pre></td></tr></table></figure></p></li>
 <li><p><strong><code>git remote</code></strong></p>
@@ -297,6 +298,7 @@ git operations
 <p><code>git fetch</code>和<code>git merge</code>的结合版</p>
 <p>取回 origin/master 分支，再与本地的 master(默认可不写) 分支合并 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br></pre></td></tr></table></figure></p></li>
 </ul>
+<p><a target="_blank" rel="noopener" href="https://missing-semester-cn.github.io/2020/version-control/">Git 参考链接</a></p>
 
     </div>
 
