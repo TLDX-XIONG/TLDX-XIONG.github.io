@@ -756,9 +756,10 @@ YOLO v5-4.0 版本源码解读
     <title>virtualenv</title>
     <url>/configuration/virtualenv/</url>
     <content><![CDATA[<center>
-virtualenv 配置
+virtualenv 配置和换源
 </center>
 <span id="more"></span>
+<h4 id="virtualenv">virtualenv</h4>
 <p>virtualenv 可创建虚拟环境，用于管理不同 python 项目所需的依赖项，而项目彼此之间不相互干扰。</p>
 <ul>
 <li>安装 virtualenv <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install virtualenv</span><br></pre></td></tr></table></figure></li>
@@ -772,6 +773,15 @@ virtualenv 配置
 <p>无法加载 ...ps1，因为在此系统上禁止运行此脚本</p>
 </blockquote>
 <p>解决办法是：win + x, 选择 <code>Windows Powershell(管理员)</code>，输入 <code>set-executionpolicy remotesigned</code>，再输入 <code>y</code> 确认。</p>
+<h4 id="pip-换源">pip 换源</h4>
+<ul>
+<li>Linux: 修改 <code>~/.pip/pip.conf</code> 文件(没有则创建一个), 内容如下： <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = http://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure></li>
+<li>windows:
+<ol type="1">
+<li>在 user 目录中创建一个 pip 目录, 如 <code>C:\Users\TLDX\pip</code>, 在 pip 目录下新建 <code>pip.ini</code>, 内容如下 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = http://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">[install]</span><br><span class="line">trusted-host = https://pypi.tuna.tsinghua.edu.cn</span><br></pre></td></tr></table></figure></li>
+<li>直接命令行输入： ```shell pip config set global.index-url http://pypi.tuna.tsinghua.edu.cn/simple</li>
+</ol></li>
+</ul>
 ]]></content>
       <categories>
         <category>configuration</category>
