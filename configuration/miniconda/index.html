@@ -20,15 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="TLDX&#39;s blog">
-<meta property="og:url" content="http://example.com/categories/Appendix/index.html">
+  <meta name="description" content="miniconda 配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="miniconda">
+<meta property="og:url" content="http://example.com/configuration/miniconda/index.html">
 <meta property="og:site_name" content="TLDX&#39;s blog">
+<meta property="og:description" content="miniconda 配置">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-17T12:11:45.000Z">
+<meta property="article:modified_time" content="2022-10-17T12:14:55.025Z">
 <meta property="article:author" content="TLDX">
+<meta property="article:tag" content="miniconda">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/categories/Appendix/">
+<link rel="canonical" href="http://example.com/configuration/miniconda/">
 
 
 <script id="page-configurations">
@@ -36,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Category: Appendix | TLDX's blog</title>
+  <title>miniconda | TLDX's blog</title>
   
 
 
@@ -180,80 +185,154 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/configuration/miniconda/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="TLDX">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TLDX's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          miniconda
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-10-17 20:11:45 / Modified: 20:14:55" itemprop="dateCreated datePublished" datetime="2022-10-17T20:11:45+08:00">2022-10-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/configuration/" itemprop="url" rel="index"><span itemprop="name">configuration</span></a>
+                </span>
+            </span>
+
+          
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Appendix
-          <small>Category</small>
-        </h2>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/configuration/miniconda/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/configuration/miniconda/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>945</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <center>
+miniconda 配置
+</center>
+<span id="more"></span>
+<h3 id="linux">Linux</h3>
+<ol type="1">
+<li>开源镜像站下载镜像并安装 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -O https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py38_4.9.2-Linux-x86_64.sh</span><br><span class="line"></span><br><span class="line">bash Miniconda3-py38_4.9.2-Linux-x86_64.sh</span><br></pre></td></tr></table></figure></li>
+<li>改镜像源 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --set show_channel_urls yes</span><br><span class="line">conda config --set auto_activate_base false # 去掉启动后自动激活 conda base python环境</span><br></pre></td></tr></table></figure></li>
+<li>更新 conda 的包库
+<ul>
+<li><code>conda update conda</code></li>
+</ul></li>
+<li>conda 命令
+<ul>
+<li><code>conda env list</code> 列出所有环境</li>
+<li><code>conda create --name myenv python==xxx</code> 创建环境</li>
+<li><code>conda activate myenv</code> 激活环境</li>
+<li><code>conda deactivate</code> 退出环境</li>
+<li><code>conda remove -n myenv --all</code> 删除环境</li>
+<li><code>conda install package</code> 安装包</li>
+<li><code>conda list</code> 包列表</li>
+<li><code>conda uninstall package</code> 卸载包</li>
+<li><code>conda clean</code> 清除包缓存</li>
+<li><code>conda config</code> 配置信息</li>
+<li><code>conda info</code> conda 基本信息</li>
+</ul></li>
+</ol>
+<h3 id="windows">Windows</h3>
+<ol type="1">
+<li>开源镜像站下载镜像并安装 <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda">地址</a></li>
+<li>修改镜像源 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --set show_channel_urls yes</span><br></pre></td></tr></table></figure></li>
+<li>conda 命令与 Linux 环境一致</li>
+</ol>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-21T18:14:32+08:00"
-              content="2020-06-21">
-          06-21
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/miniconda/" rel="tag"># miniconda</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/Appendix/ASCII/" itemprop="url">
-            <span itemprop="name">ASCII 表(控制字符和可显示字符)</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Linux/Vim-cmd/" rel="prev" title="Vim-cmd">
+      <i class="fa fa-chevron-left"></i> Vim-cmd
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-    <div class="collection-year">
-      <span class="collection-header">2019</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-29T13:00:37+08:00"
-              content="2019-11-29">
-          11-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/Appendix/HTML-special-symbol/" itemprop="url">
-            <span itemprop="name">HTML special symbol</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -300,6 +379,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#linux"><span class="nav-number">1.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#windows"><span class="nav-number">2.</span> <span class="nav-text">Windows</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

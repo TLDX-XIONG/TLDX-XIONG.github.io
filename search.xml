@@ -1430,4 +1430,48 @@ Normal --:--> Command-line</pre>
         <tag>vim</tag>
       </tags>
   </entry>
+  <entry>
+    <title>miniconda</title>
+    <url>/configuration/miniconda/</url>
+    <content><![CDATA[<center>
+miniconda 配置
+</center>
+<span id="more"></span>
+<h3 id="linux">Linux</h3>
+<ol type="1">
+<li>开源镜像站下载镜像并安装 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl -O https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py38_4.9.2-Linux-x86_64.sh</span><br><span class="line"></span><br><span class="line">bash Miniconda3-py38_4.9.2-Linux-x86_64.sh</span><br></pre></td></tr></table></figure></li>
+<li>改镜像源 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --set show_channel_urls yes</span><br><span class="line">conda config --set auto_activate_base false # 去掉启动后自动激活 conda base python环境</span><br></pre></td></tr></table></figure></li>
+<li>更新 conda 的包库
+<ul>
+<li><code>conda update conda</code></li>
+</ul></li>
+<li>conda 命令
+<ul>
+<li><code>conda env list</code> 列出所有环境</li>
+<li><code>conda create --name myenv python==xxx</code> 创建环境</li>
+<li><code>conda activate myenv</code> 激活环境</li>
+<li><code>conda deactivate</code> 退出环境</li>
+<li><code>conda remove -n myenv --all</code> 删除环境</li>
+<li><code>conda install package</code> 安装包</li>
+<li><code>conda list</code> 包列表</li>
+<li><code>conda uninstall package</code> 卸载包</li>
+<li><code>conda clean</code> 清除包缓存</li>
+<li><code>conda config</code> 配置信息</li>
+<li><code>conda info</code> conda 基本信息</li>
+</ul></li>
+</ol>
+<h3 id="windows">Windows</h3>
+<ol type="1">
+<li>开源镜像站下载镜像并安装 <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda">地址</a></li>
+<li>修改镜像源 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --set show_channel_urls yes</span><br></pre></td></tr></table></figure></li>
+<li>conda 命令与 Linux 环境一致</li>
+</ol>
+]]></content>
+      <categories>
+        <category>configuration</category>
+      </categories>
+      <tags>
+        <tag>miniconda</tag>
+      </tags>
+  </entry>
 </search>
