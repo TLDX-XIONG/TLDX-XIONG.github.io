@@ -1172,16 +1172,21 @@ Linux and Shell
 </ul></li>
 <li><code>cp [options] [source] [dest]</code> <strong>复制文件和目录</strong>
 <ul>
+<li><code>cp source.txt dir/dest.txt</code></li>
+<li><code>cp -r source_dir dest_dir/</code></li>
 <li><code>-r</code> 复制目录下的所有文件</li>
 <li><code>-i</code> 覆盖时候询问是否覆盖</li>
+<li><code>f</code> 强制删除</li>
 </ul></li>
 <li><code>zip</code> <strong>压缩文件</strong>
 <ul>
+<li><code>zip -r out.zip source_dir</code></li>
 <li><code>-r</code> 递归处理压缩</li>
 <li><code>-q</code> 隐藏指令执行过程</li>
 </ul></li>
 <li><code>unzip</code> <strong>解压文件</strong>
 <ul>
+<li><code>unzip file.zip -d path/to/directory</code></li>
 <li><code>-d</code> 解压后存储的目录</li>
 <li><code>-v</code> 查看压缩文件信息</li>
 <li><code>-l</code> 查看压缩文件包含的文件</li>
@@ -1189,11 +1194,17 @@ Linux and Shell
 <li><code>tar [-czvf] compressname dir</code> <strong>压缩文件</strong></li>
 <li><code>tar [-xvf] compressname -C dir</code> <strong>解压文件</strong></li>
 <li><code>tar [-xzvf] compressname -C dir</code><strong>解压.gz文件</strong></li>
-<li><code>find [path]</code> <strong>查找文件</strong>
+<li><code>find [path] - name</code> <strong>查找文件</strong>
 <ul>
+<li><code>find directory -name test*.txt -maxdepth 2 -type d</code></li>
 <li><code>name</code> 指定查找的文件</li>
-<li><code>type</code> 文件类型</li>
+<li><code>type</code> 文件类型(f: 普通文件；d: 目录文件)</li>
 </ul></li>
+<li><code>df -h</code> <strong>查看挂载的磁盘信息</strong></li>
+<li><code>du -h --max-depth=1</code> <strong>查看一级子目录和文件的大小</strong></li>
+<li><code>sort</code> <strong>对目录和文件进行排序</strong></li>
+<li><code>top</code> <strong>实时监控系统资源使用情况</strong></li>
+<li><code>free -m</code> <strong>显示系统上可用的内存信息</strong></li>
 <li><code>xargs</code> <strong>连接两个命令</strong>
 <ul>
 <li><code>[source_command] | xargs -d '\n' [dest_command]</code></li>
